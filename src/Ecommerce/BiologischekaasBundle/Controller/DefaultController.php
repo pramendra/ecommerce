@@ -14,9 +14,10 @@ class DefaultController extends Controller
         /* 
         * PageManager aanroepen
         */
-        $pm = $this->get('PageManager');
+        //$pm = $this->get('PageManager');
         
-        $page = $pm->setPermalink('{homepage}');
+        //$page = $pm->setPermalink('{homepage}');
+        $page = null;
 
     	return $this->render('BiologischekaasBundle:Default:index.html.twig', array('latest_products' => $latest_products, 'page' => $page));
     }
