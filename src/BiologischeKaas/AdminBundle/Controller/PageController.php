@@ -1,6 +1,6 @@
 <?php
 
-namespace AddictedToVintage\AdminBundle\Controller;
+namespace BiologischeKaas\AdminBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
@@ -26,7 +26,7 @@ class PageController extends Controller
             $page = $this->getDoctrine()->getRepository('EcommerceBundle:Page')->find($id);
         }
 
-        $page_form = $this->createForm(new \AddictedToVintage\AdminBundle\Form\PageType($page), $page);
+        $page_form = $this->createForm(new \BiologischeKaas\AdminBundle\Form\PageType($page), $page);
 
         $page_form->setData($page);
 

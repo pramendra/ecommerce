@@ -1,6 +1,6 @@
 <?php
 
-namespace AddictedToVintage\AdminBundle\Controller;
+namespace BiologischeKaas\AdminBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
@@ -23,7 +23,7 @@ class ClientsController extends Controller {
 
 	$email->setClient($client);
 
-	$email_form = $this->createForm(new \AddictedToVintage\AdminBundle\Form\EmailType($email), $email);
+	$email_form = $this->createForm(new \BiologischeKaas\AdminBundle\Form\EmailType($email), $email);
 
 	$email_form->setData($email);
 
@@ -65,7 +65,7 @@ class ClientsController extends Controller {
     public function viewAction($id) {
 	$client = $this->getDoctrine()->getRepository('EcommerceBundle:Client')->find($id);
 
-	$client_form = $this->createForm(new \AddictedToVintage\AdminBundle\Form\ClientType($client), $client);
+	$client_form = $this->createForm(new \BiologischeKaas\AdminBundle\Form\ClientType($client), $client);
 
 	$client_form->setData($client);
 

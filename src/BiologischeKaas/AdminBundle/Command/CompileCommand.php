@@ -1,6 +1,6 @@
 <?php
 
-namespace AddictedToVintage\AdminBundle\Command;
+namespace BiologischeKaas\AdminBundle\Command;
 
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputArgument;
@@ -8,8 +8,8 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
-use AddictedToVintage\AdminBundle\Compile\lessc;
-use AddictedToVintage\AdminBundle\Compile\JavaScriptPacker;
+use BiologischeKaas\AdminBundle\Compile\lessc;
+use BiologischeKaas\AdminBundle\Compile\JavaScriptPacker;
 
 class CompileCommand extends ContainerAwareCommand {
 

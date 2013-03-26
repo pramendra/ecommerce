@@ -22,6 +22,7 @@ class AppKernel extends Kernel
             
             new BiologischeKaas\EcommerceBundle\EcommerceBundle(),
             new BiologischeKaas\AdminBundle\AdminBundle(),
+            
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

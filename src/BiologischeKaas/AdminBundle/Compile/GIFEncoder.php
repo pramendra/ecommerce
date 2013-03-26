@@ -1,6 +1,6 @@
 <?php
 
-namespace AddictedToVintage\AdminBundle\Compile;
+namespace BiologischeKaas\AdminBundle\Compile;
 
 /*
   :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::

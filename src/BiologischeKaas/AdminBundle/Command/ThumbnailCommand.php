@@ -1,6 +1,6 @@
 <?php
 
-namespace AddictedToVintage\AdminBundle\Command;
+namespace BiologischeKaas\AdminBundle\Command;
 
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputArgument;
@@ -9,7 +9,7 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use BiologischeKaas\EcommerceBundle\Entity\Product;
 use BiologischeKaas\EcommerceBundle\Entity\ProductImages;
-use AddictedToVintage\AdminBundle\UploadHandler\UploadHandler;
+use BiologischeKaas\AdminBundle\UploadHandler\UploadHandler;
 
 class ThumbnailCommand extends ContainerAwareCommand {
 

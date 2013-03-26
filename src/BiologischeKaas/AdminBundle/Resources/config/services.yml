@@ -1,5 +1,5 @@
 parameters:
-#    admin.example.class: AddictedToVintage\AdminBundle\Example
+#    admin.example.class: BiologischeKaas\AdminBundle\Example
 
 services:
 #    admin.example:

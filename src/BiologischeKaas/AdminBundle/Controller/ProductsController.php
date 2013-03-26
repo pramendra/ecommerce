@@ -1,10 +1,10 @@
 <?php
 
-namespace AddictedToVintage\AdminBundle\Controller;
+namespace BiologischeKaas\AdminBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
-use AddictedToVintage\AdminBundle\UploadHandler\UploadHandler;
+use BiologischeKaas\AdminBundle\UploadHandler\UploadHandler;
 use BiologischeKaas\EcommerceBundle\Entity\ProductImages;
 use BiologischeKaas\EcommerceBundle\Entity\Product;
 use Symfony\Component\HttpFoundation\Request;
@@ -170,7 +170,7 @@ class ProductsController extends Controller {
             $product = $this->getDoctrine()->getRepository('EcommerceBundle:Product')->find($id);
         }
 
-        $product_form = $this->createForm(new \AddictedToVintage\AdminBundle\Form\ProductType($product), $product);
+        $product_form = $this->createForm(new \BiologischeKaas\AdminBundle\Form\ProductType($product), $product);
 
         $product_form->setData($product);
 

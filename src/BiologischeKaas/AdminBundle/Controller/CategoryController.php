@@ -1,6 +1,6 @@
 <?php
 
-namespace AddictedToVintage\AdminBundle\Controller;
+namespace BiologischeKaas\AdminBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
@@ -23,7 +23,7 @@ class CategoryController extends Controller {
             $category = $this->getDoctrine()->getRepository('EcommerceBundle:Category')->find($id);
         }
 
-        $category_form = $this->createForm(new \AddictedToVintage\AdminBundle\Form\CategoryType($category), $category);
+        $category_form = $this->createForm(new \BiologischeKaas\AdminBundle\Form\CategoryType($category), $category);
 
         $category_form->setData($category);
 
@@ -59,7 +59,7 @@ class CategoryController extends Controller {
             $subcategory = $this->getDoctrine()->getRepository('EcommerceBundle:Subcategory')->find($id);
         }
 
-        $subcategory_form = $this->createForm(new \AddictedToVintage\AdminBundle\Form\SubcategoryType($subcategory), $subcategory);
+        $subcategory_form = $this->createForm(new \BiologischeKaas\AdminBundle\Form\SubcategoryType($subcategory), $subcategory);
 
         $subcategory_form->setData($subcategory);
 

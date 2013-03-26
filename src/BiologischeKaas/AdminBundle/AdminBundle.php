@@ -1,6 +1,6 @@
 <?php
 
-namespace AddictedToVintage\AdminBundle;
+namespace BiologischeKaas\AdminBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace AddictedToVintage\AdminBundle\Controller;
+namespace BiologischeKaas\AdminBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use BiologischeKaas\EcommerceBundle\Entity\Page;
@@ -25,7 +25,7 @@ class NewsletterController extends Controller
             $newsletter = $this->getDoctrine()->getRepository('EcommerceBundle:Newsletter')->find($id);
         }
 
-        $newsletter_form = $this->createForm(new \AddictedToVintage\AdminBundle\Form\NewsletterType($newsletter), $newsletter);
+        $newsletter_form = $this->createForm(new \BiologischeKaas\AdminBundle\Form\NewsletterType($newsletter), $newsletter);
 
         $newsletter_form->setData($newsletter);
 

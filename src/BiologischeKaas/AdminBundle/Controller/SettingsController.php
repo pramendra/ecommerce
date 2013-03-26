@@ -1,6 +1,6 @@
 <?php
 
-namespace AddictedToVintage\AdminBundle\Controller;
+namespace BiologischeKaas\AdminBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
@@ -38,7 +38,7 @@ class SettingsController extends Controller {
             $coupon = $this->getDoctrine()->getRepository('EcommerceBundle:Coupon')->find($id);
         }
 
-        $coupon_form = $this->createForm(new \AddictedToVintage\AdminBundle\Form\CouponType($coupon), $coupon);
+        $coupon_form = $this->createForm(new \BiologischeKaas\AdminBundle\Form\CouponType($coupon), $coupon);
 
         $coupon_form->setData($coupon);
 

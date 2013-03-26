@@ -12,7 +12,7 @@ class ClientController extends Controller {
 
         $client = $this->get('security.context')->getToken()->getUser();
 
-        $client_form = $this->createForm(new \AddictedToVintage\AdminBundle\Form\ClientType($client), $client);
+        $client_form = $this->createForm(new \BiologischeKaas\AdminBundle\Form\ClientType($client), $client);
 
         $client_form->setData($client);
 

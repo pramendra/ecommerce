@@ -1,6 +1,6 @@
 <?php
 
-namespace AddictedToVintage\AdminBundle\DependencyInjection;
+namespace BiologischeKaas\AdminBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
