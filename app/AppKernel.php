@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             //new Ecommerce\AddictedtovintageBundle\AddictedtovintageBundle(),
             new Ecommerce\BiologischekaasBundle\BiologischekaasBundle(),
+            new Ecommerce\AdminBundle\AdminBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
