@@ -1,0 +1,12 @@
+# Internal routing configuration to handle ESI
+#_internal:
+#    resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
+#    prefix:   /_internal
+
+AdminBundle:
+    resource: "@AdminBundle/Resources/config/routing.yml"
+    prefix:   /
+
+EcommerceBundle:
+    resource: "@EcommerceBundle/Resources/config/routing.yml"
+    prefix:   /
