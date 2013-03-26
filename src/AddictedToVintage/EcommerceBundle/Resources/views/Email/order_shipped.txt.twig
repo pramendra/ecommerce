@@ -1,7 +1,0 @@
-Beste {{ order.client.name }},
-
-Je bestelling ({{ order.orderNr }}) bij AddictedToVintage is vandaag verzonden.
-
-{% if order.shippingcode != null %}
-    Je kan je bestelling volgen via: https://tracktrace.tntpostpakketservice.nl/Search/Searchbasic.aspx?B={{ order.shippingcode }}&P={{ order.client.zipcode }}
-{% endif %}
