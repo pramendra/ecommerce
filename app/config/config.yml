@@ -66,4 +66,4 @@ swiftmailer:
     
 imports:
     biologischekaasbundle:
-        resource: "@BiologischekaasBundle/Resources/config/services.xml"
+        resource: "@BiologischekaasBundle/Resources/config/services.yml"
