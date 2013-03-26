@@ -1,0 +1,149 @@
+div#msp_main { 
+
+    div.warning {
+        .alert();
+        .alert-error();
+
+        img { 
+            float: left;
+            margin-right: 10px;
+        }
+
+        ul { 
+            list-style: none;
+            margin: 0px;
+            display: inline;
+        }
+    }
+    
+    div.notice {
+        .alert();
+
+        img { 
+            float: left;
+            margin-right: 10px;
+        }
+
+        ul { 
+            list-style: none;
+            margin: 0px;
+            display: inline;
+        }
+    }
+
+    div.message {
+        font-size: 14px;
+    }
+
+    ul.order_products { 
+        li { 
+            padding: 5px;
+        }
+    }
+
+
+    div#buttons { 
+        .clearfix();
+        clear: both;
+
+        input.cancel {
+            .btn();
+            .btn-danger();
+            .btn-large();
+
+            float: right;
+        }
+
+        input.next {
+            .btn();
+            .btn-large();
+            .btn-primary();
+            float: right;
+            margin-left: 20px;
+            width: 200px;
+        }
+    }
+
+    fieldset {
+        margin-top: 15px;
+        width: 45%;
+        .pull-left();
+    }
+
+    legend {
+        font-weight: 600;
+        font-size: 24px;
+        color: #333;
+    }
+
+    p.hint {
+        display: none;
+    }
+
+    p.field {
+        border-bottom: 1px solid #ddd;
+        margin: 5px 0px;
+        padding: 5px 0px;
+
+        label {
+            display: inline-block;
+            font-weight: bold;
+            width: 150px;
+        }   
+
+        span {
+            margin-bottom: 5px;
+            margin-left: 10px;
+
+            img {
+                margin-right: 5px;
+                margin-bottom: 5px;
+                vertical-align: top;
+            }
+
+        }
+    }
+
+    p.note {
+        margin-top: 15px;
+        margin-left: 40px;
+    }
+
+    div.transaction {
+        margin: 0 auto;
+        text-decoration: none;
+        border: 1px solid #000;
+
+        p.field {
+            span {
+                text-decoration: none;
+            }
+        }
+    }
+
+
+    div.banklist {
+        margin: 0 auto;
+        margin-top: 10px;
+        margin-left: 40px;
+
+        ul {
+            list-style: none;
+
+            li {
+                display: block;
+
+                a {
+                    color: #666;
+                    display: block;
+                    text-decoration: none;
+                }
+
+                a:hover {
+                    color: #999;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
