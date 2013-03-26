@@ -1,0 +1,58 @@
+Cart:
+  type: entity
+  table: cart
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    totalPriceInc:
+      type: float
+      nullable: false
+      column: total_price_inc
+    totalPriceEx:
+      type: float
+      nullable: false
+      column: total_price_ex
+    numProducts:
+      type: integer
+      unsigned: false
+      nullable: false
+      column: num_products
+    sessionId:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+      column: session_id
+    updatedAt:
+      type: datetime
+      nullable: false
+      column: updated_at
+    createdAt:
+      type: datetime
+      nullable: false
+      column: created_at
+  oneToOne:
+    shipping:
+      targetEntity: Shipping
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        shipping_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    client:
+      targetEntity: Client
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        client_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

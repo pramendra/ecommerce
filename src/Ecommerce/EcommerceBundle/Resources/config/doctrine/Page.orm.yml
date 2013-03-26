@@ -1,0 +1,72 @@
+Ecommerce\BiologischekaasBundle\Entity\Page:
+  type: entity
+  table: page
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    title:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+    pageTitle:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+      column: page_title
+    content:
+      type: text
+      nullable: false
+    image:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+    createdAt:
+      type: datetime
+      nullable: false
+      column: created_at
+    updatedAt:
+      type: datetime
+      nullable: false
+      column: updated_at
+    parent:
+      type: integer
+      unsigned: false
+      nullable: true
+    permalink:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+    status:
+      type: integer
+      unsigned: false
+      nullable: true
+    description:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+    keywords:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+    landingpage:
+      type: integer
+      unsigned: false
+      nullable: true
+    landingpageKeyword:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+      column: landingpage_keyword
+  lifecycleCallbacks: {  }

@@ -1,0 +1,370 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+html, body {
+	width: 100%;
+	color: #000;
+	font-size: 14px;
+	margin: 0 auto;
+	font-family: arial;
+        background: #F5F4F0;
+}
+
+div.clear {
+	clear: both;
+}
+
+div#msp_header {
+    background: url("../img/header_bg.jpg");
+    height: 110px;
+    width: 100%;
+    margin: 0 auto;
+}
+div#msp_header .brand {
+    float: left;
+    display: block;
+    margin-left: -20px;
+    font-size: 20px;
+    font-weight: 200;
+    line-height: 1;
+    color: #FFFFFF;
+    margin-top: 25px;
+}
+div#msp_header .brand a { 
+    font-family: "Handlee",Helvetica,Arial;
+    font-size: 29px;
+    font-weight: normal;
+    line-height: 39px;
+    color: #FFF;
+    text-shadow: 2px 1px 1px #A13920;
+    text-decoration: none;
+}
+div#msp_header .slogan { 
+    font-size: 14px;
+}
+
+#color-ribbon {
+    
+    display: block;
+    height: 3px;
+    margin-top: 0;
+    padding: 0;
+    width: 100%;
+}
+#color-ribbon ul li {
+    display: block;
+    float: left;
+    height: 4px;
+    min-width: 20%;
+}
+
+div#msp_header div#msp_header_wrapper {
+	margin: 0 auto;
+	height: 62px;
+	width: 960px;
+}
+
+div#msp_wrapper {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #DDDDDD;
+    box-shadow: 0 0 6px #BBBBBB;
+    margin-top: 20px;
+    padding: 20px;   
+}
+div#msp_wrapper div#msp_main {
+	margin: 0 auto;
+	width: 960px;
+}
+
+div#msp_wrapper div#msp_main div.warning {
+	margin: 0 auto;
+	display: block;
+}
+
+div#msp_wrapper div#msp_main div.warning div {
+	border: 1px solid #EE3B3B;
+	background: #F08080;
+	height: 30px;
+	line-height: 30px;
+}
+
+div#msp_wrapper div#msp_main div.notice {
+	margin: 0 auto;
+	display: block;
+}
+
+div#msp_wrapper div#msp_main div.notice div {
+	border: 1px solid #78AB46;
+	background: #66DC00;
+	height: 30px;
+	line-height: 30px;
+}
+
+div#msp_wrapper div#msp_main div.message {
+	font-size: 14px;
+}
+
+div#msp_wrapper div#msp_main ul.order_products {
+	margin: 10px 5px 10px 40px;
+        border: 1px solid #ddd;
+        background: #f1f1f1;        
+}
+div#msp_wrapper div#msp_main ul.order_products li { 
+    padding: 5px;
+}
+div#msp_footer {
+	margin: 0 auto;
+	width: 960px;
+	font-size: 9px;
+	color: #666;
+	margin-top: 25px;
+}
+
+div#msp_footer a {
+	color: #666;
+	text-decoration: none;
+}
+
+div#msp_footer a:hover {
+	color: #999;
+	text-decoration: underline;
+}
+
+div#buttons {
+	margin-top: 15px;
+}
+
+input {
+	border: 0;
+	border: 1px solid #666;
+	background: #00ACED;
+	font-size: 18px;
+	font-weight: 600;
+	color: #FFF;
+	width: 100px;
+	height: 25px;
+	width: 8em;
+}
+
+div#buttons input.cancel {
+	margin-top: 10px;
+	border: 0;
+	border: 1px solid #EE3B3B;
+	background: #F08080;
+	font-size: 11px;
+	font-weight: 600;
+	color: #FFF;
+	height: 20px;
+}
+
+div#buttons input.cancel:hover {
+	margin-top: 10px;
+	border: 0;
+	border: 1px solid #EE3B3B;
+	background: red;
+	font-size: 18;
+	font-weight: 600;
+	color: #FFF;
+	height: 25px;
+}
+
+div#buttons input.next {
+	margin-top: 10px;
+	border: 0;
+	border: 1px solid #78AB46;
+	background: #66CD00;
+	font-size: 18px;
+	font-weight: 600;
+	color: #FFF;
+	float: right;
+}
+
+div#buttons input.next:hover {
+	margin-top: 10px;
+	border: 0;
+	border: 1px solid #78AB46;
+	background: green;
+	font-size: 18;
+	font-weight: 600;
+	color: #FFF;
+	float: right;
+}
+
+input:hover {
+	border: 0;
+	border: 1px solid #666;
+	background: blue;
+	font-size: 18px;
+	font-weight: 600;
+	color: #FFF;
+	width: 100px;
+	height: 25px;
+	width: 8em;
+}
+
+table.methods {
+	margin-left: 40px;
+}
+
+table.methods tbody {
+	width: 100%;
+}
+
+table.methods tbody tr td {
+	vertical-align: bottom;
+}
+
+table.methods tbody tr td:first-child input {
+	width: 15px;
+}
+
+table.methods tbody tr td:last-child {
+	padding-left: 20px;
+}
+
+fieldset {
+    margin-top: 15px;
+}
+
+legend {
+    font-weight: 600;
+    font-size: 24px;
+    margin-left: 35px;
+    color: #ED4300;
+}
+
+p.hint {
+    margin-top: 5px;
+    color: #666;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+p.field {
+    border-bottom: 1px solid #ddd;
+    margin: 5px 0px;
+    padding: 5px 0px;
+    clear: both;
+}
+
+p.field label {
+	display: inline-block;
+	font-weight: 600;
+        width: 150px;
+        
+}
+
+p.field span {
+	margin-bottom: 5px;
+	margin-left: 10px;
+}
+
+p.field span img {
+	margin-right: 5px;
+	margin-bottom: 5px;
+	vertical-align: top;
+}
+
+center {
+	height: 10px;
+}
+
+p.note {
+	margin-top: 15px;
+	margin-left: 40px;
+}
+
+strong {
+	font-weight: 600;
+}
+
+div.transaction {
+	margin: 0 auto;
+	text-decoration: none;
+	border: 1px solid #000;
+	-moz-border-radius: 1em 1em 1em 1em;
+	border-radius: 1em 1em 1em 1em;
+}
+
+div.transaction p.field span {
+	text-decoration: none;
+}
+
+input#field-extvar1 {
+	background: #fff;
+	border: 1px solid #333;
+	-moz-border-radius: 0;
+	border-radius: 0;
+}
+
+input#field-extvar2 {
+	background: #fff;
+	border: 1px solid #333;
+	-moz-border-radius: 0;
+	border-radius: 0;
+}
+
+input#field-extvar3 {
+	background: #fff;
+	border: 1px solid #333;
+	-moz-border-radius: 0;
+	border-radius: 0;
+}
+
+input#field-extvar4 {
+	background: #fff;
+	border: 1px solid #333;
+	-moz-border-radius: 0;
+	border-radius: 0;
+}
+
+div#transaction {
+	margin: 0 auto;
+	margin-top: 25px;
+	border: 1px solid #000;
+	-moz-border-radius: 1em 1em 1em 1em;
+	border-radius: 1em 1em 1em 1em;
+}
+
+div.banklist {
+	margin: 0 auto;
+	margin-top: 10px;
+	margin-left: 40px;
+}
+
+div.banklist ul {
+	list-style: none;
+}
+
+div.banklist ul li {
+	display: block;
+}
+
+div.banklist ul li a {
+	color: #666;
+	display: block;
+	text-decoration: none;
+}
+
+div.banklist ul li a:hover {
+	color: #999;
+	text-decoration: underline;
+}

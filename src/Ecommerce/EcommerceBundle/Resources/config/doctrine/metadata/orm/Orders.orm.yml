@@ -1,0 +1,65 @@
+Orders:
+  type: entity
+  table: orders
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    ordernr:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+    status:
+      type: integer
+      unsigned: false
+      nullable: false
+    createdAt:
+      type: datetime
+      nullable: false
+      column: created_at
+    payed:
+      type: integer
+      unsigned: false
+      nullable: false
+    total:
+      type: float
+      nullable: false
+    paymethodId:
+      type: integer
+      unsigned: false
+      nullable: false
+      column: paymethod_id
+  oneToOne:
+    coupon:
+      targetEntity: Coupon
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        coupon_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    client:
+      targetEntity: Client
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        client_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    shipping:
+      targetEntity: Shipping
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        shipping_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

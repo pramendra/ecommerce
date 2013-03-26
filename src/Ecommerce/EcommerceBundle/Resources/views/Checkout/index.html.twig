@@ -1,0 +1,187 @@
+{% extends 'BiologischekaasBundle::layout.html.twig' %}
+
+{% block sidebar %}
+
+{% endblock%}
+
+{% block content %}
+
+    <div class="row-fluid">
+        <div class="span3">
+            <h1>Afrekenen</h1>
+        </div>
+        <div class="span9">
+            <ul class="unstyled checkout_steps">
+                <li class="active">Persoonlijke gegevens <i class="icon-arrow-right"></i></li>
+                <li>Bezorgwijze <i class="icon-arrow-right"></i></li>
+                <li>Betaalmethode <i class="icon-arrow-right"></i></li>
+                <li>Bestelling plaatsen <i class="icon-arrow-right"></i></li>
+            </ul>
+        </div>    
+    </div>
+
+    <hr />
+
+    <div class="row-fluid">
+    
+        <div class="span12">
+
+            <div class="row-fluid">
+
+                <div class="span8">
+                    
+                    <form name="checkout_form" onSubmit="return validate_personal_information();" id="checkout_form" action="{{ path('_cart_shipping') }}" method="POST" class="form-horizontal">
+
+                        <div class="checkout-well">
+                        
+                            <h3><i class="icon-user"></i> Persoonlijke gegevens</h3>
+                            <p>Vul dan hieronder je gegevens in zodat wij weten wie je bent. Je afleverradres kun je in de volgende stap aanpassen.</p>
+                            <p><i class="icon-key"></i> Heb je al een account bij Addictedtovintage? <a href="{{ path('login') }}">Klik hier om in te loggen</a></p>
+                            
+                            <hr />
+
+                            <fieldset>
+                                <div class="control-group">
+                                    <label class="control-label" for="client_name">Naam:</label>
+                                    <div class="controls">
+                                        <input type="text" class="input-xlarge" name="client_name" id="client_name" {% if is_granted('ROLE_CLIENT') %} value="{{ app.user.name }}" {% endif %}/>
+                                        <span class="help-inline"></span>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="client_email">E-mailadres:</label>
+                                    <div class="controls">
+                                        <input type="text" class="input-xlarge" name="client_email" id="client_email" {% if is_granted('ROLE_CLIENT') %} value="{{ app.user.email }}" {% endif %} />
+                                        <span class="help-inline"></span>
+                                    </div>
+                                </div>
+
+                                <div class="form-inline">
+                                    
+                                    <div class="control-group">
+                                        <label class="control-label" for="client_zipcode">Postcode + huisnummer:</label>
+
+                                        <div class="controls">
+                                            <input type="text" class="input-small" name="client_zipcode" id="client_zipcode" {% if is_granted('ROLE_CLIENT') %} value="{{ app.user.zipcode }}" {% endif %} />
+                                            <input type="text" class="input-small" name="client_housenumber" id="client_housenumber" {% if is_granted('ROLE_CLIENT') %} value="{{ app.user.housenumber }}" {% endif %} />
+                                            <span class="help-inline"></span>
+                                        </div>
+                                    </div>
+
+                                </div>    
+
+                                <br />
+
+                                <div class="control-group hide">
+
+                                    <label class="control-label" for="client_address">Adres:</label>
+                                    <div class="controls">
+                                        <div class="address">
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="control-group hide">
+                                    <label class="control-label" for="client_address">Adres:</label>
+                                    <div class="controls">
+                                        <input type="text" class="input-xlarge" name="client_address" id="client_address" {% if is_granted('ROLE_CLIENT') %} value="{{ app.user.address }}" {% endif %} />
+                                        <span class="help-inline"></span>
+                                    </div>
+                                </div>
+
+                                <div class="control-group hide">
+                                    <label class="control-label" for="name">Woonplaats:</label>
+                                    <div class="controls">
+                                        <input type="text" class="input-xlarge" name="client_location" id="client_location" {% if is_granted('ROLE_CLIENT') %} value="{{ app.user.location }}" {% endif %} />
+                                        <span class="help-inline"></span>
+                                    </div>
+                                </div>
+
+                                <div class="control-group hide">
+                                    <label class="control-label" for="client_country">Land:</label>
+                                    <div class="controls">
+                                        <select class="input-xlarge" name="client_country" id="client_country">
+                                            <option value="Nederland">Nederland</option>
+                                            <option value="Belgie">Belgi&euml;</option>
+                                        </select>
+                                        <span class="help-inline"></span>
+                                    </div>
+                                </div>
+
+                                <div class="control-group">
+                                    <label class="control-label" for="client_phone">Telefoonnummer:</label>
+                                    <div class="controls">
+                                        <input type="text" class="input-large" name="client_phone" id="client_phone" {% if is_granted('ROLE_CLIENT') %} value="{{ app.user.phone }}" {% endif %} />
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                        <div class="facebook-data hide">
+
+                            <i class="icon-facebook pull-right"></i>
+
+                            <img class="pull-left" />
+                            <strong></strong>
+                            <p></p>
+
+                        </div>
+                        
+                        <div class="clearfix"></div>
+                            
+                        <input type="submit" class="btn pull-right btn-large btn-primary" value="Doorgaan naar stap 2 " />
+                        
+                        <div class="clearfix"></div>
+                        
+                    </div>
+                        
+                    </form>
+                    
+                </div>
+
+                <div class="span4">
+                    
+                    <div class="checkout-well">
+                        <h3><i class="icon-facebook"></i> Koppel je accounts</h3>
+                    
+                        <p>Om sneller je gegevens in te vullen kun je hieronder je Facebook account koppelen aan je bestelling. Klik op de onderstaande knop om in te loggen op Facebook.</p>
+                        
+                        <p>We zullen je Facebook account alleen gebruiken om een bestelling te plaatsen en om later bij een andere bestelling je gegevens te gebruiken</p>
+                        
+                        <hr />
+                        
+                        <a href="#" class="btn btn-block btn-large btn-facebook btn-primary"><i class="icon-facebook"></i> Login met Facebook</a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            {# 
+            <div class="row-fluid">
+                <div class="span12">
+                    <a href="javascript:void(0)" onclick="javascript:document.checkout_form.submit();" class="btn pull-right btn-large btn-primary">Door naar stap 2 <i class="icon-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <br />
+            #}
+            <hr />
+
+            <div class="row-fluid">
+                <div class="span12">
+
+                    <small>
+                        <i class="icon-lock"></i> Je bevindt je nu in een beveiligde omgeving, al je gegevens worden op dit moment streng beveiligd.
+                    </small>
+
+                </div>
+            </div>
+
+
+    </div>
+</div>
+
+</form>    
+
+{% endblock %}
