@@ -3,7 +3,7 @@ parameters:
     database_host:     localhost
     database_port:     ~
     database_name:     biologische_kaas_nl
-    database_user:     p3881
+    database_user:     p3889
     database_password: pzat29
 
     mailer_transport:  smtp
