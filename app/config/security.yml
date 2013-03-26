@@ -4,7 +4,7 @@ jms_security_extra:
 
 security:
     encoders:
-        BiologischeKaas\EcommerceBundle\Entity\Client:
+        Ecommerce\BiologischekaasBundle\Entity\Client:
             algorithm:  sha1
             iterations: 1
             encode_as_base64: false
@@ -14,7 +14,7 @@ security:
 
     providers:
         clients:
-            entity: { class: BiologischeKaas\EcommerceBundle\Entity\Client, property: email }
+            entity: { class: Ecommerce\BiologischekaasBundle\Entity\Client, property: email }
             
     firewalls:
         dev:
