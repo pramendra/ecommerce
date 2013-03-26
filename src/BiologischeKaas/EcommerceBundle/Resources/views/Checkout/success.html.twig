@@ -1,0 +1,68 @@
+{% extends 'EcommerceBundle::layout.html.twig' %}
+
+{% block sidebar %}
+    
+{% endblock%}
+
+{% block content %}
+
+    
+    <div class="span12">
+        
+        <div class="checkout-well">
+            
+            <h1>Bestelling geplaatst!</h1>
+
+            <p>Je bestelling is succesvol geplaatst, we sturen ter bevestiging een e-mail met daarin je bestelling.</p>
+
+            <p>Je bestelling is opgeslagen onder ordernummer: <b>{{ order.ordernr }}</b>, bewaar dit nummer goed want zo kunnen we je bestelling weer terug vinden!</p>
+
+            <p>Voor vragen kun je mailen naar <b>info@addictedtovintage.nl</b>
+
+        </div>
+        
+    </div>
+    <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-10334375-1']);
+    _gaq.push(['_trackPageview']);
+    _gaq.push(['_addTrans',
+        '{{ order.ordernr }}',           // order ID - required
+        'AddictedToVintage.nl',  // affiliation or store name
+        '{{ order.total }}',          // total - required
+        '0',           // tax
+        '{{ order.shipping.costs }}',              // shipping
+        '{{ order.client.location}}',       // city
+        '',     // state or province
+        '{{ order.client.country }}'             // country
+    ]);
+
+    // add item might be called for every item in the shopping cart
+    // where your ecommerce engine loops through each item in the cart and
+    // prints out _addItem for each
+    
+    {% for item in order.products %}
+    _gaq.push(['_addItem',
+        '{{ order.ordernr }}',           // order ID - required
+        '{{ item.product.sku }}',           // SKU/code - required
+        '{{ item.product.name }}',        // product name
+        '{{ item.product.subcategories[0].name }}',   // category or variation
+        '{{ item.price }}',          // unit price - required
+        '{{ item.amount }}'               // quantity - required
+    ]);
+    
+    {% endfor %}
+    
+    _gaq.push(['_trackTrans']); //submits transaction to the Analytics servers
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+    </script>
+
+    
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends 'AdminBundle::layout.html.twig' %}
+
+{% block content %}
+
+{{ form_errors(pages_form) }}
+
+<div class="row-fluid">
+
+    <div class="span12">
+        
+        <a class="btn btn-primary btn-large pull-right" href="javascript:void(0)" onclick="document.pageform.submit()"><i class="icon-white icon-ok"></i> Opslaan</a>
+        
+        <h1>{{ page.title }}</h1>
+        
+        <hr />
+    </div>
+
+</div>
+
+{% if page.id is not null %}
+    <div class="row-fluid">
+        <div class="span12">
+            <div id="seosnippet">
+                <a href="#" class="title">{{ page.title }}</a> <br />
+                <a class="url" style="font-size: 13px; color: #282; line-height: 15px;" href="#">addictedtovintage.nl/{{ page.permalink }}</a>
+                <p style="font-size: 13px; color: #000; line-height: 15px;" class="desc"><span style="color: #666;">{{ page.updatedAt|date('d M Y') }}</span> 
+                    &ndash; <span class="content" style="color: rgb(136, 136, 136);">{{ page.description|slice(0, 160) }}<strong>...</strong></span>
+                </p>
+            </div>
+        </div>
+    </div>
+{% endif %}
+
+<div class="row-fluid">
+    
+    <div class="span12">
+
+        <form action="" class="form-horizontal client-form" name="pageform" method="post" {{ form_enctype(pages_form) }}>
+            {{ form_row(pages_form.title) }}
+            {{ form_row(pages_form.pagetitle) }}
+            {{ form_row(pages_form.permalink) }}
+            {{ form_row(pages_form.keywords) }}
+            {{ form_row(pages_form.landingpageKeyword) }}
+            {{ form_row(pages_form.landingpage) }}
+            {{ form_row(pages_form.description) }}
+
+            {{ form_label(pages_form.content, 'Inhoud') }}    
+            {{ form_widget(pages_form.content, { 'attr': {'class': 'ckeditor'} }) }}    
+
+            {{ form_rest(pages_form) }}
+        </form>   
+        
+    </div>
+</div>
+
+{% endblock %}
+
+
+{% block javascripts %}
+
+{{ parent() }}
+
+<script src="/ckeditor/ckeditor.js"></script>
+
+{% endblock %}

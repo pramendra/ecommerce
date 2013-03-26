@@ -1,0 +1,34 @@
+BiologischeKaas\EcommerceBundle\Entity\Email:
+  type: entity
+  table: email
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    content:
+      type: text
+      nullable: false
+    createdAt:
+      type: datetime
+      nullable: false
+      column: created_at
+    subject:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+  oneToOne:
+    client:
+      targetEntity: Client
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        client:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

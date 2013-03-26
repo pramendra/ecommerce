@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Addictedtovintage.nl - Betalen</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" type="text/css" href="{{ asset('http://dev.addictedtovintage.nl/bundles/ecommerce/css/msp_style.css') }}" />
+    </head>
+    <body>
+        <div id="msp_header">
+            <div id="msp_header_wrapper">
+                <span class="brand">
+                    <a href="{{ path('_root') }}">AddictedToVintage</a>
+                    <p class="slogan">Vintage kleding, woonaccesoires & accessoires</p>
+                </span>
+            </div>
+        </div>
+            
+        <div id="msp_wrapper" class="content">
+            <div id="msp_main">###MULTISAFEPAY###  
+            
+                {% if test == true %}
+            <script type="text/javascript" src="https://testpay.multisafepay.com/app/scripts/jquery-1.4.2.min.js"></script>
+            <script type="text/javascript" src="https://testpay.multisafepay.com/app/scripts/common.js.php"></script>
+            <script type="text/javascript" src="https://testpay.multisafepay.com/app/scripts/multisafepay-form-verification.js.php"></script>
+            <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js"></script>
+            <script type="text/javascript" src="https://testpay.multisafepay.com//app/scripts/i18n/jquery.ui.datepicker-nl.js"></script>
+
+
+        <form action="/pay/external-details/" method="post" autocomplete="off" id="form-payment" onsubmit="document.getElementById('button-pay').disabled = true; return true">
+                <div class="hidden">
+                        <input type="hidden" name="action" value="external-prepare" id="field-action" />
+                        <input type="hidden" name="type" value="directmerchantdeposit" />
+                </div>
+
+                <fieldset class="single">
+                        <legend>Transactiegegevens</legend>
+
+                        <p class="hint">
+                                Controleer hier de gegevens van uw transactie.		</p>
+
+                        <p class="field">
+                                <label>Ontvanger</label>
+                                <span>test</span>
+                        </p>
+                        <p class="field">
+                                <label>Bedrag</label>
+                                <span>EUR 24,65</span>
+                        </p>
+                        <p class="field">
+                                <label>Beschrijving</label>
+                                <span>Order #20120828004</span>
+                        </p>
+                        <p class="field">
+                                <label>Details</label>
+                                <span><ul class="order_products"><li>1x Faux Handbag</li></ul></span>
+                        </p>
+                        <p class="field">
+                                <label>Betaalmethode</label>
+                                                        <span><img src="https://testpay.multisafepay.com/app/images/methods/ideal.png" alt="iDeal" /></span>
+                                                </p>
+
+                        <p class="field">
+                                <label>Totaal bedrag</label>
+                                <span>EUR 24,65</span>
+                        </p>
+                </fieldset>
+
+                <fieldset class="single">
+                        <legend>Betalingsgegevens</legend>
+
+                        <p class="hint">
+                                De volgende gegevens zijn nodig om uw transactie te voltooien.		</p>
+
+
+                <input type="hidden" name="extvar[extvar7]" value="EW-CCAB276A9B1B8" />
+
+        <p class="field">
+                <label for="field-extvar8">Bank*</label>
+                <select id="field-extvar8" name="extvar[extvar8]" class="extvar">
+                        <option label="" value="-1" disabled="disabled" selected="selected"></option>
+        <option label="Test bank" value="0151">Test bank</option>
+
+                </select>
+        </p>	</fieldset>
+
+
+                <div id="buttons">
+                        <input id="button-pay" class="next" value="Betaal" type="submit" />
+
+                <input class="cancel" value="Annuleer" type="button" onclick="if (confirm('Weet u zeker dat u deze transactie wilt annuleren?')) { document.getElementById('field-action').value = 'cancel'; document.getElementById('form-payment').submit() }" />
+                </div>
+        </form>
+            
+           {% endif %}
+            </div>
+            
+        </div>
+            
+        <div id="msp_footer">
+            Copyright &copy; 
+            <script type="text/javascript">
+                    var d=new Date();
+                    document.write(d.getFullYear());
+            </script>
+            <a href="http://www.multisafepay.com" target="_blank">MultiSafepay</a> - Alle rechten voorbehouden
+        </div>    
+            
+        <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-10334375-2']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+        </script>
+        
+        <script type="text/javascript">
+        WebFontConfig = {
+            google: { families: [ 'Handlee::latin' ] }
+        };
+        (function() {
+            var wf = document.createElement('script');
+            wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+            '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+            wf.type = 'text/javascript';
+            wf.async = 'true';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(wf, s);
+        })(); </script>
+            
+    </body>
+</html>

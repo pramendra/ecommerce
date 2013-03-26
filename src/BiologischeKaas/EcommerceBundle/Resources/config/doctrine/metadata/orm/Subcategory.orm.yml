@@ -1,0 +1,39 @@
+Subcategory:
+  type: entity
+  table: subcategory
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    name:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+    description:
+      type: text
+      nullable: false
+    keywords:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+    image:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+    permalink:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+    active:
+      type: integer
+      unsigned: false
+      nullable: false
+  lifecycleCallbacks: {  }

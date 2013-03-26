@@ -1,0 +1,28 @@
+    <div class="cart">
+        <div class="row-fluid">
+            <div class="span3">
+                <i class="icon-shopping-cart"></i>
+            </div>
+            <div class="span9">
+                <h4>
+                    <a rel="nofollow" href="{{ path('_cart') }}">Winkelmandje</a> 
+
+                    {% if app.session.get('cart') is not null %}
+                        {% if app.session.get('cart').products|length > 0 %}
+                            {% set totalPrice = app.session.get('cart').totalPriceInc|number_format(2) + app.session.get('cart').shipping.costs|number_format(2) %}
+                            <span class="total_price">€{{ totalPrice|number_format(2) }}</span>
+                            <span class="product_count">{{ app.session.get('cart').numProducts }} producten</span>
+                        {% else %}    
+                            <span class="total_price">€0,00</span>
+                            <span class="product_count">Geen producten</span>
+                        {% endif %}
+
+                    {% else %}    
+                        <span class="total_price">€0,00</span>
+                        <span class="product_count">Geen producten</span>
+                    {% endif %}
+
+                </h4>
+            </div>
+        </div>                           
+    </div>

@@ -1,0 +1,75 @@
+BiologischeKaas\EcommerceBundle\Entity\Street:
+  type: entity
+  table: street
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    created:
+      type: datetime
+      nullable: false
+    updated:
+      type: datetime
+      nullable: false
+    active:
+      type: boolean
+      nullable: true
+    chars:
+      type: string
+      length: 2
+      fixed: false
+      nullable: true
+    street:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+    even:
+      type: boolean
+      nullable: false
+    low:
+      type: integer
+      unsigned: false
+      nullable: true
+    high:
+      type: integer
+      unsigned: false
+      nullable: true
+    lowcapped:
+      type: boolean
+      nullable: true
+    highcapped:
+      type: boolean
+      nullable: true
+    lat:
+      type: decimal
+      nullable: true
+    lng:
+      type: decimal
+      nullable: true
+    pobox:
+      type: boolean
+      nullable: true
+    unsure:
+      type: boolean
+      nullable: true
+    subtitle:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+  oneToOne:
+    postcode:
+      targetEntity: Postcode
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        postcode_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

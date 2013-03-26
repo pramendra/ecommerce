@@ -1,0 +1,41 @@
+<div class="category_product">
+    
+    {% if product.isNew == 1 %}
+        <span class="product-is-new"></span>
+    {% endif %}
+
+    <div class="category_product_image">
+
+        {% if product.firstImage is defined and product.firstImage is not null %}
+            {% set image = product.firstImage.thumbpath %}
+        {% else %}
+        
+            {% if product.images is not null and product.images[0] is not null %}
+                {% set image = product.images[0].thumbpath %}
+            {% else %}
+                {% set image = default_image %}
+            {% endif %}
+        
+        {% endif %}
+        
+        <a href="{{ path('_product', { 'section' : section.permalink, 'category' : category.permalink, 'subcategory' : subcategory.permalink, 'product' : product.permalink} ) }}" title="{{ product.name }}">
+            <img class="first_product_image" alt="{{ product.name }}" title="{{ product.name }}" src="{{ image }}" />
+        </a>
+        
+        
+    </div>
+    
+    <div class="category_product_bottom">
+
+        <span class="category_product_title">
+            <a href="{{ path('_product', { 'section' : section.permalink, 'category' : category.permalink, 'subcategory' : subcategory.permalink, 'product' : product.permalink} ) }}" title="{{ product.name }}">
+                {{ product.name }}
+            </a>
+        </span>
+
+        <!-- p class="category_product_description">{{ product.description|slice(0, 80) }}...</p -->
+        
+        <span class="category_product_price">&euro; {{ product.price|number_format(2, ',', '.') }}</span>
+        <p class="category_product_stock">Nog {{ product.stock }} op voorraad</p>
+    </div>
+</div>

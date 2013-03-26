@@ -1,0 +1,39 @@
+BiologischeKaas\EcommerceBundle\Entity\Cityname:
+  type: entity
+  table: cityname
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    created:
+      type: datetime
+      nullable: false
+    updated:
+      type: datetime
+      nullable: false
+    active:
+      type: boolean
+      nullable: true
+    name:
+      type: string
+      length: 64
+      fixed: false
+      nullable: true
+    official:
+      type: boolean
+      nullable: true
+  oneToOne:
+    city:
+      targetEntity: City
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        city_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

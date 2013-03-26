@@ -1,0 +1,45 @@
+<div class="row-fluid">
+
+    <div class="span12">
+
+
+        <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="orders">
+            <thead>
+                <tr>
+                    <th width="20%">Ordernummer</th>
+                    <th width="25%">Producten</th>
+                    <th width="15%">Totaalprijs</th>
+                    <th width="15%">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                
+                {% for order in client.orders %}
+                
+                <tr>
+                    <td>{{ order.ordernr }}</td>
+                    <td>
+                        
+                        <ul class="unstyled">
+                        
+                        {% for order_product in order.products %}
+                            <li>{{ order_product.amount }} x <a href="{{ path('admin_products_edit', { 'id' : order_product.product.id } ) }}" data-content="<img src='{{ order_product.product.images[0].thumbPath }}' />" rel="popover" class="popover_link">{{ order_product.product.name }}</a> ({{ order_product.product.sku }})</li>
+                        {% endfor %}  
+                           
+                        </ul>
+                        
+                    </td>
+                    <td>{{ order.total|number_format(2, ',', '.') }}</td>
+                    <td>{{ order.status }}</td>
+                </tr>
+                
+                {% endfor %}
+                
+                
+            </tbody>
+        </table>
+
+    </div>
+
+</div>

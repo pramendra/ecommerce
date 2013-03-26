@@ -1,0 +1,11 @@
+{% include 'EcommerceBundle:Email:html-header.html.twig' %}
+
+<p>Beste {{ order.client.name }},</p>
+
+<p>Je bestelling ({{ order.orderNr }}) bij AddictedToVintage is vandaag verzonden.</p>
+
+{% if order.shippingcode != null %}
+    <p>Je kan je bestelling volgen via: <a href="https://tracktrace.tntpostpakketservice.nl/Search/Searchbasic.aspx?B={{ order.shippingcode }}&P={{ order.client.zipcode }}">Track & trace van PostNL</a></p>
+{% endif %}
+    
+{% include 'EcommerceBundle:Email:html-footer.html.twig' %}

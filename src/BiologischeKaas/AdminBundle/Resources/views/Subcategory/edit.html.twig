@@ -1,0 +1,42 @@
+{% extends 'AdminBundle::layout.html.twig' %}
+
+{% block content %}
+<div class="row-fluid">
+
+    <div class="span12">
+        
+        <a class="btn btn-success pull-right" href="javascript:void(0)" onclick="document.productform.submit()"><i class="icon-white icon-ok"></i> Opslaan</a>
+        <a class="btn btn-danger pull-right" style="margin-right: 10px"><i class="icon-white icon-trash"></i> Verwijderen</a>
+
+        <h1>{{ subcategory.name }}</h1>
+        
+        <form action="" class="form-horizontal client-form" name="productform" method="post" {{ form_enctype(subcategory_form) }}>
+
+            {{ form_errors(subcategory_form) }}
+            
+            {{ form_row(subcategory_form.name) }}
+            {{ form_row(subcategory_form.active) }}
+            {{ form_row(subcategory_form.permalink) }}
+            {{ form_row(subcategory_form.keywords) }}
+            {{ form_row(subcategory_form.description) }}
+            
+               {{ form_rest(subcategory_form) }}
+
+        </form>
+
+
+    </div>
+
+</div>
+
+
+<div class="row-fluid">
+    
+    <div class="span12">
+        
+    </div>
+    
+</div>
+</form>
+{% endblock %}
+
