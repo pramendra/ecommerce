@@ -3,38 +3,37 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-<head>
-    <meta charset="utf-8">
+    <head>
+        <meta charset="utf-8">
     {% if page is defined and page != null %}
-    <title>{{ page.title }}</title>
-    <meta name="description" content="{{ page.description }}" />
+        <title>{{ page.title }}</title>
+        <meta name="description" content="{{ page.description }}" />
     {% else %}
-    <title>AddictedToVintage.nl</title>
-    <meta name="description" content="" />
+        <title>Biologische-kaas.nl</title>
+        <meta name="description" content="De lekkerste biologische kaas online" />
     {% endif %}
-    <meta name="viewport" content="initial-scale=1.0" />
-    <meta name="author" content="AddictedToVintage" />
-    <meta name="robots" content="index, follow" />
-    <meta http-equiv="imagetoolbar" content="no" />
-    <meta http-equiv="cleartype" content="on" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="google-site-verification" content="vF_eH79E8mCRkrxzMtoCFF9y_9sy9-4c5Gk8ZCtOPBA" />
-	<meta name="beslist-site-verification" content="2595474ab3b2cc9b74c9c5e2b7e7f729" />
-    
+        <meta name="viewport" content="initial-scale=1.0" />
+        <meta name="author" content="Biologische-kaas.nl" />
+        <meta name="robots" content="noindex, nofollow" />
+        <meta http-equiv="imagetoolbar" content="no" />
+        <meta http-equiv="cleartype" content="on" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="google-site-verification" content="vF_eH79E8mCRkrxzMtoCFF9y_9sy9-4c5Gk8ZCtOPBA" />
+
     {% if product is defined and product is not null %}
-            <meta property="og:title" content="{{ product.name }}"/>
+        <meta property="og:title" content="{{ product.name }}"/>
         {% if product.firstimage is defined and product.firstimage is not null %}
-            <meta property="og:image" content="{{ url('_root') }}images/products/thumbs/{{ product.firstImage.name }}"/>
+        <meta property="og:image" content="{{ url('_root') }}images/products/thumbs/{{ product.firstImage.name }}"/>
         {% else %}
-            <meta property="og:image" content="{{ url('_root') }}images/products/thumbs/{{ product.images[0].name }}"/>
+        <meta property="og:image" content="{{ url('_root') }}images/products/thumbs/{{ product.images[0].name }}"/>
         {% endif %}
-        <meta property="og:site_name" content="Addictedtovintage.nl"/>
+        <meta property="og:site_name" content="Biologische-kaas.nl"/>
         <meta property="og:description" content="{{ product.description }}"/>
     {% else %}
-        <meta property="og:title" content="Addictedtovintage.nl"/>
+        <meta property="og:title" content="Biologische-kaas.nl"/>
         <meta property="og:image" content="{{ url('_root') }}images/facebooklogo.png"/>
-        <meta property="og:site_name" content="Addictedtovintage.nl"/>
-        <meta property="og:description" content="Online Vintage Tassen, Sieraden & Woonaccesoires"/>
+        <meta property="og:site_name" content="Biologische-kaas.nl"/>
+        <meta property="og:description" content="De lekkerste biologische kaas online"/>
     {% endif %}
 
     {% block stylesheets %}
@@ -43,9 +42,9 @@
         <link rel="stylesheet" href="{{ asset('bundles/biologischekaas/fonts/stylesheet.css') }}" type="text/css" charset="utf-8">
 
         {% if app.environment == 'dev' %}
-            <link href="{{ asset('bundles/biologischekaas/less/app.less') }}" type="text/css" rel="stylesheet/less" />
+        <link href="{{ asset('bundles/biologischekaas/less/app.less') }}" type="text/css" rel="stylesheet/less" />
         {% else %}
-            <link href="{{ asset('bundles/biologischekaas/css/app-min.css') }}" type="text/css" rel="stylesheet" />
+        <link href="{{ asset('bundles/biologischekaas/css/app-min.css') }}" type="text/css" rel="stylesheet" />
         {% endif %}
     {% endblock %}
 
@@ -56,168 +55,33 @@
 
     {% endblock %}
 
-    <link rel="shortcut icon" href="{{ asset('bundles/biologischekaas/ico/favicon.ico') }}">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ asset('bundles/biologischekaas/ico/apple-touch-icon-114x114-precomposed.png') }}">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ asset('bundles/biologischekaas/ico/apple-touch-icon-72x72-precomposed.png') }}">
-    <link rel="apple-touch-icon-precomposed" href="{{ asset('bundles/biologischekaas/ico/apple-touch-icon-57x57-precomposed.png') }}">
+        <link rel="shortcut icon" href="{{ asset('bundles/biologischekaas/ico/favicon.ico') }}">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ asset('bundles/biologischekaas/ico/apple-touch-icon-114x114-precomposed.png') }}">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ asset('bundles/biologischekaas/ico/apple-touch-icon-72x72-precomposed.png') }}">
+        <link rel="apple-touch-icon-precomposed" href="{{ asset('bundles/biologischekaas/ico/apple-touch-icon-57x57-precomposed.png') }}">
 
-    <script src="{{ asset('bundles/biologischekaas/js/modernizr-2.6.2-respond-1.1.0.min.js') }}"></script>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
-</head>
+        <script src="{{ asset('bundles/biologischekaas/js/modernizr-2.6.2-respond-1.1.0.min.js') }}"></script>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+    </head>
 
-<body>
-    <div id="fb-root"></div>
-    <header>
-        <div class="container">
-            <div class="row-fluid">
-		<div class="span5">
-		    <a href="{{ path('_root') }}">
-			<h1 class="site-brand">AddictedtoVintage.nl</h1>
-			<p class="site-slogan hide">Online Vintage Tassen, Sieraden & Woonaccesoires</p>
-		    </a>
-		</div>
-		<div class="span7">
-		    <ul class="nav top-nav">
-			{% if is_granted('ROLE_CLIENT') %}
-			    <li><a rel="nofollow" href="{{ path('_account') }}"><i class="icon-user"></i> Account</a></li>
-			{% else %}
-			    <li><a rel="nofollow" href="{{ path('login') }}"><i class="icon-user"></i> Inloggen</a></li>
-			{% endif %}
-			<li><a rel="nofollow" href="{{ path('_root') }}contact"><i class="icon-envelope"></i> Contact</a></li>
-			<li><a rel="nofollow" href="{{ path('_root') }}klantenservice"><i class="icon-question-sign"></i> Klantenservice</a></li>
-		    </ul>
-		</div>
-            </div>
-        </div>
-    </header>
-
-    <nav>
+    <body>
+        <div id="fb-root"></div>
         <div class="container">
             <div class="row-fluid">
                 <div class="span12">
-                     {% render controller('BiologischekaasBundle:Section:menu') %}
+                    Biologische-kaas.nl
                 </div>
-            </div>
-        </div>
-    </nav>
-    <div class="search">
-
-        <div class="container">
-
-            <div class="row-fluid">
-                <div class="span4">
-                    <form method="POST" action="{{ path('_search') }}">
-                        <div class="input-append">
-                            <input type="search"  data-provide="typeahead" autocomplete="off" class="typeahead span10" placeholder="Zoek een product... " value="" name="q">
-                            <button type="submit" class="btn button-search"><i class="icon-search"></i></button>
-                        </div>
-                    </form>
-                </div>
-                <div class="span6">
-                    <p>
-                        <span class="wonen"></span> 
-                        <strong>Nieuw: Vintage Woonaccessoires!</strong> <br />
-                        Met o.a.: <a href="{{ path('_subcategory', { 'section' : 'woonaccessoires', 'category': 'servies', 'subcategory' : 'vazen' }) }}">vazen</a>, <a href="{{ path('_subcategory', { 'section' : 'woonaccessoires', 'category': 'servies', 'subcategory' : 'borden' }) }}">borden</a>, <a href="{{ path('_subcategory', { 'section' : 'woonaccessoires', 'category': 'servies', 'subcategory' : 'schalen' }) }}">schalen</a> en nog veel meer!
-                    </p>
-                </div>    
-                <div class="span2">
-                    <div class="fb-like pull-right" data-href="https://www.facebook.com/Addictedtovintage.nl" data-layout="button_count" data-send="false" data-width="150" data-show-faces="false"></div>
-                </div>
-            </div>
+            </div>    
         </div>
 
-    </div>
-
-    <div class="container">
-        <div class="row-fluid">
-            <div class="span12" id="content-container">
-
-                <div class="row-fluid">
-
-                {% block sidebar %}
-                    {% include 'BiologischekaasBundle:Sidebar:index.html.twig' %}
-                {% endblock %}
-
-                {% block content %}
-                {% endblock %}
-
-                </div>
-            </div>
-        </div>
-    </div>
-        
-
-    <div class="footer">
-        <div class="container">
-            <div class="row-fluid">
-                <div class="span12">
-                    <div class="row-fluid">
-                        <div class="span4">
-
-                            <div class="question-box">
-
-                                <h4>Hulp nodig bij je bestelling?</h4>
-
-                                <p>Stuur ons nu een email via het contactformulier, en we helpen je met het plaatsen van je bestelling.</p>
-                                <p>Of lees de meest gestelde vragen in onze online klantenservice.</p>
-                            </div>
-
-                            <hr />
-                            <p><b>Populaire zoektermen: <a href="{{ path('_page', { 'permalink' : 'vintage-leren-tassen' } ) }}" title="Vintage leren tassen">Vintage leren tassen</a></b></p>
-                            {#
-			    <hr />
-			    
-			    <small>
-				<strong>Addictedtovintage</strong> <br />
-				Verstolkstraat 28, 8933DZ Leeuwarden <br /> KVK: 50787098
-			    </small>
-			    #}
-                        </div>
-
-                        <div class="span4">
-                            <h5>Klantenservice</h5>
-                            <ul class="unstyled questions">
-                                <li><i class="icon-question-sign"></i> <a rel="nofollow" href="{{ path('_page', { 'permalink' : 'kwaliteit' } ) }}">Wat is de kwaliteit van de producten?</a></li>
-                                <li><i class="icon-question-sign"></i> <a rel="nofollow" href="{{ path('_page', { 'permalink' : 'betaalwijzen' } ) }}">Waarmee kan ik online betalen?</a></li>
-                                <li><i class="icon-question-sign"></i> <a rel="nofollow" href="{{ path('_page', { 'permalink' : 'verzending-en-bezorging' } ) }}">Welke verzendmethodes kan ik kiezen?</a></li>
-                                <li><i class="icon-question-sign"></i> <a rel="nofollow" href="{{ path('_page', { 'permalink' : 'retouren-en-service' } ) }}">Hoe kan ik mijn bestelling retourneren</a></li>
-                                <li><i class="icon-question-sign"></i> <a rel="nofollow" href="{{ path('_page', { 'permalink' : 'veiligheid-en-privacy' } ) }}">Wat doen jullie aan veiligheid en privacy?</a></li>
-                            </ul>
-                        </div>
-                        <div class="span4">
-                            <div class="fb-like-box" data-href="http://www.facebook.com/addictedtovintagenl" data-width="292" data-show-faces="true" data-stream="false" data-header="false"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <hr />
-
-            <div class="row-fluid">
-                <div class="span6">
-                    <ul class="unstyled">
-                        <li class="inline"><a rel="nofollow" href="{{ path('_sitemap') }}"><i class="icon-sitemap"></i> SiteMap</a></li>
-                        <li class="inline"><a rel="nofollow" href="{{ path('_page', { 'permalink' : 'voorwaarden' } ) }}"><i class="icon-legal"></i> Voorwaarden</a></li>
-                        <li class="inline"><a rel="nofollow" href="{{ path('_page', { 'permalink' : 'contact' } ) }}"><i class="icon-envelope"></i> Contact</a></li>
-                        <li class="inline"><a href="https://plus.google.com/111274401763774016435" rel="publisher">Google+</a></li>
-                        <li class="inline"><a href="https://twitter.com/VintageAddictNL">Twitter</a></li>
-                    </ul>
-                </div>
-                <div class="span6">
-                    <img class="pull-right" src="{{ asset('/bundles/biologischekaas/img/multisafepay-footer.jpg') }}" alt="Betaalwijzen" />
-                </div>    
-            </div>
-        </div>
-    </div>
-    
     {% block javascripts %}
-                
-        <script type="text/javascript"> less = { env: 'development' }; </script>
+
+        <script type="text/javascript"> less = {env: 'development'};</script>
 
         <script type="text/javascript">
 
-        var ROOT = '{{ path('_root') }}';
-        var PATH_CART = '{{ path('_cart') }}';
+            var ROOT = '{{ path('_root') }}';
+            var PATH_CART = '{{ path('_cart') }}';
 
             </script>
 
@@ -248,12 +112,12 @@
             {# LOAD APP #}
             <script src="{{ asset('bundles/biologischekaas/js/app.js') }}"></script>
         {% else %}
-            
-            
+
+
             {# LOAD PLUGINS #}
             <script src="{{ asset('bundles/biologischekaas/js/plugins/filter.js') }}"></script>
             <script src="{{ asset('bundles/biologischekaas/js/plugins/social.js') }}"></script>
-            
+
             <script src="{{ asset('bundles/biologischekaas/js/bootstrap-affix.js') }}"></script>
             <script src="{{ asset('bundles/biologischekaas/js/bootstrap-alert.js') }}"></script>
             <script src="{{ asset('bundles/biologischekaas/js/bootstrap-button.js') }}"></script>
@@ -274,49 +138,46 @@
 
     {% endblock %}
 
-        <script type="text/javascript">
+    <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-        var _gaq = _gaq || [];
-        {% if app.debug %}
-        _gaq.push(['_setAccount', 'UA-10334375-2']);
-        {% else %}
-        _gaq.push(['_setAccount', 'UA-10334375-1']);
-        {% endif %}
-        _gaq.push(['_trackPageview']);
+            ga('create', 'UA-39637917-1', 'biologische-kaas.nl');
+            ga('send', 'pageview');
 
-        (function() {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-
-        </script>
-
-        <script>(function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.net/nl_NL/all.js#xfbml=1&appId=455090604538684";
-            fjs.parentNode.insertBefore(js, fjs);
-          }(document, 'script', 'facebook-jssdk'));</script>
-            
-
-        <div id="cartModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="cartModalLabel" aria-hidden="true">
-            <div class="modal-body">
-                <p>One fine body…</p>
-            </div>
-            <div class="modal-footer">
-                <button class="btn" data-dismiss="modal" aria-hidden="true">Verder winkelen</button>
-                <a rel="nofollow" class="btn btn-primary" href="{{ path('_cart') }}">Naar winkelmandje</a>
-            </div>
-        </div>     
-            
-    <script type="text/javascript">
-      (function() {
-        var mf = document.createElement("script"); mf.type = "text/javascript"; mf.async = true;
-        mf.src = "//cdn.mouseflow.com/projects/7c6da9b4-6593-43ba-b8c2-5e86c9da3b24.js";
-        document.getElementsByTagName("head")[0].appendChild(mf);
-      })();
     </script>
+
+    <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id))
+            return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/nl_NL/all.js#xfbml=1&appId=455090604538684";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+
+    <div id="cartModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-body">
+            <p>One fine body…</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Verder winkelen</button>
+            <a rel="nofollow" class="btn btn-primary" href="{{ path('_cart') }}">Naar winkelmandje</a>
+        </div>
+    </div>     
+
+    <script type="text/javascript">
+        (function() {
+            var mf = document.createElement("script");
+            mf.type = "text/javascript";
+            mf.async = true;
+            mf.src = "//cdn.mouseflow.com/projects/7c6da9b4-6593-43ba-b8c2-5e86c9da3b24.js";
+            document.getElementsByTagName("head")[0].appendChild(mf);
+        })();
+        </script>
     </body>
 </html>
