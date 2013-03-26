@@ -1,0 +1,46 @@
+AddictedToVintage\EcommerceBundle\Entity\OrdersProduct:
+  type: entity
+  table: orders_product
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    amount:
+      type: integer
+      unsigned: false
+      nullable: false
+    price:
+      type: float
+      nullable: false
+    totalPrice:
+      type: float
+      nullable: false
+      column: total_price
+    productHistory:
+      type: text
+      nullable: false
+      column: product_history
+  oneToOne:
+    product:
+      targetEntity: Product
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        product_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    order:
+      targetEntity: Orders
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        order_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

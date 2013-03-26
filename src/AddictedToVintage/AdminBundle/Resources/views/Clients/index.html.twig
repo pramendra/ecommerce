@@ -1,0 +1,75 @@
+{% extends 'AdminBundle::layout.html.twig' %}
+
+{% block content %}
+
+
+<style type="text/css" title="currentStyle">
+        @import "/bundles/admin/css/demo_table.css";
+</style>
+
+<div class="row-fluid">
+
+    <div class="span12">
+
+
+        <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="orders">
+            <thead>
+                <tr>
+                    <th width="10%">Id</th>
+                    <th width="35%">Naam</th>
+                    <th width="25%">Woonplaats</th>
+                    <th width="15%">Emailadres</th>
+                    <th width="15%">Aangemaakt op</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+
+    </div>
+
+</div>
+
+
+{% endblock %}
+
+{% block javascripts %}
+
+{{ parent() }}
+
+    <script type="text/javascript">
+        
+
+    $(document).ready(function() {
+            var data_table = $('#orders').dataTable( {
+                    "bProcessing": true,
+                    "sAjaxSource": '{{ path('admin_json_clients') }}',
+                    "sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
+                    "oLanguage": {
+                        "sProcessing": "Bezig...",
+                        "sLengthMenu": "_MENU_ resultaten weergeven",
+                        "sZeroRecords": "Geen resultaten gevonden",
+                        "sInfo": "_START_ tot _END_ van _TOTAL_ resultaten",
+                        "sInfoEmpty": "Geen resultaten om weer te geven",
+                        "sInfoFiltered": " (gefilterd uit _MAX_ resultaten)",
+                        "sInfoPostFix": "",
+                        "sSearch": "Zoeken:",
+                        "sEmptyTable": "Geen resultaten aanwezig in de tabel",
+                        "sInfoThousands": ".",
+                        "sLoadingRecords": "Een moment geduld aub - bezig met laden...",
+                        "oPaginate": {
+                            "sFirst": "Eerste",
+                            "sLast": "Laatste",
+                            "sNext": "Volgende",
+                            "sPrevious": "Vorige"
+                        }
+                    }
+            } );
+            
+    } );
+
+    </script>
+
+{% endblock %}
+    

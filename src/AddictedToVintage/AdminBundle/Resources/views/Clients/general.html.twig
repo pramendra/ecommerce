@@ -1,0 +1,52 @@
+
+{{ form_errors(clients_form) }}
+
+<form action="" class="form-horizontal client-form" name="clientform" method="post" {{ form_enctype(clients_form) }}>
+    <div class="well">
+        <div class="row-fluid">
+
+            <div class="span6">
+                <h3>Algemene gegevens</h3>
+                <hr />
+                {{ form_row(clients_form.name) }}
+                {{ form_row(clients_form.address) }}
+                {{ form_row(clients_form.zipcode) }}
+                {{ form_row(clients_form.location) }}
+                {{ form_row(clients_form.country) }}
+
+            </div>
+
+            <div class="span6">
+
+                <h3>Contact gegevens</h3>
+                <hr />
+                {{ form_row(clients_form.email) }}
+                {{ form_row(clients_form.phone) }}
+
+            </div>
+        </div>
+    </div>
+
+    <div class="well">
+        <h3>Verzendgegevens</h3>
+
+        {{ form_row(clients_form.shippingAddress) }}
+        {{ form_row(clients_form.shippingZipcode) }}
+        {{ form_row(clients_form.shippingLocation) }}
+        {{ form_row(clients_form.shippingCountry) }}
+
+    </div>
+
+  {#
+    <div class="well normal">
+            <a class="general_anchor_offset" id="anchorlogin"></a>
+            <h3>Wachtwoord</h3>
+                    {{ form_row(clients_form.password) }}
+                    {{ form_row(clients_form.password) }}
+                    <input id="login" type="submit" class="btn" value="Opslaan" />
+                    <div class="clear"></div>
+    </div>
+    #}
+    
+    {{ form_rest(clients_form) }}
+    </form>

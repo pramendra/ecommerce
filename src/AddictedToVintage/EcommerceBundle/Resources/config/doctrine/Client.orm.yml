@@ -1,0 +1,126 @@
+AddictedToVintage\EcommerceBundle\Entity\Client:
+  type: entity
+  table: client
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    name:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+    address:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+    housenumber:
+      type: string
+      length: 20
+      fixed: false
+      nullable: false
+    zipcode:
+      type: string
+      length: 15
+      fixed: false
+      nullable: false
+    location:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+    country:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+    phone:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+    email:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+    password:
+      type: string
+      length: 128
+      fixed: false
+      nullable: false
+    algorithm:
+      type: string
+      length: 128
+      fixed: false
+      nullable: false
+    salt:
+      type: string
+      length: 128
+      fixed: false
+      nullable: true
+    shippingAddress:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+      column: shipping_address
+    shippingZipcode:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+      column: shipping_zipcode
+    shippingLocation:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+      column: shipping_location
+    shippingCountry:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+      column: shipping_country
+    ipAddress:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+      column: ip_address
+    reffer:
+      type: text
+      nullable: true
+    acceptNewsletter:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: accept_newsletter
+    history:
+      type: text
+      nullable: false
+    createdAt:
+      type: datetime
+      nullable: false
+      column: created_at
+    updatedAt:
+      type: datetime
+      nullable: true
+      column: updated_at
+    deletedAt:
+      type: datetime
+      nullable: true
+      column: deleted_at
+  oneToMany:
+    orders:
+      targetEntity: Orders
+      cascade: [ "persist", "remove" ]
+      mappedBy: client
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

@@ -1,0 +1,57 @@
+<div class="row-fluid">
+
+    <div class="span12">
+        
+        <table class="table table-striped" width="100%">
+        
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>attribute</th>
+                    <th>waarde</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                {% for attribute in product.attributes %}
+                
+                    <tr id="{{ attribute.id }}">
+                        <td>{{ attribute.id }}</td>
+                        <td>{{ attribute.attribute.name }}</td>
+                        <td>
+			    <form action="{{ path('admin_products_attributes', { 'id' : product.id, 'product_attribute_id' : attribute.id } ) }}" name="attributes" method="post">
+				<input type="text" name="attribute_value" value="{{ attribute.attributeValue }}" />
+				<input type="submit" class="btn" value="Wijzigen">
+			    </form>
+			</td>
+                        <td><a href="javascript:removeAttribute('{{ attribute.id }}')" class="btn btn-danger">Verwijderen</a> </td>
+                    </tr>
+                
+                {% endfor %}
+                
+                <form action="{{ path('admin_products_attributes', { 'id' : product.id, 'product_attribute_id' : 0 } ) }}" name="attributes" method="post">
+                <tr>
+                    <td>Nieuw</td>
+                    <td>
+                        <select name="attribute_id">
+                            {% for attribute in attributes %}
+                                <option value="{{ attribute.id }}">{{ attribute.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </td>
+                    <td><input type="text" name="attribute_value" value="" /></td>
+                    <td><input type="submit" class="btn btn-primary" value="Opslaan" /></td>
+                </tr>
+                </form>
+                
+            </tbody>
+            
+        </table>
+            
+        
+            
+        
+            
+    </div>
+
+</div>

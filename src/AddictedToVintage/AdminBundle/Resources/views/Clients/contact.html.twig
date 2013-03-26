@@ -1,0 +1,78 @@
+{% extends 'AdminBundle::layout.html.twig' %}
+
+{% block content %}
+<div class="row-fluid">
+
+    <div class="span12">
+
+        <h1>{{ client.name }}</h1>
+
+        <p>{{ client.email }}</p>
+
+        <hr />
+
+	<table class="table table-striped">
+	    <thead>
+		<tr>
+		    <th>Datum</th>
+		    <th>Onderwerp</th>
+		</tr>
+	    </thead>
+
+	    <tbody>
+	    	{% for email in emaillog %}
+		    <tr>
+			<td>{{ email.createdAt|date('d-m-Y H:i') }}</td>
+			<td>{{ email.subject }}</td>
+			<td><a class="btn" href="{{ path('admin_email_view', { id : email.id}) }}"><i class="icon-eye-open"></i> Bekijk mail</a></td>
+		    </tr>
+		{% endfor %}
+		</tbody>
+
+	    </table>
+	</div>
+
+    </div>
+
+    <div class="row-fluid">
+
+	<div class="span12">
+
+	    {{ form_errors(email_form) }}
+
+	    <form action="{{ path('admin_contact_client', { id : client.id } ) }}" class="form-horizontal client-form" name="clientform" method="post" {{ form_enctype(email_form) }}>
+		<div class="row-fluid">
+
+		    <div class="span12">
+			{{ form_row(email_form.subject) }}
+		    </div>
+		</div>
+
+		<div class="row-fluid">    
+		    
+		    <div class="span12">
+			{{ form_label(email_form.content, 'Inhoud') }}    
+			{{ form_widget(email_form.content, { 'value' : 'Beste ' ~ client.name ~ ',<br /><br /><br /> Met vriendelijke groet,<br />Addictedtovintage', 'attr': {'class': 'ckeditor'} }) }}  
+		    </div>
+		</div>
+		    
+		{{ form_rest(email_form) }}
+	    </form>
+	</div>
+	
+	
+        <a class="btn btn-primary pull-right" href="javascript:void(0)" onclick="document.clientform.submit()"><i class="icon-white icon-envelope"></i> Versturen</a>
+
+
+    </div>
+
+{% endblock %}
+
+
+{% block javascripts %}
+
+{{ parent() }}
+
+<script src="/ckeditor/ckeditor.js"></script>
+
+{% endblock %}

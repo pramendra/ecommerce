@@ -1,0 +1,21 @@
+<ul class="unstyled">
+{% for single_category in section.categories %}
+    <li>
+        <div class="well">
+            <a href="{{ path('_category', { 'section' : section.permalink, 'category' : single_category.permalink}) }}">
+                <h4>{{ single_category.name }}</h4>
+            </a>
+
+            <ul>
+            {% for single_subcategory in single_category.subcategories %}
+                <li style="display: inline-block; margin-right: 3px;">
+                    <a href="{{ path('_subcategory', { 'section' : section.permalink, 'category' : single_category.permalink, 'subcategory' : single_subcategory.permalink }) }}">
+                        <i class="icon-arrow-right"></i> {{ single_subcategory.name }}
+                    </a>
+                </li>   
+            {% endfor %}
+            </ul>
+        </div>        
+    </li>    
+{% endfor %}
+</ul>

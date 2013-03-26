@@ -1,0 +1,99 @@
+<!-- The file upload form used as target for the file upload widget -->
+<form id="fileupload" action="{{ path('admin_products_upload') }}" method="POST" enctype="multipart/form-data">
+    <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
+    <div class="row-fluid fileupload-buttonbar">
+        <div class="span7">
+            <span class="btn btn-success fileinput-button">
+                <i class="icon-plus icon-white"></i>
+                <span>Foto's toevoegen...</span>
+                <input type="file" name="files[]" multiple>
+            </span>
+            <button type="submit" class="btn btn-primary start">
+                <i class="icon-upload icon-white"></i>
+                <span>Start</span>
+            </button>
+            {#    
+            <button type="reset" class="btn btn-warning cancel">
+                <i class="icon-ban-circle icon-white"></i>
+                <span>Annuleren</span>
+            </button>
+            #}
+
+            {#    
+            <button type="button" class="btn btn-danger delete">
+                <i class="icon-trash icon-white"></i>
+                <span>Verwijderen</span>
+            </button>
+
+            <input type="checkbox" class="toggle">
+            #}
+        </div>
+        <!-- The global progress information -->
+        <div class="span5 fileupload-progress fade">
+            <!-- The global progress bar -->
+            <div class="progress progress-success progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+                <div class="bar" style="width:0%;"></div>
+            </div>
+            <div class="progress-extended">&nbsp;</div>
+        </div>
+    </div>
+    <div class="fileupload-loading"></div>
+    <br>
+    <table role="presentation" class="table table-striped">
+        <tbody class="files" data-toggle="modal-gallery" data-target="#modal-gallery">
+
+            
+            {% for image in product.images %}
+            
+            <tr class="template-download fade in" style="height: 82px;">
+
+                <td class="preview">
+                    <a download="{{ image.name }}" rel="gallery" title="{{ image.name }}" href="{{ image.path }}"><img src="{{ image.thumbPath }}"></a>
+                </td>
+                <td class="name">
+                    <a download="{{ image.name }}" rel="gallery" title="{{ image.name }}" href="{{ image.path }}">{{ image.name }}</a>
+                </td>
+                <td class="size"><span>{{ image.filesize }} KB</span></td>
+                <td colspan="2"></td>
+
+                <td class="delete">
+                    <button data-url="{{ path('admin_products_upload', { 'file' : image.name } ) }}" data-type="DELETE" class="btn btn-danger">
+                        <i class="icon-trash icon-white"></i>
+                        <span>Verwijderen</span>
+                    </button>
+                    <input type="checkbox" value="1" name="delete">
+                </td>
+            </tr>
+            
+            {% endfor %}
+
+        </tbody>
+    </table>
+</form>
+
+<div id="modal-gallery" class="modal modal-gallery hide fade" data-filter=":odd">
+    <div class="modal-header">
+        <a class="close" data-dismiss="modal">&times;</a>
+        <h3 class="modal-title"></h3>
+    </div>
+    <div class="modal-body"><div class="modal-image"></div></div>
+    <div class="modal-footer">
+        <a class="btn modal-download" target="_blank">
+            <i class="icon-download"></i>
+            <span>Download</span>
+        </a>
+        <a class="btn btn-success modal-play modal-slideshow" data-slideshow="5000">
+            <i class="icon-play icon-white"></i>
+            <span>Slideshow</span>
+        </a>
+        <a class="btn btn-info modal-prev">
+            <i class="icon-arrow-left icon-white"></i>
+            <span>Vorige</span>
+        </a>
+        <a class="btn btn-primary modal-next">
+            <span>Volgende</span>
+            <i class="icon-arrow-right icon-white"></i>
+        </a>
+    </div>
+</div>
+

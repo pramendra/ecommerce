@@ -1,0 +1,60 @@
+AddictedToVintage\EcommerceBundle\Entity\Cart:
+  type: entity
+  table: cart
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    totalPriceInc:
+      type: float
+      nullable: false
+      column: total_price_inc
+    totalPriceEx:
+      type: float
+      nullable: false
+      column: total_price_ex
+    numProducts:
+      type: integer
+      unsigned: false
+      nullable: false
+      column: num_products
+    sessionId:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+      column: session_id
+    updatedAt:
+      type: datetime
+      nullable: true
+      column: updated_at
+    createdAt:
+      type: datetime
+      nullable: false
+      column: created_at
+  oneToOne:
+    coupon:
+      targetEntity: Coupon
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        coupon_id:
+          referencedColumnName: id
+      orphanRemoval: false      
+  manyToOne:
+    shipping:
+      targetEntity: Shipping
+    client:
+      targetEntity: Client
+  oneToMany:
+    products:
+      targetEntity: CartProducts
+      cascade: [ "persist", "remove" ]
+      mappedBy: cart
+      orphanRemoval: false
+  lifecycleCallbacks: {  }
