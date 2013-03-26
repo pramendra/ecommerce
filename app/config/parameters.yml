@@ -13,5 +13,5 @@ parameters:
 
     locale:            en
     secret:            ThisTokenIsNotSoSecretChangeIt
-    default_image:      /images/default.jpg
-    sale_discount:      20
+    default_image:     /images/default.jpg
+    sale_discount:     20
