@@ -1,10 +1,10 @@
 parameters:
     database_driver:   pdo_mysql
-    database_host:     addictedtovintage.nl
+    database_host:     localhost
     database_port:     ~
-    database_name:     addictedtovintage_nl
+    database_name:     biologische_kaas_nl
     database_user:     p3881
-    database_password: blENblk2012
+    database_password: pzat29
 
     mailer_transport:  smtp
     mailer_host:       localhost
