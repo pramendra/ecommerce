@@ -1,0 +1,35 @@
+Ecommerce\AddictedtovintageBundle\Entity\Coupon:
+  type: entity
+  table: coupon
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    code:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+    discount:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+    discountType:
+      type: integer
+      unsigned: false
+      nullable: false
+      column: discount_type
+    createdAt:
+      type: datetime
+      nullable: false
+      column: created_at
+    deletedAt:
+      type: datetime
+      nullable: true
+      column: deleted_at
+  lifecycleCallbacks: {  }

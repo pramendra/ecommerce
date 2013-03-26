@@ -1,0 +1,53 @@
+
+{% if product.subcategories[0] is defined %}
+
+
+<div class="category_product">
+
+    <div class="category_product_image">
+
+        {% if product.firstImage is defined and product.firstImage is not null %}
+            {% set image = product.firstImage %}
+        {% else %}
+            {% set image = product.images[0] %}
+        {% endif %}
+        
+        <a href="{{ path('_product_shortcut', { 'product' : product.permalink} ) }}" title="{{ product.name }}">
+            <img class="first_product_image" alt="{{ product.name }}" title="{{ product.name }}" src="{{ image.thumbpath }}" />
+         </a>
+        
+        
+    </div>
+    
+    <div class="category_product_bottom">
+
+        <span class="category_product_title">
+            <a href="{{ path('_product_shortcut', { 'product' : product.permalink} ) }}" title="{{ product.name }}">
+                {{ product.name }}
+            </a>
+        </span>
+
+        <!-- p class="category_product_description">{{ product.description|slice(0, 80) }}...</p -->
+    </div>
+    
+    <!-- div class="btn-group">
+        <a class="btn btn-primary btn-small pull-left"><i class="icon-white icon-shopping-cart"></i> Bestellen</a>
+        <a class="btn btn-small pull-left"><i class="icon icon-eye-open"></i> Bekijken</a>
+    </div -->
+        <span class="category_product_price">&euro; {{ product.price|number_format(2, ',', '.') }}</span>
+    
+    <p class="category_product_stock">Nog {{ product.stock }} op voorraad</p>
+    {# <span class="category_product_shadow"></span> #}
+    
+     {% if product.isSale == 1 %}
+        <span class="category_sale_price">
+            {% set price = product.price %} 
+            {% set price = price - (price / 100 * sale_discount) %}
+            <p>Nu voor maar: &euro; {{ price|number_format(2, ',', '.') }}</p>
+        </span>
+    {% endif %}
+
+    
+</div>
+
+{% endif %}
