@@ -37,14 +37,14 @@
     {% endif %}
 
     {% block stylesheets %}
-        <link rel="stylesheet" href="{{ asset('bundles/biologischekaas/css/font-awesome.css') }}">
-        <link rel="stylesheet" href="{{ asset('bundles/biologischekaas/css/jqzoom.css') }}">
-        <link rel="stylesheet" href="{{ asset('bundles/biologischekaas/fonts/stylesheet.css') }}" type="text/css" charset="utf-8">
+        <link rel="stylesheet" href="{{ asset('bundles/bk/css/font-awesome.css') }}">
+        <link rel="stylesheet" href="{{ asset('bundles/bk/css/jqzoom.css') }}">
+        <link rel="stylesheet" href="{{ asset('bundles/bk/fonts/stylesheet.css') }}" type="text/css" charset="utf-8">
 
         {% if app.environment == 'dev' %}
-        <link href="{{ asset('bundles/biologischekaas/less/app.less') }}" type="text/css" rel="stylesheet/less" />
+        <link href="{{ asset('bundles/bk/less/app.less') }}" type="text/css" rel="stylesheet/less" />
         {% else %}
-        <link href="{{ asset('bundles/biologischekaas/css/app-min.css') }}" type="text/css" rel="stylesheet" />
+        <link href="{{ asset('bundles/bk/css/app-min.css') }}" type="text/css" rel="stylesheet" />
         {% endif %}
     {% endblock %}
 
@@ -55,12 +55,12 @@
 
     {% endblock %}
 
-        <link rel="shortcut icon" href="{{ asset('bundles/biologischekaas/ico/favicon.ico') }}">
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ asset('bundles/biologischekaas/ico/apple-touch-icon-114x114-precomposed.png') }}">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ asset('bundles/biologischekaas/ico/apple-touch-icon-72x72-precomposed.png') }}">
-        <link rel="apple-touch-icon-precomposed" href="{{ asset('bundles/biologischekaas/ico/apple-touch-icon-57x57-precomposed.png') }}">
+        <link rel="shortcut icon" href="{{ asset('bundles/bk/ico/favicon.ico') }}">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ asset('bundles/bk/ico/apple-touch-icon-114x114-precomposed.png') }}">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ asset('bundles/bk/ico/apple-touch-icon-72x72-precomposed.png') }}">
+        <link rel="apple-touch-icon-precomposed" href="{{ asset('bundles/bk/ico/apple-touch-icon-57x57-precomposed.png') }}">
 
-        <script src="{{ asset('bundles/biologischekaas/js/modernizr-2.6.2-respond-1.1.0.min.js') }}"></script>
+        <script src="{{ asset('bundles/bk/js/modernizr-2.6.2-respond-1.1.0.min.js') }}"></script>
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
     </head>
 
@@ -69,7 +69,7 @@
         <div class="container">
             <div class="row-fluid">
                 <div class="span12">
-                    <img src="{{ asset('bundles/biologischekaas/img/cover.jpg') }}" />
+                    <img src="{{ asset('bundles/bk/img/cover.jpg') }}" />
                 </div>
             </div>    
         </div>
@@ -85,54 +85,54 @@
 
             </script>
 
-            <script src="{{ asset('bundles/biologischekaas/js/jquery.js') }}"></script>
-            <script src="{{ asset('bundles/biologischekaas/js/jqzoom.js') }}"></script>
+            <script src="{{ asset('bundles/bk/js/jquery.js') }}"></script>
+            <script src="{{ asset('bundles/bk/js/jqzoom.js') }}"></script>
 
         {% if app.environment == 'dev' %}
 
-            <script src="{{ asset('bundles/biologischekaas/js/less.js') }}"></script>
-            <script src="{{ asset('bundles/biologischekaas/js/bootstrap-affix.js') }}"></script>
-            <script src="{{ asset('bundles/biologischekaas/js/bootstrap-alert.js') }}"></script>
-            <script src="{{ asset('bundles/biologischekaas/js/bootstrap-button.js') }}"></script>
-            <script src="{{ asset('bundles/biologischekaas/js/bootstrap-carousel.js') }}"></script>
-            <script src="{{ asset('bundles/biologischekaas/js/bootstrap-collapse.js') }}"></script>
-            <script src="{{ asset('bundles/biologischekaas/js/bootstrap-dropdown.js') }}"></script>
-            <script src="{{ asset('bundles/biologischekaas/js/bootstrap-modal.js') }}"></script>
-            <script src="{{ asset('bundles/biologischekaas/js/bootstrap-tooltip.js') }}"></script>
-            <script src="{{ asset('bundles/biologischekaas/js/bootstrap-popover.js') }}"></script>
-            <script src="{{ asset('bundles/biologischekaas/js/bootstrap-scrollspy.js') }}"></script>
-            <script src="{{ asset('bundles/biologischekaas/js/bootstrap-tab.js') }}"></script>
-            <script src="{{ asset('bundles/biologischekaas/js/bootstrap-transition.js') }}"></script>
-            <script src="{{ asset('bundles/biologischekaas/js/bootstrap-typeahead.js') }}"></script>
+            <script src="{{ asset('bundles/bk/js/less.js') }}"></script>
+            <script src="{{ asset('bundles/bk/js/bootstrap-affix.js') }}"></script>
+            <script src="{{ asset('bundles/bk/js/bootstrap-alert.js') }}"></script>
+            <script src="{{ asset('bundles/bk/js/bootstrap-button.js') }}"></script>
+            <script src="{{ asset('bundles/bk/js/bootstrap-carousel.js') }}"></script>
+            <script src="{{ asset('bundles/bk/js/bootstrap-collapse.js') }}"></script>
+            <script src="{{ asset('bundles/bk/js/bootstrap-dropdown.js') }}"></script>
+            <script src="{{ asset('bundles/bk/js/bootstrap-modal.js') }}"></script>
+            <script src="{{ asset('bundles/bk/js/bootstrap-tooltip.js') }}"></script>
+            <script src="{{ asset('bundles/bk/js/bootstrap-popover.js') }}"></script>
+            <script src="{{ asset('bundles/bk/js/bootstrap-scrollspy.js') }}"></script>
+            <script src="{{ asset('bundles/bk/js/bootstrap-tab.js') }}"></script>
+            <script src="{{ asset('bundles/bk/js/bootstrap-transition.js') }}"></script>
+            <script src="{{ asset('bundles/bk/js/bootstrap-typeahead.js') }}"></script>
 
             {# LOAD PLUGINS #}
-            <script src="{{ asset('bundles/biologischekaas/js/plugins/filter.js') }}"></script>
-            <script src="{{ asset('bundles/biologischekaas/js/plugins/social.js') }}"></script>
+            <script src="{{ asset('bundles/bk/js/plugins/filter.js') }}"></script>
+            <script src="{{ asset('bundles/bk/js/plugins/social.js') }}"></script>
 
             {# LOAD APP #}
-            <script src="{{ asset('bundles/biologischekaas/js/app.js') }}"></script>
+            <script src="{{ asset('bundles/bk/js/app.js') }}"></script>
         {% else %}
 
 
             {# LOAD PLUGINS #}
-            <script src="{{ asset('bundles/biologischekaas/js/plugins/filter.js') }}"></script>
-            <script src="{{ asset('bundles/biologischekaas/js/plugins/social.js') }}"></script>
+            <script src="{{ asset('bundles/bk/js/plugins/filter.js') }}"></script>
+            <script src="{{ asset('bundles/bk/js/plugins/social.js') }}"></script>
 
-            <script src="{{ asset('bundles/biologischekaas/js/bootstrap-affix.js') }}"></script>
-            <script src="{{ asset('bundles/biologischekaas/js/bootstrap-alert.js') }}"></script>
-            <script src="{{ asset('bundles/biologischekaas/js/bootstrap-button.js') }}"></script>
-            <script src="{{ asset('bundles/biologischekaas/js/bootstrap-carousel.js') }}"></script>
-            <script src="{{ asset('bundles/biologischekaas/js/bootstrap-collapse.js') }}"></script>
-            <script src="{{ asset('bundles/biologischekaas/js/bootstrap-dropdown.js') }}"></script>
-            <script src="{{ asset('bundles/biologischekaas/js/bootstrap-modal.js') }}"></script>
-            <script src="{{ asset('bundles/biologischekaas/js/bootstrap-tooltip.js') }}"></script>
-            <script src="{{ asset('bundles/biologischekaas/js/bootstrap-popover.js') }}"></script>
-            <script src="{{ asset('bundles/biologischekaas/js/bootstrap-scrollspy.js') }}"></script>
-            <script src="{{ asset('bundles/biologischekaas/js/bootstrap-tab.js') }}"></script>
-            <script src="{{ asset('bundles/biologischekaas/js/bootstrap-transition.js') }}"></script>
-            <script src="{{ asset('bundles/biologischekaas/js/bootstrap-typeahead.js') }}"></script>
+            <script src="{{ asset('bundles/bk/js/bootstrap-affix.js') }}"></script>
+            <script src="{{ asset('bundles/bk/js/bootstrap-alert.js') }}"></script>
+            <script src="{{ asset('bundles/bk/js/bootstrap-button.js') }}"></script>
+            <script src="{{ asset('bundles/bk/js/bootstrap-carousel.js') }}"></script>
+            <script src="{{ asset('bundles/bk/js/bootstrap-collapse.js') }}"></script>
+            <script src="{{ asset('bundles/bk/js/bootstrap-dropdown.js') }}"></script>
+            <script src="{{ asset('bundles/bk/js/bootstrap-modal.js') }}"></script>
+            <script src="{{ asset('bundles/bk/js/bootstrap-tooltip.js') }}"></script>
+            <script src="{{ asset('bundles/bk/js/bootstrap-popover.js') }}"></script>
+            <script src="{{ asset('bundles/bk/js/bootstrap-scrollspy.js') }}"></script>
+            <script src="{{ asset('bundles/bk/js/bootstrap-tab.js') }}"></script>
+            <script src="{{ asset('bundles/bk/js/bootstrap-transition.js') }}"></script>
+            <script src="{{ asset('bundles/bk/js/bootstrap-typeahead.js') }}"></script>
 
-            <script src="{{ asset('bundles/biologischekaas/js/app-min.js') }}"></script>
+            <script src="{{ asset('bundles/bk/js/app-min.js') }}"></script>
 
         {% endif %}
 
