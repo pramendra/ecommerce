@@ -1,6 +1,6 @@
 <?php
 
-namespace Ecommerce\BiologischekaasBundle\Twig\Extension;
+namespace Ecommerce\EcommerceBundle\Twig\Extension;
 
 class DayConvertTwigExtension extends \Twig_Extension {
 

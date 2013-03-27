@@ -1,9 +1,9 @@
 <?php
 
-namespace Ecommerce\BiologischekaasBundle\Controller;
+namespace Ecommerce\EcommerceBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use BiologischekaasBundle\Entity\Product;
+use EcommerceBundle\Entity\Product;
 
 class ProductController extends Controller {
 
@@ -18,11 +18,11 @@ class ProductController extends Controller {
             $show_canonical = false;
         }
 
-        $sections = $this->getDoctrine()->getRepository('BiologischekaasBundle:Section')->findAll();
+        $sections = $this->getDoctrine()->getRepository('EcommerceBundle:Section')->findAll();
         
         $product_permalink = str_replace('.html', '', $product);
 
-        $product_repository = $this->getDoctrine()->getRepository('BiologischekaasBundle:Product');
+        $product_repository = $this->getDoctrine()->getRepository('EcommerceBundle:Product');
         $product = $product_repository->findActiveProductByPermalink($product_permalink);
           
         if(!empty($product[0])) { 
@@ -44,13 +44,13 @@ class ProductController extends Controller {
             //throw $this->createNotFoundException();
         }
         
-        $categories_repository = $this->getDoctrine()->getRepository('BiologischekaasBundle:Category');
+        $categories_repository = $this->getDoctrine()->getRepository('EcommerceBundle:Category');
         $category = $categories_repository->findOneByPermalink($category);
         
-        $subcategories_repository = $this->getDoctrine()->getRepository('BiologischekaasBundle:Subcategory');
+        $subcategories_repository = $this->getDoctrine()->getRepository('EcommerceBundle:Subcategory');
         $subcategory = $subcategories_repository->findOneByPermalink($subcategory);
         
-        $sections_repository = $this->getDoctrine()->getRepository('BiologischekaasBundle:Section');
+        $sections_repository = $this->getDoctrine()->getRepository('EcommerceBundle:Section');
         $section = $sections_repository->findOneByPermalink($section);
      
         $attribute = null;
@@ -64,11 +64,11 @@ class ProductController extends Controller {
 //        }
 //        
 //        if($attribute != null) { 
-//            $related_products = $this->getDoctrine()->getRepository('BiologischekaasBundle:Product')->findRelatedProductsByAttribute($subcategory, $attribute, 4, $product);
+//            $related_products = $this->getDoctrine()->getRepository('EcommerceBundle:Product')->findRelatedProductsByAttribute($subcategory, $attribute, 4, $product);
 //        }
 //        
         if($related_products == null) { 
-            $related_products = $this->getDoctrine()->getRepository('BiologischekaasBundle:Product')->getActiveProductsBySubcategory($subcategory, 4);
+            $related_products = $this->getDoctrine()->getRepository('EcommerceBundle:Product')->getActiveProductsBySubcategory($subcategory, 4);
         }
         
         $sale_discount = $this->container->getParameter('sale_discount');
@@ -82,19 +82,19 @@ class ProductController extends Controller {
 
         $page = $pm->pageParser(array('title' => $product->getName(),'description' => $product->getDescription(), 'subcategory' => $subcategory->getName()));
 
-        return $this->render('BiologischekaasBundle:Product:index.html.twig', array('sale_discount' => $sale_discount, 'product' => $product, 'category' => $category, 'section' => $section, 'subcategory' => $subcategory, 'page' => $page, 'sections' => $sections, 'related_products' => $related_products, 'show_canonical' => $show_canonical  ));
+        return $this->render('EcommerceBundle:Product:index.html.twig', array('sale_discount' => $sale_discount, 'product' => $product, 'category' => $category, 'section' => $section, 'subcategory' => $subcategory, 'page' => $page, 'sections' => $sections, 'related_products' => $related_products, 'show_canonical' => $show_canonical  ));
     }
 
     public function shortcutAction($product) {
         
         $product_permalink = str_replace('.html', '', $product);
 
-        $product_repository = $this->getDoctrine()->getRepository('BiologischekaasBundle:Product');
+        $product_repository = $this->getDoctrine()->getRepository('EcommerceBundle:Product');
         $product = $product_repository->findOneByPermalink($product_permalink);
         
         if (!$product) {
             
-            $categories_repository = $this->getDoctrine()->getRepository('BiologischekaasBundle:Category');
+            $categories_repository = $this->getDoctrine()->getRepository('EcommerceBundle:Category');
             $category = $categories_repository->findOneByPermalink($product_permalink);
             
             if($category != null) { 
@@ -114,7 +114,7 @@ class ProductController extends Controller {
 		}
             }
             
-            $subcategorie_repository = $this->getDoctrine()->getRepository('BiologischekaasBundle:Subcategory');
+            $subcategorie_repository = $this->getDoctrine()->getRepository('EcommerceBundle:Subcategory');
             $subcategory = $subcategorie_repository->findOneByPermalink($product_permalink);
             
             if($subcategory != null) { 

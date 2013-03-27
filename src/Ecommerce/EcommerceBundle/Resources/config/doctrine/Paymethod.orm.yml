@@ -1,4 +1,4 @@
-Ecommerce\BiologischekaasBundle\Entity\Paymethod:
+Ecommerce\EcommerceBundle\Entity\Paymethod:
   type: entity
   table: paymethod
   fields:

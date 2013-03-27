@@ -1,0 +1,173 @@
+{% extends 'BKBundle::layout.html.twig' %}
+
+{% block sidebar %}
+
+{% endblock%}
+
+{% block content %}
+
+{% set total = cart.totalPriceInc + cart.shipping.costs %}
+
+<div class="row-fluid">
+    <div class="span3">
+        <h1>Afrekenen</h1>
+    </div>
+    <div class="span9">
+        <ul class="unstyled checkout_steps">
+            <li class="checked">Persoonlijke gegevens <i class="icon-check"></i></li>
+            <li class="checked">Bezorgwijze <i class="icon-check"></i></li>
+            <li class="active">Betaalmethode <i class="icon-arrow-right"></i></li>
+            <li>Bestelling plaatsen <i class="icon-arrow-right"></i></li>
+        </ul>
+    </div>    
+</div>
+
+<hr />
+
+<form name="checkout_form" id="checkout_form" action="{{ path('_cart_overview') }}" method="POST" class="form-horizontal">
+
+    <div class="row-fluid">    
+        <div class="span6">
+            
+            <div class="checkout-well">
+
+                <a class="foreign_payments_btn pull-right btn btn-small" href="javascript:void(0)" onclick="javascript:show_foreign()"><i class="icon-globe"></i> Toon buitenlandse betaalwijzes</a>
+
+                <h3><i class="icon-money"></i> Betaalwijze</h3>
+                <p>Vul hieronder in waar we je bestelling naar toe moeten suren</p>
+
+                <hr />
+
+                <ul class="checkout_payments unstyled">
+
+                {% for paymethod in paymethods %}
+
+                    {% if paymethod.isForeign == 0 %}
+
+                    <li>
+
+                        <input class="payment" type="radio" name="payment[]" style="margin-left: 10px; margin-top: 35px;" value="{{ paymethod.code }}" />
+
+                        <img src="{{ asset('/bundles/biologischekaas/img/pay/' ~ paymethod.id ~ '.jpg') }}" class="paymethod_logo" /> 
+                        
+                        <h5>{{ paymethod.title }}</h5>
+                        <p>{{ paymethod.description }}</p>
+
+
+                    </li>
+
+                    {% endif %}
+
+                {% endfor %}
+
+                </ul>
+
+                <div class="foreign_payments hide">
+
+                    <br />
+
+                    <h3><i class="icon-globe"></i> Buitenlandse betaalwijzes</h3>
+
+                    <hr />
+
+                    <ul class="checkout_payments unstyled">
+
+                    {% for paymethod in paymethods %}
+
+                        {% if paymethod.isForeign == 1 %}
+
+                        <li>
+                            <input class="payment" type="radio" name="payment[]" value="{{ paymethod.code }}" />
+
+                            <h5>{{ paymethod.title }}</h5>
+                            <p>{{ paymethod.description }}</p>
+                        </li>
+
+                        {% endif %}
+
+                    {% endfor %}
+
+                    </ul>
+
+                </div>
+            </div>
+
+        </div>
+            
+        <div class="span6">
+
+            <div class="checkout-well">
+
+                <h3><i class="icon-list"></i> Betaaloverzicht</h3>
+
+                <table width="100%" cellpadding="2" cellspacing="1" class="table table-striped cart">
+
+                    <thead>
+                        <tr>
+                            <th width="30%">Product</th>
+                            <th width="20%">Prijs</th>
+                            <th width="20%" align="right">Totaal</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                    {% for item in cart.products %}
+
+                    {% set productTotal = item.amount * item.price %}
+                    {% set product = item.product %}
+                        <tr>
+                            <td><a href="#" class="product">{{ item.product.name }}</a></td>
+                            <td>{{ item.amount }} x &euro; {{ item.price|number_format(2, ',', '.') }}</td>
+                            <td align="right">&euro; {{ productTotal|number_format(2, ',', '.') }}</td>
+                        </tr>
+
+                    {% endfor %}
+
+                        <tr>
+                            <td colspan="3">&nbsp;</td>
+                        </tr>
+                    {% if discount > 0 %}    
+                        
+                        <tr>
+                            <td colspan="2">Korting</td>
+                            <td>- &euro; <span id="total_discount">{{ discount }}</span></td>
+                        </tr>
+                        
+                    {% endif %}
+                        
+                        <tr>
+                            <td colspan="2">Totaalbedrag artikelen:</td>
+                            <td>&euro; <span id="cart_products_total">{{ cart.totalPriceInc|number_format(2, ',', '.') }}</span></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Totaalbedrag verzend/verwerkingskosten:</td>
+                            <td>&euro; <span id="cart_shipping_total">{{ cart.shipping.costs|number_format(2, ',', '.') }}</span></td>
+                        </tr>
+
+                        {% set total = cart.totalPriceInc + cart.shipping.costs %}
+
+                        <tr>
+                            <td colspan="2"><h4>Totaalbedrag:</h4></td>
+                            <td><h4>&euro; <span id="cart_total">{{ total|number_format(2, ',', '.') }}</span></h4></td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+
+        </div>    
+            
+    </div>
+    
+    <hr />
+    
+    <div class="row-fluid">
+        <div class="span12">
+            <a href="javascript:void(0)" onclick="javascript:validate_paymethod()" class="btn pull-right btn-large btn-primary">Door naar de laatste stap <i class="icon-arrow-right"></i></a>
+        </div>
+    </div>
+
+</form>    
+
+{% endblock %}

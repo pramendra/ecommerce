@@ -1,11 +1,11 @@
 <?php
 
-namespace Ecommerce\BiologischekaasBundle\Entity;
+namespace Ecommerce\EcommerceBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Ecommerce\BiologischekaasBundle\Entity\Subcategory
+ * Ecommerce\EcommerceBundle\Entity\Subcategory
  */
 class Subcategory
 {
@@ -50,12 +50,12 @@ class Subcategory
     protected $active;
     
     /*
-     * @var Ecommerce\BiologischekaasBundle\Entity\Product $products
+     * @var Ecommerce\EcommerceBundle\Entity\Product $products
      */
     protected $products;
     
     /*
-     * @var Ecommerce\BiologischekaasBundle\Entity\Category $categories
+     * @var Ecommerce\EcommerceBundle\Entity\Category $categories
      */
     protected $categories;    
     

@@ -1,6 +1,6 @@
 <?php
 
-namespace Ecommerce\BiologischekaasBundle\DependencyInjection;
+namespace Ecommerce\EcommerceBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;

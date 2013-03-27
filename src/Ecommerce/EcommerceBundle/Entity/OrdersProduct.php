@@ -1,11 +1,11 @@
 <?php
 
-namespace Ecommerce\BiologischekaasBundle\Entity;
+namespace Ecommerce\EcommerceBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Ecommerce\BiologischekaasBundle\Entity\OrdersProduct
+ * Ecommerce\EcommerceBundle\Entity\OrdersProduct
  */
 class OrdersProduct
 {
@@ -35,12 +35,12 @@ class OrdersProduct
     protected $productHistory;
 
     /**
-     * @var Ecommerce\BiologischekaasBundle\Entity\Product
+     * @var Ecommerce\EcommerceBundle\Entity\Product
      */
     protected $product;
 
     /**
-     * @var Ecommerce\BiologischekaasBundle\Entity\Orders
+     * @var Ecommerce\EcommerceBundle\Entity\Orders
      */
     protected $order;
 
@@ -138,9 +138,9 @@ class OrdersProduct
     /**
      * Set product
      *
-     * @param Ecommerce\BiologischekaasBundle\Entity\Product $product
+     * @param Ecommerce\EcommerceBundle\Entity\Product $product
      */
-    public function setProduct(\Ecommerce\BiologischekaasBundle\Entity\Product $product)
+    public function setProduct(\Ecommerce\EcommerceBundle\Entity\Product $product)
     {
         $this->product = $product;
     }
@@ -148,7 +148,7 @@ class OrdersProduct
     /**
      * Get product
      *
-     * @return Ecommerce\BiologischekaasBundle\Entity\Product 
+     * @return Ecommerce\EcommerceBundle\Entity\Product 
      */
     public function getProduct()
     {
@@ -158,9 +158,9 @@ class OrdersProduct
     /**
      * Set order
      *
-     * @param Ecommerce\BiologischekaasBundle\Entity\Orders $order
+     * @param Ecommerce\EcommerceBundle\Entity\Orders $order
      */
-    public function setOrder(\Ecommerce\BiologischekaasBundle\Entity\Orders $order)
+    public function setOrder(\Ecommerce\EcommerceBundle\Entity\Orders $order)
     {
         $this->order = $order;
     }
@@ -168,7 +168,7 @@ class OrdersProduct
     /**
      * Get order
      *
-     * @return Ecommerce\BiologischekaasBundle\Entity\Orders 
+     * @return Ecommerce\EcommerceBundle\Entity\Orders 
      */
     public function getOrder()
     {

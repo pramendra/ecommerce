@@ -1,11 +1,11 @@
 <?php
 
-namespace Ecommerce\BiologischekaasBundle\Entity;
+namespace Ecommerce\EcommerceBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Ecommerce\BiologischekaasBundle\Entity\ProductAttributes
+ * Ecommerce\EcommerceBundle\Entity\ProductAttributes
  */
 class ProductAttributes
 {
@@ -25,12 +25,12 @@ class ProductAttributes
     protected $isSelectable;
 
     /**
-     * @var Ecommerce\BiologischekaasBundle\Entity\Product
+     * @var Ecommerce\EcommerceBundle\Entity\Product
      */
     protected $product;
 
     /**
-     * @var Ecommerce\BiologischekaasBundle\Entity\Attribute
+     * @var Ecommerce\EcommerceBundle\Entity\Attribute
      */
     protected $attribute;
 
@@ -88,9 +88,9 @@ class ProductAttributes
     /**
      * Set product
      *
-     * @param Ecommerce\BiologischekaasBundle\Entity\Product $product
+     * @param Ecommerce\EcommerceBundle\Entity\Product $product
      */
-    public function setProduct(\Ecommerce\BiologischekaasBundle\Entity\Product $product)
+    public function setProduct(\Ecommerce\EcommerceBundle\Entity\Product $product)
     {
         $this->product = $product;
     }
@@ -98,7 +98,7 @@ class ProductAttributes
     /**
      * Get product
      *
-     * @return Ecommerce\BiologischekaasBundle\Entity\Product 
+     * @return Ecommerce\EcommerceBundle\Entity\Product 
      */
     public function getProduct()
     {
@@ -108,9 +108,9 @@ class ProductAttributes
     /**
      * Set attribute
      *
-     * @param Ecommerce\BiologischekaasBundle\Entity\Attribute $attribute
+     * @param Ecommerce\EcommerceBundle\Entity\Attribute $attribute
      */
-    public function setAttribute(\Ecommerce\BiologischekaasBundle\Entity\Attribute $attribute)
+    public function setAttribute(\Ecommerce\EcommerceBundle\Entity\Attribute $attribute)
     {
         $this->attribute = $attribute;
     }
@@ -118,7 +118,7 @@ class ProductAttributes
     /**
      * Get attribute
      *
-     * @return Ecommerce\BiologischekaasBundle\Entity\Attribute 
+     * @return Ecommerce\EcommerceBundle\Entity\Attribute 
      */
     public function getAttribute()
     {

@@ -1,0 +1,41 @@
+Ecommerce\AVBundle\Entity\ProductAttributes:
+  type: entity
+  table: product_attributes
+  repositoryClass: Ecommerce\AVBundle\Repository\ProductAttributesRepository
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    attributeValue:
+      type: text
+      nullable: false
+      column: attribute_value
+    isSelectable:
+      type: integer
+      unsigned: false
+      nullable: false
+      column: is_selectable
+  manyToOne:
+    product:
+      targetEntity: Product
+      cascade: { } 
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        product_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    attribute:
+      targetEntity: Attribute
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        attribute_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

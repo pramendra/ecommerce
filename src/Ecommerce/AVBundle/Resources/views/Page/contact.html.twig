@@ -1,0 +1,103 @@
+{% extends 'AVBundle::layout.html.twig' %}
+
+{% block sidebar %}
+{% endblock %}
+
+{% block content %}
+
+<div class="row-fluid">
+
+	<div class="span12">
+        
+        <div class="page">
+            
+		<h1 class="page-title">Contact</h1>
+		<p>Via dit formulier kunt u in contact komen met addictedtovintage.nl. </p>
+
+		<div class="row-fluid">
+
+			<div class="span12">
+
+					<form action="#" id="contact-form" method="POST" class="form-horizontal">
+						<fieldset class="control-group">
+
+							<label id="name-label" class="control-label">Naam:</label>
+
+							<div class="controls">
+								<input type="text" id="name" name="name" class="input-xlarge" />
+							</div>
+
+						</fieldset>
+
+						<fieldset class="control-group">
+
+							<label id="adres-label" class="control-label">Adres:</label>
+
+							<div class="controls">
+								<input type="text" id="adres" name="adres" class="input-xlarge" />
+							</div>
+
+						</fieldset>
+
+						<fieldset class="control-group">
+
+							<label id="zipcode-label" class="control-label">Postcode:</label>
+
+							<div class="controls">
+								<input type="text" id="zipcode" name="postcode" class="input-xlarge" />
+							</div>
+
+						</fieldset>
+
+						<fieldset class="control-group">
+
+							<label id="city-label" class="control-label">Woonplaats:</label>
+
+							<div class="controls">
+								<input type="text" id="city" name="woonplaats" class="input-xlarge" />
+							</div>
+
+						</fieldset>
+
+						<fieldset class="control-group">
+
+							<label id="email-label" class="control-label">E-mailadres:</label>
+
+							<div class="controls">
+								<input type="text" id="email" name="email" class="input-xlarge" />
+							</div>
+
+						</fieldset>
+
+						<fieldset class="control-group">
+
+							<label id="phone-label" class="control-label">Telefoonnummer:</label>
+
+							<div class="controls">
+								<input type="text" id="phone" name="telefoon" class="input-xlarge" />
+							</div>
+
+						</fieldset>
+
+						<fieldset class="control-group">
+
+							<label id="phone-label" class="control-label">Bericht:</label>
+
+							<div class="controls">
+								<textarea id="bericht" name="bericht" style="width: 75%" rows="4"></textarea>
+							</div>
+
+						</fieldset>
+
+						<input type="button" onclick="javascript:validate_contact()" class="btn btn-primary btn-large pull-right" rel="Contactformulier versturen" value="Versturen" />
+
+						<div class="clearfix"></div>
+
+					</form>
+                </div>
+            </div>
+        </div>
+	</div>
+</div>
+
+{% endblock %}

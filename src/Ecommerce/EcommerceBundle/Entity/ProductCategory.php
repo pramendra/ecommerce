@@ -1,11 +1,11 @@
 <?php
 
-namespace Ecommerce\BiologischekaasBundle\Entity;
+namespace Ecommerce\EcommerceBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Ecommerce\BiologischekaasBundle\Entity\ProductCategory
+ * Ecommerce\EcommerceBundle\Entity\ProductCategory
  */
 class ProductCategory
 {
@@ -15,12 +15,12 @@ class ProductCategory
     protected $id;
 
     /**
-     * @var Ecommerce\BiologischekaasBundle\Entity\Subcategory
+     * @var Ecommerce\EcommerceBundle\Entity\Subcategory
      */
     protected $subcategory;
 
     /**
-     * @var Ecommerce\BiologischekaasBundle\Entity\Product
+     * @var Ecommerce\EcommerceBundle\Entity\Product
      */
     protected $product;
 
@@ -38,9 +38,9 @@ class ProductCategory
     /**
      * Set subcategory
      *
-     * @param Ecommerce\BiologischekaasBundle\Entity\Subcategory $subcategory
+     * @param Ecommerce\EcommerceBundle\Entity\Subcategory $subcategory
      */
-    public function setSubcategory(\Ecommerce\BiologischekaasBundle\Entity\Subcategory $subcategory)
+    public function setSubcategory(\Ecommerce\EcommerceBundle\Entity\Subcategory $subcategory)
     {
         $this->subcategory = $subcategory;
     }
@@ -48,7 +48,7 @@ class ProductCategory
     /**
      * Get subcategory
      *
-     * @return Ecommerce\BiologischekaasBundle\Entity\Subcategory 
+     * @return Ecommerce\EcommerceBundle\Entity\Subcategory 
      */
     public function getSubcategory()
     {
@@ -58,9 +58,9 @@ class ProductCategory
     /**
      * Set product
      *
-     * @param Ecommerce\BiologischekaasBundle\Entity\Product $product
+     * @param Ecommerce\EcommerceBundle\Entity\Product $product
      */
-    public function setProduct(\Ecommerce\BiologischekaasBundle\Entity\Product $product)
+    public function setProduct(\Ecommerce\EcommerceBundle\Entity\Product $product)
     {
         $this->product = $product;
     }
@@ -68,7 +68,7 @@ class ProductCategory
     /**
      * Get product
      *
-     * @return Ecommerce\BiologischekaasBundle\Entity\Product 
+     * @return Ecommerce\EcommerceBundle\Entity\Product 
      */
     public function getProduct()
     {

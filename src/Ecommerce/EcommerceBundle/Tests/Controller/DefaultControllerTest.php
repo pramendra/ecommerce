@@ -1,6 +1,6 @@
 <?php
 
-namespace Ecommerce\BiologischekaasBundle\Tests\Controller;
+namespace Ecommerce\EcommerceBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 

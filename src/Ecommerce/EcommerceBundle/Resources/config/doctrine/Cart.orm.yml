@@ -1,4 +1,4 @@
-Ecommerce\BiologischekaasBundle\Entity\Cart:
+Ecommerce\EcommerceBundle\Entity\Cart:
   type: entity
   table: cart
   fields:

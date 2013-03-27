@@ -1,0 +1,170 @@
+_root:
+    pattern:  /
+    defaults: { _controller: SGBundle:Default:index }
+
+_ajax:
+    pattern: /ajax
+    defaults: { _controller: SGBundle:Ajax:index }
+    
+_cart:
+    pattern:  /winkelmandje
+    defaults: { _controller: SGBundle:Cart:index }
+
+_sale:
+    pattern:  /sale
+    defaults: { _controller: SGBundle:Sale:index }
+    
+_account:
+    pattern:  /mijn-account
+    defaults: { _controller: SGBundle:Client:index }
+    
+_checkout:
+    pattern:  /afrekenen
+    defaults: { _controller: SGBundle:Cart:checkout }    
+    
+_cart_shipping:
+    pattern:  /afrekenen/bezorgwijze
+    defaults: { _controller: SGBundle:Cart:shipping }
+    
+_cart_paymethod:
+    pattern:  /afrekenen/betaalmethode
+    defaults: { _controller: SGBundle:Cart:payment }
+    
+_cart_overview:
+    pattern:  /afrekenen/overzicht
+    defaults: { _controller: SGBundle:Cart:overview }
+    
+_checkout_complete:
+    pattern:  /bestelling-geplaatst
+    defaults: { _controller: SGBundle:Cart:checkoutComplete }    
+    
+_checkout_cancel:
+    pattern:  /bestelling-geannuleerd
+    defaults: { _controller: SGBundle:Cart:checkoutCancel }    
+    
+_search:
+    pattern:  /zoeken
+    defaults: { _controller: SGBundle:Search:index }
+    
+_address:
+    pattern:  /client-address-lookup
+    defaults: { _controller: SGBundle:Client:addressLookup }
+    
+_set_product_filter:
+    pattern:  /set-product-filter
+    defaults: { _controller: SGBundle:Ajax:index }
+
+_twitter_oauth:
+    pattern:  /authorize-twitter
+    defaults: { _controller: SGBundle:Client:twitterOauth }  
+    
+_json_search:
+    pattern:  /json-search
+    defaults: { _controller: SGBundle:Search:json }
+    
+_notify:
+    pattern:  /notify
+    defaults: { _controller: SGBundle:Cart:notify }
+    
+_sitemap:
+    pattern:  /sitemap
+    defaults: { _controller: SGBundle:Page:sitemap }
+    
+_contact:
+    pattern:  /contact
+    defaults: { _controller: SGBundle:Page:contact }
+
+_betaalpagina_msp:
+    pattern:  /betaal-template-msp
+    defaults: { _controller: SGBundle:Cart:MSPPaymentPage }
+
+login:
+    pattern:   /login
+    defaults:  { _controller: SGBundle:Client:login }
+    
+login_check:
+    pattern:   /login_check
+    
+logout:
+    pattern:   /logout
+    
+_test:
+    pattern:  /test/email
+    defaults: { _controller: SGBundle:Test:email }    
+    
+_testmail:
+    pattern:  /test
+    defaults: { _controller: SGBundle:Test:index }    
+
+_oldcrap: 
+    pattern:  /index.php/catalogsearch/result/index/
+    defaults:
+        _controller: FrameworkBundle:Redirect:redirect
+        route: _root
+        permanent: true    
+
+_oldcrap2: 
+    pattern:  /index.php/catalogsearch/result/
+    defaults:
+        _controller: FrameworkBundle:Redirect:redirect
+        route: _root
+        permanent: true    
+
+_oldcrap3: 
+    pattern:  /index.php/{old}/{crap}/
+    defaults:
+        _controller: FrameworkBundle:Redirect:redirect
+        route: _root
+        permanent: true    
+
+_section:
+    pattern:  /{section}
+    defaults: { _controller: SGBundle:Section:index }
+
+_section_ws:
+    pattern:  /{section}/
+    defaults:
+        _controller: FrameworkBundle:Redirect:redirect
+        route: _section
+        permanent: true    
+
+_category:
+    pattern:  /{section}/{category}
+    defaults: { _controller: SGBundle:Category:index }
+
+_category_ws:
+    pattern:  /{section}/{category}/
+    defaults:
+        _controller: FrameworkBundle:Redirect:redirect
+        route: _category
+        permanent: true    
+
+_subcategory:
+    pattern:  /{section}/{category}/{subcategory}
+    defaults: { _controller: SGBundle:Category:Subcategory }  
+    
+_subcategory_ws:
+    pattern:  /{section}/{category}/{subcategory}
+    defaults:
+        _controller: FrameworkBundle:Redirect:redirect
+        route: _subcategory
+        permanent: true  
+    
+_product:
+    pattern:  /{section}/{category}/{subcategory}/{product}
+    defaults: { _controller: SGBundle:Product:view }    
+    
+
+_seo_page:
+    pattern:  /{permalink}
+    defaults: { _controller: SGBundle:Seo:view }    
+
+
+_page:
+    pattern:  /{permalink}
+    defaults: { _controller: SGBundle:Page:view }    
+
+_product_shortcut:
+    pattern:  /{product}
+    defaults: { _controller: SGBundle:Product:shortcut }   
+ 

@@ -1,11 +1,11 @@
 <?php
 
-namespace Ecommerce\BiologischekaasBundle\Entity;
+namespace Ecommerce\EcommerceBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Ecommerce\BiologischekaasBundle\Entity\Section
+ * Ecommerce\EcommerceBundle\Entity\Section
  */
 class Section
 {
@@ -25,7 +25,7 @@ class Section
     protected $permalink;
 
     /**
-     * @var Ecommerce\BiologischekaasBundle\Entity\Category
+     * @var Ecommerce\EcommerceBundle\Entity\Category
      */
     protected $categories;
     

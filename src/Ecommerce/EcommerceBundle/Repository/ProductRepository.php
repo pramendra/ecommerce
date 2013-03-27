@@ -1,17 +1,17 @@
 <?php
 
-namespace Ecommerce\BiologischekaasBundle\Repository;
+namespace Ecommerce\EcommerceBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
-use Ecommerce\BiologischekaasBundle\Entity\Subcategory;
-use Ecommerce\BiologischekaasBundle\Entity\Product;
-use Ecommerce\BiologischekaasBundle\Entity\ProductAttributes;
+use Ecommerce\EcommerceBundle\Entity\Subcategory;
+use Ecommerce\EcommerceBundle\Entity\Product;
+use Ecommerce\EcommerceBundle\Entity\ProductAttributes;
 
 class ProductRepository extends EntityRepository {
 
     public function getProductAttributes($products, $attribute) {
         $query = "SELECT pa
-        		FROM BiologischekaasBundle:ProductAttributes pa 
+        		FROM EcommerceBundle:ProductAttributes pa 
         		WHERE pa.product IN ( " . $products . " )
         		AND pa.attribute = '" . $attribute . "'
         		GROUP BY pa.attributeValue ";
@@ -117,7 +117,7 @@ class ProductRepository extends EntityRepository {
         return $qb->getQuery()->getResult();
     }
     
-    public function findLatestProductsBySection(\Ecommerce\BiologischekaasBundle\Entity\Section $section, $maxResults = 99999) { 
+    public function findLatestProductsBySection(\Ecommerce\EcommerceBundle\Entity\Section $section, $maxResults = 99999) { 
         
         $qb = $this->createQueryBuilder('p');
         
@@ -138,7 +138,7 @@ class ProductRepository extends EntityRepository {
         return $qb->getQuery()->getResult();
     }
     
-    public function findLatestProductsByCategory(\Ecommerce\BiologischekaasBundle\Entity\Category $category, $maxResults = 5) { 
+    public function findLatestProductsByCategory(\Ecommerce\EcommerceBundle\Entity\Category $category, $maxResults = 5) { 
         
         $qb = $this->createQueryBuilder('p');
                 
@@ -158,7 +158,7 @@ class ProductRepository extends EntityRepository {
         return $qb->getQuery()->getResult();
     }
     
-    public function findAllProductsByCategory(\Ecommerce\BiologischekaasBundle\Entity\Category $category) { 
+    public function findAllProductsByCategory(\Ecommerce\EcommerceBundle\Entity\Category $category) { 
         
         $qb = $this->createQueryBuilder('p');
                 

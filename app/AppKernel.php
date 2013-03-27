@@ -19,9 +19,11 @@ class AppKernel extends Kernel
             new JMS\AopBundle\JMSAopBundle(),
             new JMS\DiExtraBundle\JMSDiExtraBundle($this),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
-            //new Ecommerce\AddictedtovintageBundle\AddictedtovintageBundle(),
-            new Ecommerce\BiologischekaasBundle\BiologischekaasBundle(),
+            new Ecommerce\EcommerceBundle\EcommerceBundle(),
             new Ecommerce\AdminBundle\AdminBundle(),
+            new Ecommerce\AVBundle\AVBundle(),
+            new Ecommerce\BKBundle\BKBundle(),
+            new Ecommerce\SGBundle\SGBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

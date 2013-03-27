@@ -1,6 +1,6 @@
 <?php
 
-namespace Ecommerce\BiologischekaasBundle\Repository;
+namespace Ecommerce\EcommerceBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
 
@@ -22,7 +22,7 @@ class CategoryRepository extends EntityRepository {
         return $attribute_values;
     }
     
-     public function getQueryBuilderSubcategoryCategory(\Ecommerce\BiologischekaasBundle\Entity\Subcategory $subcategory) {
+     public function getQueryBuilderSubcategoryCategory(\Ecommerce\EcommerceBundle\Entity\Subcategory $subcategory) {
 
         $qb = $this->createQueryBuilder('p');
         $qb->groupBy('p.id');

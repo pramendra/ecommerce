@@ -1,0 +1,107 @@
+{% include 'SGBundle:Email:html-header.html.twig' %}
+
+<p>Beste {{ order.client.name }},</p>
+
+<p>Bedankt voor je bestelling bij AddictedToVintage. <br />Hieronder vindt je de gegevens van je bestelling.</p>
+
+<table width="100%" cellpadding="2" cellspacing="1" class="table">
+
+    <thead>
+        <tr>
+            <th width="50%"></th>
+            <th width="50%"></th>
+        </tr>
+    </thead>
+
+    <tbody>
+	<tr>
+	    <td style="border-bottom: 1px solid #eee;"><strong>Ordernummer:</strong></td>
+	    <td style="border-bottom: 1px solid #eee;">{{ order.orderNr }}</td>
+	</tr>
+	<tr>
+	    <td style="border-bottom: 1px solid #eee;"><strong>Betaalmethode:</strong></td>
+	    <td style="border-bottom: 1px solid #eee;">{{ order.paymethod.title }}</td>
+	</tr>
+	<tr>
+	    <td style="border-bottom: 1px solid #eee;"><strong>Verzendmethode:</strong></td>
+	    <td style="border-bottom: 1px solid #eee;">{{ order.shipping.name }}</td>
+	</tr>
+	<tr>
+	    <td style="border-bottom: 1px solid #eee;"><strong>Verwachte ontvangstdatum:</strong></td>
+	    <td style="border-bottom: 1px solid #eee;">{{ order.shippingdate|date('d-m-Y') }}</td>
+	</tr>
+    </tbody>
+</table>
+
+
+<h4 style="font-size: 16px;">Overzicht van je bestelling</h4>
+
+<table width="100%" cellpadding="2" cellspacing="1" class="table table-striped cart">
+
+    <thead>
+        <tr>
+            <th width="70%"></th>
+            <th width="30%"></th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        {% for item in order.products %}
+
+        {% set productTotal = item.amount * item.price %}
+        
+        <tr>
+            <td style="border-bottom: 1px solid #ddd;">{{ item.amount }} x {{ item.product.name }}</td>
+            <td style="border-bottom: 1px solid #ddd;" align="right">&euro; {{ productTotal|number_format(2, ',', '.') }}</td>
+        </tr>
+
+        {% endfor %}
+
+        <tr>
+            <td style="border-bottom: 1px solid #ddd;">Verzendkosten:</td>
+            <td style="border-bottom: 1px solid #ddd;" align="right">&euro; {{ order.shipping.costs|number_format(2, ',', '.') }}</td>
+        </tr>
+
+        <tr>
+            <td style="border-bottom: 1px solid #ddd;"><strong>Totaalbedrag:</strong></td>
+            <td style="border-bottom: 1px solid #ddd;" align="right"><strong>&euro; {{ order.total|number_format(2, ',', '.') }}</strong></td>
+        </tr>
+    </tbody>
+
+</table>
+
+{% if order.paymethod.id == 13 %}
+<div style="background: #eee; padding: 10px; margin: 10px 0px;">
+    <p>
+	<strong>Let op:</strong> 
+	Je bestelling wordt pas verzonden wanneer deze is betaald onder vermelding van je ordernummer <strong>{{ order.orderNr }}</strong>. 
+	<br /> <br /> 
+
+	<strong>Betaalgegevens:</strong> <br /> 
+
+	Bankrekening: 57.02.31.426<br />
+	Ter name van: A.Tichelaar te Leeuwarden<br /> 
+	IBAN: NL50ABNA0570231426<br />
+	BIC: ABNANL2A<br />
+	Bank:ABN AMRO
+    </p>
+</div>
+{% endif %}
+
+<hr style="border-bottom: 1px solid #ddd; border-top: 0px; border-right: 0px; border-left: 0px;" />
+
+<p>
+    Met vriendelijke groet, <br />
+    Addictedtovintage.nl<br /><br />
+    
+    <small>
+    Verstolkstraat 28<br />
+    8933DZ Leeuwarden<br />
+    info@addictedtovintage.nl<br />
+    KVK: 50787098
+    </small>
+    
+</p>    
+
+{% include 'SGBundle:Email:html-footer.html.twig' %}

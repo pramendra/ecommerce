@@ -1,7 +1,7 @@
-{% extends 'BiologischekaasBundle::layout.html.twig' %}
+{% extends 'EcommerceBundle::layout.html.twig' %}
 
 {% block banner %}
-    {% include 'BiologischekaasBundle:Banner:index.html.twig' %}
+    {% include 'EcommerceBundle:Banner:index.html.twig' %}
 {% endblock %}
 
 {% block canonical %}
@@ -69,7 +69,7 @@
                     {% set category = subcategory.categories[0] %}
 
                     <li class="span4">
-                        {% include 'BiologischekaasBundle:Category:product.html.twig' with {'product': product} %}
+                        {% include 'EcommerceBundle:Category:product.html.twig' with {'product': product} %}
                     </li>
 
                     {% if x == 3 %} 

@@ -1,12 +1,12 @@
 <?php
 
-namespace Ecommerce\BiologischekaasBundle\Repository;
+namespace Ecommerce\EcommerceBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
 
 class SubcategoryRepository extends EntityRepository {
 
-    public function getActiveSubcategoriesByCategory(\Ecommerce\BiologischekaasBundle\Entity\Category $category) {
+    public function getActiveSubcategoriesByCategory(\Ecommerce\EcommerceBundle\Entity\Category $category) {
         
         $qb = $this->createQueryBuilder('sc');
 
@@ -19,7 +19,7 @@ class SubcategoryRepository extends EntityRepository {
         return $qb->getQuery()->getResult();
     }
 
-    public function getQueryBuilderProductSubcategories(\Ecommerce\BiologischekaasBundle\Entity\Product $product) {
+    public function getQueryBuilderProductSubcategories(\Ecommerce\EcommerceBundle\Entity\Product $product) {
 
         $qb = $this->createQueryBuilder('p');
         $qb->groupBy('p.id');

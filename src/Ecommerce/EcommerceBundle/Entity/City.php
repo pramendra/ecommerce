@@ -1,11 +1,11 @@
 <?php
 
-namespace Ecommerce\BiologischekaasBundle\Entity;
+namespace Ecommerce\EcommerceBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Ecommerce\BiologischekaasBundle\Entity\City
+ * Ecommerce\EcommerceBundle\Entity\City
  */
 class City
 {
@@ -50,17 +50,17 @@ class City
     protected $areacode;
 
     /**
-     * @var Ecommerce\BiologischekaasBundle\Entity\City
+     * @var Ecommerce\EcommerceBundle\Entity\City
      */
     protected $municipality;
 
     /**
-     * @var Ecommerce\BiologischekaasBundle\Entity\Province
+     * @var Ecommerce\EcommerceBundle\Entity\Province
      */
     protected $province;
 
     /**
-     * @var Ecommerce\BiologischekaasBundle\Entity\Source
+     * @var Ecommerce\EcommerceBundle\Entity\Source
      */
     protected $source;
 
@@ -218,9 +218,9 @@ class City
     /**
      * Set municipality
      *
-     * @param Ecommerce\BiologischekaasBundle\Entity\City $municipality
+     * @param Ecommerce\EcommerceBundle\Entity\City $municipality
      */
-    public function setMunicipality(\Ecommerce\BiologischekaasBundle\Entity\City $municipality)
+    public function setMunicipality(\Ecommerce\EcommerceBundle\Entity\City $municipality)
     {
         $this->municipality = $municipality;
     }
@@ -228,7 +228,7 @@ class City
     /**
      * Get municipality
      *
-     * @return Ecommerce\BiologischekaasBundle\Entity\City 
+     * @return Ecommerce\EcommerceBundle\Entity\City 
      */
     public function getMunicipality()
     {
@@ -238,9 +238,9 @@ class City
     /**
      * Set province
      *
-     * @param Ecommerce\BiologischekaasBundle\Entity\Province $province
+     * @param Ecommerce\EcommerceBundle\Entity\Province $province
      */
-    public function setProvince(\Ecommerce\BiologischekaasBundle\Entity\Province $province)
+    public function setProvince(\Ecommerce\EcommerceBundle\Entity\Province $province)
     {
         $this->province = $province;
     }
@@ -248,7 +248,7 @@ class City
     /**
      * Get province
      *
-     * @return Ecommerce\BiologischekaasBundle\Entity\Province 
+     * @return Ecommerce\EcommerceBundle\Entity\Province 
      */
     public function getProvince()
     {
@@ -258,9 +258,9 @@ class City
     /**
      * Set source
      *
-     * @param Ecommerce\BiologischekaasBundle\Entity\Source $source
+     * @param Ecommerce\EcommerceBundle\Entity\Source $source
      */
-    public function setSource(\Ecommerce\BiologischekaasBundle\Entity\Source $source)
+    public function setSource(\Ecommerce\EcommerceBundle\Entity\Source $source)
     {
         $this->source = $source;
     }
@@ -268,7 +268,7 @@ class City
     /**
      * Get source
      *
-     * @return Ecommerce\BiologischekaasBundle\Entity\Source 
+     * @return Ecommerce\EcommerceBundle\Entity\Source 
      */
     public function getSource()
     {

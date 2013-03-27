@@ -1,11 +1,11 @@
 <?php
 
-namespace Ecommerce\BiologischekaasBundle\Entity;
+namespace Ecommerce\EcommerceBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Ecommerce\BiologischekaasBundle\Entity\SubcategoryCategory
+ * Ecommerce\EcommerceBundle\Entity\SubcategoryCategory
  */
 class SubcategoryCategory
 {
@@ -15,12 +15,12 @@ class SubcategoryCategory
     protected $id;
 
     /**
-     * @var Ecommerce\BiologischekaasBundle\Entity\Subcategory
+     * @var Ecommerce\EcommerceBundle\Entity\Subcategory
      */
     protected $subcategory;
 
     /**
-     * @var Ecommerce\BiologischekaasBundle\Entity\Category
+     * @var Ecommerce\EcommerceBundle\Entity\Category
      */
     protected $category;
 
@@ -38,9 +38,9 @@ class SubcategoryCategory
     /**
      * Set subcategory
      *
-     * @param Ecommerce\BiologischekaasBundle\Entity\Subcategory $subcategory
+     * @param Ecommerce\EcommerceBundle\Entity\Subcategory $subcategory
      */
-    public function setSubcategory(\Ecommerce\BiologischekaasBundle\Entity\Subcategory $subcategory)
+    public function setSubcategory(\Ecommerce\EcommerceBundle\Entity\Subcategory $subcategory)
     {
         $this->subcategory = $subcategory;
     }
@@ -48,7 +48,7 @@ class SubcategoryCategory
     /**
      * Get subcategory
      *
-     * @return Ecommerce\BiologischekaasBundle\Entity\Subcategory 
+     * @return Ecommerce\EcommerceBundle\Entity\Subcategory 
      */
     public function getSubcategory()
     {
@@ -58,9 +58,9 @@ class SubcategoryCategory
     /**
      * Set category
      *
-     * @param Ecommerce\BiologischekaasBundle\Entity\Category $category
+     * @param Ecommerce\EcommerceBundle\Entity\Category $category
      */
-    public function setCategory(\Ecommerce\BiologischekaasBundle\Entity\Category $category)
+    public function setCategory(\Ecommerce\EcommerceBundle\Entity\Category $category)
     {
         $this->category = $category;
     }
@@ -68,7 +68,7 @@ class SubcategoryCategory
     /**
      * Get category
      *
-     * @return Ecommerce\BiologischekaasBundle\Entity\Category 
+     * @return Ecommerce\EcommerceBundle\Entity\Category 
      */
     public function getCategory()
     {

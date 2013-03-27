@@ -1,4 +1,4 @@
-Ecommerce\BiologischekaasBundle\Entity\Street:
+Ecommerce\EcommerceBundle\Entity\Street:
   type: entity
   table: street
   fields:

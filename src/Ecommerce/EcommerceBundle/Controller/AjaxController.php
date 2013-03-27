@@ -1,13 +1,13 @@
 <?php
 
-namespace Ecommerce\BiologischekaasBundle\Controller;
+namespace Ecommerce\EcommerceBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Ecommerce\BiologischekaasBundle\Entity\Product;
-use Ecommerce\BiologischekaasBundle\Entity\Cart;
-use Ecommerce\BiologischekaasBundle\Entity\CartProducts;
-use Ecommerce\BiologischekaasBundle\ProductFilter\ProductFilter;
+use Ecommerce\EcommerceBundle\Entity\Product;
+use Ecommerce\EcommerceBundle\Entity\Cart;
+use Ecommerce\EcommerceBundle\Entity\CartProducts;
+use Ecommerce\EcommerceBundle\ProductFilter\ProductFilter;
 
 class AjaxController extends Controller {
 
@@ -80,7 +80,7 @@ class AjaxController extends Controller {
 
         $shopManager = $this->get('ShopManager');
         
-        $product = $this->getDoctrine()->getRepository('BiologischekaasBundle:Product')->find($this->getRequest()->get('product'));
+        $product = $this->getDoctrine()->getRepository('EcommerceBundle:Product')->find($this->getRequest()->get('product'));
         
         $shopManager->removeProductFromCart($product);
         
@@ -97,7 +97,7 @@ class AjaxController extends Controller {
         $amount = $this->get('request')->request->get('amount');
 
         $product = $this->getDoctrine()
-                ->getRepository('BiologischekaasBundle:Product')
+                ->getRepository('EcommerceBundle:Product')
                 ->findOneById($product_id);
 
         $shopManager = $this->get('ShopManager');
@@ -116,7 +116,7 @@ class AjaxController extends Controller {
         $product_id = $this->get('request')->request->get('product');
 
         $product = $this->getDoctrine()
-                ->getRepository('BiologischekaasBundle:Product')
+                ->getRepository('EcommerceBundle:Product')
                 ->findOneById($product_id);
 
         $shopManager = $this->get('ShopManager');
@@ -185,7 +185,7 @@ class AjaxController extends Controller {
         $result = '';
         
         $attribute_id = $this->get('request')->request->get('attribute');
-        $attribute = $this->getDoctrine()->getRepository('BiologischekaasBundle:Attribute')->find($attribute_id);
+        $attribute = $this->getDoctrine()->getRepository('EcommerceBundle:Attribute')->find($attribute_id);
 
         $attribute_value = $this->get('request')->request->get('attribute_value');
 

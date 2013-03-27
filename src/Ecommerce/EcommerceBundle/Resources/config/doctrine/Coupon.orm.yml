@@ -1,4 +1,4 @@
-Ecommerce\BiologischekaasBundle\Entity\Coupon:
+Ecommerce\EcommerceBundle\Entity\Coupon:
   type: entity
   table: coupon
   fields:

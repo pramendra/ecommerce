@@ -1,11 +1,11 @@
 <?php
 
-namespace Ecommerce\BiologischekaasBundle\Entity;
+namespace Ecommerce\EcommerceBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Ecommerce\BiologischekaasBundle\Entity\Province
+ * Ecommerce\EcommerceBundle\Entity\Province
  */
 class Province
 {
@@ -45,12 +45,12 @@ class Province
     protected $lng;
 
     /**
-     * @var Ecommerce\BiologischekaasBundle\Entity\Country
+     * @var Ecommerce\EcommerceBundle\Entity\Country
      */
     protected $country;
 
     /**
-     * @var Ecommerce\BiologischekaasBundle\Entity\Source
+     * @var Ecommerce\EcommerceBundle\Entity\Source
      */
     protected $source;
 
@@ -188,9 +188,9 @@ class Province
     /**
      * Set country
      *
-     * @param Ecommerce\BiologischekaasBundle\Entity\Country $country
+     * @param Ecommerce\EcommerceBundle\Entity\Country $country
      */
-    public function setCountry(\Ecommerce\BiologischekaasBundle\Entity\Country $country)
+    public function setCountry(\Ecommerce\EcommerceBundle\Entity\Country $country)
     {
         $this->country = $country;
     }
@@ -198,7 +198,7 @@ class Province
     /**
      * Get country
      *
-     * @return Ecommerce\BiologischekaasBundle\Entity\Country 
+     * @return Ecommerce\EcommerceBundle\Entity\Country 
      */
     public function getCountry()
     {
@@ -208,9 +208,9 @@ class Province
     /**
      * Set source
      *
-     * @param Ecommerce\BiologischekaasBundle\Entity\Source $source
+     * @param Ecommerce\EcommerceBundle\Entity\Source $source
      */
-    public function setSource(\Ecommerce\BiologischekaasBundle\Entity\Source $source)
+    public function setSource(\Ecommerce\EcommerceBundle\Entity\Source $source)
     {
         $this->source = $source;
     }
@@ -218,7 +218,7 @@ class Province
     /**
      * Get source
      *
-     * @return Ecommerce\BiologischekaasBundle\Entity\Source 
+     * @return Ecommerce\EcommerceBundle\Entity\Source 
      */
     public function getSource()
     {

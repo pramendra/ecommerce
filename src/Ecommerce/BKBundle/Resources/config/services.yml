@@ -1,0 +1,36 @@
+parameters:
+#    ecommerce.example.class: Ecommerce\BKBundle\Example
+
+services:
+    PageManager:
+        class:     Ecommerce\BKBundle\PageManager\PageManager
+        calls:
+            - [setContainer, ["@service_container"]]
+    ShopManager:
+        class:     Ecommerce\BKBundle\ShopManager\ShopManager
+        calls:
+            - [setContainer, ["@service_container"]]
+            - [initialize, []]
+    ProductFilter:
+        class:     Ecommerce\BKBundle\ProductFilter\ProductFilter
+        calls:
+            - [setContainer, ["@service_container"]]
+            - [initialize, []]
+    adtv.twig.extension:
+        class: Ecommerce\BKBundle\Twig\Extension\FirstImageTwigExtension
+        tags:
+            - { name: twig.extension }            
+            
+    adtv.twig.extension2:
+        class: Ecommerce\BKBundle\Twig\Extension\PaginateTwigExtension
+        tags:
+            - { name: twig.extension }            
+            
+    adtv.twig.extension3:
+        class: Ecommerce\BKBundle\Twig\Extension\DayConvertTwigExtension
+        tags:
+            - { name: twig.extension }            
+            
+#    ecommerce.example:
+#        class: %ecommerce.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

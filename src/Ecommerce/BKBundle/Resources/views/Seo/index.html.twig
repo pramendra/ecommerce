@@ -1,0 +1,61 @@
+{% extends 'BKBundle::layout.html.twig' %}
+
+{% block sidebar %}
+{{ parent() }}
+{% endblock %}
+
+{% block content %}
+<div class="span9">
+    <div class="category">
+      
+        <h1>{{ page.pagetitle }}<span class="product_count">( {{ products|length }} producten )</span></h1>
+        
+        <div itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="breadcrumb">
+            <a href="{{ url('_root') }}" itemprop="url" title="Addictedtovintage">
+                <span itemprop="title">Addictedtovintage</span>
+            </a> &rsaquo;
+
+            <div itemprop="child" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+                <a href="{{ url('_seo_page', { 'permalink' : page.permalink }) }}" itemprop="url" title="{{ page.pagetitle }}">
+                    <span itemprop="title">{{ page.pagetitle }}</span>
+                </a> 
+            </div>
+        </div>
+        
+        <hr />
+        
+        {{ page.content|raw }}
+        
+        <div class="row-fluid">
+
+            <ul class="category_products unstyled span12">
+                
+                {% set x = 1 %}
+                
+                {% for product in products %}
+                
+                    <li class="span4">
+                        {% include 'BKBundle:Search:product.html.twig' with {'product': product} %}
+                    </li>
+                    
+                    {% if x == 3 %} 
+                    
+                        {% set x = 0 %}
+                    
+                        </ul>
+                        </div>
+                        <div class="row-fluid">
+                            <ul class="category_products unstyled span12">
+                    
+                    {% endif %}
+                    
+                    {% set x = x + 1 %}
+                    
+                {% endfor %}
+            </ul>
+
+        </div>
+        
+    </div>
+</div>
+{% endblock %}

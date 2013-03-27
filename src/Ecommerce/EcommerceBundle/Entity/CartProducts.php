@@ -1,11 +1,11 @@
 <?php
 
-namespace Ecommerce\BiologischekaasBundle\Entity;
+namespace Ecommerce\EcommerceBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Ecommerce\BiologischekaasBundle\Entity\CartProducts
+ * Ecommerce\EcommerceBundle\Entity\CartProducts
  */
 class CartProducts
 {
@@ -35,12 +35,12 @@ class CartProducts
     protected $createdAt;
 
     /**
-     * @var Ecommerce\BiologischekaasBundle\Entity\Product
+     * @var Ecommerce\EcommerceBundle\Entity\Product
      */
     protected $product;
 
     /**
-     * @var Ecommerce\BiologischekaasBundle\Entity\Cart
+     * @var Ecommerce\EcommerceBundle\Entity\Cart
      */
     protected $cart;
 
@@ -138,9 +138,9 @@ class CartProducts
     /**
      * Set product
      *
-     * @param Ecommerce\BiologischekaasBundle\Entity\Product $product
+     * @param Ecommerce\EcommerceBundle\Entity\Product $product
      */
-    public function setProduct(\Ecommerce\BiologischekaasBundle\Entity\Product $product)
+    public function setProduct(\Ecommerce\EcommerceBundle\Entity\Product $product)
     {
         $this->product = $product;
     }
@@ -148,7 +148,7 @@ class CartProducts
     /**
      * Get product
      *
-     * @return Ecommerce\BiologischekaasBundle\Entity\Product 
+     * @return Ecommerce\EcommerceBundle\Entity\Product 
      */
     public function getProduct()
     {
@@ -158,9 +158,9 @@ class CartProducts
     /**
      * Set cart
      *
-     * @param Ecommerce\BiologischekaasBundle\Entity\Cart $cart
+     * @param Ecommerce\EcommerceBundle\Entity\Cart $cart
      */
-    public function setCart(\Ecommerce\BiologischekaasBundle\Entity\Cart $cart)
+    public function setCart(\Ecommerce\EcommerceBundle\Entity\Cart $cart)
     {
         $this->cart = $cart;
     }
@@ -168,7 +168,7 @@ class CartProducts
     /**
      * Get cart
      *
-     * @return Ecommerce\BiologischekaasBundle\Entity\Cart 
+     * @return Ecommerce\EcommerceBundle\Entity\Cart 
      */
     public function getCart()
     {

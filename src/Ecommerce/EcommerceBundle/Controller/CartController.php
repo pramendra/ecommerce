@@ -1,15 +1,15 @@
 <?php
 
-namespace Ecommerce\BiologischekaasBundle\Controller;
+namespace Ecommerce\EcommerceBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use BiologischekaasBundle\Entity\Product;
-use Ecommerce\BiologischekaasBundle\MultiSafePay\MultiSafePay;
+use EcommerceBundle\Entity\Product;
+use Ecommerce\EcommerceBundle\MultiSafePay\MultiSafePay;
 use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
 
-define('BASE_URL', 'http://www.addictedtovintage.nl');
+define('BASE_URL_ECOM', 'http://www.addictedtovintage.nl');
 
 class CartController extends Controller {
 
@@ -21,7 +21,7 @@ class CartController extends Controller {
             $test = true;
         }
 
-        return $this->render('BiologischekaasBundle:MSP:betalen.html.twig', array('test' => $test));
+        return $this->render('EcommerceBundle:MSP:betalen.html.twig', array('test' => $test));
     }
 
     public function indexAction() {
@@ -57,9 +57,9 @@ class CartController extends Controller {
         }
         
         /* Fetch active shipping methods */
-        $shippings = $this->getDoctrine()->getRepository('BiologischekaasBundle:Shipping')->findBy(array('shippingType' => $shippingType, 'active' => 1));
+        $shippings = $this->getDoctrine()->getRepository('EcommerceBundle:Shipping')->findBy(array('shippingType' => $shippingType, 'active' => 1));
         
-        return $this->render('BiologischekaasBundle:Cart:index.html.twig', array('cart' => $cart, 'discount' => $discount, 'shippings' => $shippings, 'coupon' => $coupon));
+        return $this->render('EcommerceBundle:Cart:index.html.twig', array('cart' => $cart, 'discount' => $discount, 'shippings' => $shippings, 'coupon' => $coupon));
     }
 
     public function shippingAction() {
@@ -82,13 +82,13 @@ class CartController extends Controller {
         }
         
         /* Fetch active shipping methods */
-        $shippings = $this->getDoctrine()->getRepository('BiologischekaasBundle:Shipping')->findBy(array('shippingType' => $cart->getShipping()->getShippingType(), 'active' => 1));
+        $shippings = $this->getDoctrine()->getRepository('EcommerceBundle:Shipping')->findBy(array('shippingType' => $cart->getShipping()->getShippingType(), 'active' => 1));
 
         $next_delivery_date = $this->getNextDeliveryDate();
         
         $next_delivery_date_range = $this->getNextDeliveryDateRange();
         
-        return $this->render('BiologischekaasBundle:Checkout:shipping.html.twig', array('cart' => $cart, 'next_delivery_date' => $next_delivery_date, 'client' => $client, 'shippings' => $shippings, 'next_delivery_date_range' => $next_delivery_date_range));
+        return $this->render('EcommerceBundle:Checkout:shipping.html.twig', array('cart' => $cart, 'next_delivery_date' => $next_delivery_date, 'client' => $client, 'shippings' => $shippings, 'next_delivery_date_range' => $next_delivery_date_range));
     }
 
     public function paymentAction() {
@@ -111,7 +111,7 @@ class CartController extends Controller {
             $shopManager->setClientShipping($this->getRequest());
         }
         
-        $paymethods = $this->getDoctrine()->getRepository('BiologischekaasBundle:Paymethod')->findBy(array('isActive' => 1));
+        $paymethods = $this->getDoctrine()->getRepository('EcommerceBundle:Paymethod')->findBy(array('isActive' => 1));
         
         /* Fetch discount */
         $discount = $shopManager->getDiscount();
@@ -122,7 +122,7 @@ class CartController extends Controller {
             $discount = number_format($discount, 2, ',', '.');
         }
         
-        return $this->render('BiologischekaasBundle:Checkout:payment.html.twig', array('cart' => $cart, 'paymethods' => $paymethods, 'discount' => $discount));
+        return $this->render('EcommerceBundle:Checkout:payment.html.twig', array('cart' => $cart, 'paymethods' => $paymethods, 'discount' => $discount));
     }
 
     public function overviewAction() {
@@ -159,7 +159,7 @@ class CartController extends Controller {
         
         $paymethod = $shopManager->getPaymethod();
         
-        return $this->render('BiologischekaasBundle:Checkout:overview.html.twig', array('cart' => $cart, 'next_delivery_date' => $next_delivery_date, 'client' => $client, 'discount' => $discount, 'paymethod' => $paymethod));
+        return $this->render('EcommerceBundle:Checkout:overview.html.twig', array('cart' => $cart, 'next_delivery_date' => $next_delivery_date, 'client' => $client, 'discount' => $discount, 'paymethod' => $paymethod));
     }
 
     public function checkoutAction() {
@@ -184,11 +184,11 @@ class CartController extends Controller {
             $msp->test = false;            
         }
         
-        $msp->merchant['notification_url'] = ltrim(BASE_URL, '/') . $this->generateUrl('_notify') . '?type=initial';
-        $msp->merchant['cancel_url'] = ltrim(BASE_URL, '/') . $this->generateUrl('_checkout_cancel');
+        $msp->merchant['notification_url'] = ltrim(BASE_URL_ECOM, '/') . $this->generateUrl('_notify') . '?type=initial';
+        $msp->merchant['cancel_url'] = ltrim(BASE_URL_ECOM, '/') . $this->generateUrl('_checkout_cancel');
 
         // optional automatic redirect back to the shop:
-        $msp->merchant['redirect_url'] = ltrim(BASE_URL, '/') . $this->generateUrl('_checkout_complete');
+        $msp->merchant['redirect_url'] = ltrim(BASE_URL_ECOM, '/') . $this->generateUrl('_checkout_complete');
 
 
         if ($this->getRequest()->getMethod() === 'POST') {
@@ -208,8 +208,8 @@ class CartController extends Controller {
                     ->setSubject('Bevestiging van je bestelling!')
                     ->setFrom('info@addictedToVintage.nl')
                     ->setTo($client->getEmail())
-                    ->addPart($this->renderView('BiologischekaasBundle:Email:order.txt.twig', array('order' => $order, 'products' => $products, 'client' => $client)))
-                    ->setBody($this->renderView('BiologischekaasBundle:Email:order.html.twig', array('order' => $order, 'products' => $products, 'client' => $client)), 'text/html')
+                    ->addPart($this->renderView('EcommerceBundle:Email:order.txt.twig', array('order' => $order, 'products' => $products, 'client' => $client)))
+                    ->setBody($this->renderView('EcommerceBundle:Email:order.html.twig', array('order' => $order, 'products' => $products, 'client' => $client)), 'text/html')
             ;
 
             $this->get('mailer')->send($message);
@@ -219,8 +219,8 @@ class CartController extends Controller {
                     ->setSubject('Nieuwe bestelling: ' . $order->getOrderNr() . '')
                     ->setFrom('info@addictedToVintage.nl')
                     ->setTo('info@addictedToVintage.nl')
-                    ->addPart($this->renderView('BiologischekaasBundle:Email:order.txt.twig', array('order' => $order, 'products' => $products, 'client' => $client)))
-                    ->setBody($this->renderView('BiologischekaasBundle:Email:order.html.twig', array('order' => $order, 'products' => $products, 'client' => $client)), 'text/html')
+                    ->addPart($this->renderView('EcommerceBundle:Email:order.txt.twig', array('order' => $order, 'products' => $products, 'client' => $client)))
+                    ->setBody($this->renderView('EcommerceBundle:Email:order.html.twig', array('order' => $order, 'products' => $products, 'client' => $client)), 'text/html')
             ;
 
             $this->get('mailer')->send($message);
@@ -228,11 +228,11 @@ class CartController extends Controller {
             
             $em = $this->getDoctrine()->getEntityManager();
             
-            $client = $this->getDoctrine()->getRepository('BiologischekaasBundle:Client')->find($client);
+            $client = $this->getDoctrine()->getRepository('EcommerceBundle:Client')->find($client);
             
-            $email = new \Ecommerce\BiologischekaasBundle\Entity\Email();
+            $email = new \Ecommerce\EcommerceBundle\Entity\Email();
             $email->setClient($client);
-            $email->setContent($this->renderView('BiologischekaasBundle:Email:order.html.twig', array('order' => $order, 'products' => $products, 'client' => $client)));
+            $email->setContent($this->renderView('EcommerceBundle:Email:order.html.twig', array('order' => $order, 'products' => $products, 'client' => $client)));
             $email->setCreatedAt(new \DateTime());
             $email->setSubject('Bevestiging van je bestelling! ');
             
@@ -311,12 +311,12 @@ class CartController extends Controller {
             return $this->redirect($this->generateUrl('_root'));
         }
 
-        return $this->render('BiologischekaasBundle:Checkout:index.html.twig', array('cart' => $cart));
+        return $this->render('EcommerceBundle:Checkout:index.html.twig', array('cart' => $cart));
     }
 
     public function checkoutCompleteAction() {
 
-        $order = $this->getDoctrine()->getRepository('BiologischekaasBundle:Orders')->findOneBy(array('ordernr' => $this->getRequest()->get('transactionid')));
+        $order = $this->getDoctrine()->getRepository('EcommerceBundle:Orders')->findOneBy(array('ordernr' => $this->getRequest()->get('transactionid')));
 
         $shopManager = $this->get('ShopManager');
         
@@ -330,7 +330,7 @@ class CartController extends Controller {
         
         $shopManager->clear();
         
-        return $this->render('BiologischekaasBundle:Checkout:success.html.twig', array('order' => $order));
+        return $this->render('EcommerceBundle:Checkout:success.html.twig', array('order' => $order));
     }
 
     public function checkoutCancelAction() {
@@ -340,7 +340,7 @@ class CartController extends Controller {
         $order = $shopManager->getOrder();
         
 
-        return $this->render('BiologischekaasBundle:Checkout:cancel.html.twig', array('order' => $order));
+        return $this->render('EcommerceBundle:Checkout:cancel.html.twig', array('order' => $order));
     }
 
     public function notifyAction($transactionid = false) {
@@ -375,7 +375,7 @@ class CartController extends Controller {
         // returns the status
         $status = $msp->getStatus();
         
-        $order = $this->getDoctrine()->getRepository('BiologischekaasBundle:Orders')->findOneBy(array('ordernr' => $transactionid));
+        $order = $this->getDoctrine()->getRepository('EcommerceBundle:Orders')->findOneBy(array('ordernr' => $transactionid));
 
         if ($order == null) {
             $shopManager = $this->get('ShopManager');

@@ -1,11 +1,11 @@
 <?php
 
-namespace Ecommerce\BiologischekaasBundle\Entity;
+namespace Ecommerce\EcommerceBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Ecommerce\BiologischekaasBundle\Entity\Cart
+ * Ecommerce\EcommerceBundle\Entity\Cart
  */
 class Cart {
 
@@ -45,22 +45,22 @@ class Cart {
     protected $createdAt;
 
     /**
-     * @var Ecommerce\BiologischekaasBundle\Entity\Shipping
+     * @var Ecommerce\EcommerceBundle\Entity\Shipping
      */
     protected $shipping;
 
     /**
-     * @var Ecommerce\BiologischekaasBundle\Entity\Client
+     * @var Ecommerce\EcommerceBundle\Entity\Client
      */
     protected $client;
 
     /**
-     * @var Ecommerce\BiologischekaasBundle\Entity\CartProducts
+     * @var Ecommerce\EcommerceBundle\Entity\CartProducts
      */
     protected $products;
 
     /**
-     * @var Ecommerce\BiologischekaasBundle\Entity\Coupon
+     * @var Ecommerce\EcommerceBundle\Entity\Coupon
      */
     protected $coupon;
     
@@ -190,16 +190,16 @@ class Cart {
     /**
      * Set shipping
      *
-     * @param Ecommerce\BiologischekaasBundle\Entity\Shipping $shipping
+     * @param Ecommerce\EcommerceBundle\Entity\Shipping $shipping
      */
-    public function setShipping(\Ecommerce\BiologischekaasBundle\Entity\Shipping $shipping) {
+    public function setShipping(\Ecommerce\EcommerceBundle\Entity\Shipping $shipping) {
         $this->shipping = $shipping;
     }
 
     /**
      * Get shipping
      *
-     * @return Ecommerce\BiologischekaasBundle\Entity\Shipping 
+     * @return Ecommerce\EcommerceBundle\Entity\Shipping 
      */
     public function getShipping() {
         return $this->shipping;
@@ -208,16 +208,16 @@ class Cart {
     /**
      * Set coupon
      *
-     * @param Ecommerce\BiologischekaasBundle\Entity\Coupon $coupon
+     * @param Ecommerce\EcommerceBundle\Entity\Coupon $coupon
      */
-    public function setCoupon(\Ecommerce\BiologischekaasBundle\Entity\Coupon $coupon) {
+    public function setCoupon(\Ecommerce\EcommerceBundle\Entity\Coupon $coupon) {
         $this->coupon = $coupon;
     }
 
     /**
      * Get coupon
      *
-     * @return Ecommerce\BiologischekaasBundle\Entity\Coupon 
+     * @return Ecommerce\EcommerceBundle\Entity\Coupon 
      */
     public function getCoupon() {
         return $this->coupon;
@@ -226,16 +226,16 @@ class Cart {
     /**
      * Set client
      *
-     * @param Ecommerce\BiologischekaasBundle\Entity\Client $client
+     * @param Ecommerce\EcommerceBundle\Entity\Client $client
      */
-    public function setClient(\Ecommerce\BiologischekaasBundle\Entity\Client $client) {
+    public function setClient(\Ecommerce\EcommerceBundle\Entity\Client $client) {
         $this->client = $client;
     }
 
     /**
      * Get client
      *
-     * @return Ecommerce\BiologischekaasBundle\Entity\Client 
+     * @return Ecommerce\EcommerceBundle\Entity\Client 
      */
     public function getClient() {
         return $this->client;
@@ -244,9 +244,9 @@ class Cart {
     /**
      * Add product
      *
-     * @param Ecommerce\BiologischekaasBundle\Entity\CartProducts $product
+     * @param Ecommerce\EcommerceBundle\Entity\CartProducts $product
      */
-    public function addProduct(\Ecommerce\BiologischekaasBundle\Entity\CartProducts $product) {
+    public function addProduct(\Ecommerce\EcommerceBundle\Entity\CartProducts $product) {
 		$product->setCart($this);
         $this->products[] = $product;
     }

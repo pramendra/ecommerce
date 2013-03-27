@@ -1,6 +1,6 @@
 <?php
 
-namespace Ecommerce\BiologischekaasBundle\Controller;
+namespace Ecommerce\EcommerceBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Security\Core\SecurityContext;
@@ -43,9 +43,9 @@ class ClientController extends Controller {
             }
         }
 
-        $TotalOrdersPrice = $this->getDoctrine()->getRepository('BiologischekaasBundle:Orders')->getTotalOrdersPrice($client);
+        $TotalOrdersPrice = $this->getDoctrine()->getRepository('EcommerceBundle:Orders')->getTotalOrdersPrice($client);
         
-        return $this->render('BiologischekaasBundle:Client:index.html.twig', array(
+        return $this->render('EcommerceBundle:Client:index.html.twig', array(
             'TotalOrdersPrice' => $TotalOrdersPrice, 'stamp_amount' => 10, 'clients_form' => $client_form->createView()));
     }
 
@@ -61,7 +61,7 @@ class ClientController extends Controller {
             $session->remove(SecurityContext::AUTHENTICATION_ERROR);
         }
 
-        return $this->render('BiologischekaasBundle:Security:login.html.twig', array(
+        return $this->render('EcommerceBundle:Security:login.html.twig', array(
                     // last username entered by the user
                     'last_username' => $session->get(SecurityContext::LAST_USERNAME),
                     'error' => $error,
@@ -77,7 +77,7 @@ class ClientController extends Controller {
             $zipcode = $request->get('zipcode');
 
 
-            $postcode_repository = $this->getDoctrine()->getRepository('BiologischekaasBundle:Postcode');
+            $postcode_repository = $this->getDoctrine()->getRepository('EcommerceBundle:Postcode');
             $result = $postcode_repository->getAdrressByPostcode($zipcode);
 
             $response = new Response(json_encode(array('result' => $result)));

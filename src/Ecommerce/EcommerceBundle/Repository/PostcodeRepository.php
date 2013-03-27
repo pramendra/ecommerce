@@ -1,6 +1,6 @@
 <?php
 
-namespace Ecommerce\BiologischekaasBundle\Repository;
+namespace Ecommerce\EcommerceBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
 

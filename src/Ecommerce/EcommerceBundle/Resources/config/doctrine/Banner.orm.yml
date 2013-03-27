@@ -1,4 +1,4 @@
-Ecommerce\BiologischekaasBundle\Entity\Banner:
+Ecommerce\EcommerceBundle\Entity\Banner:
   type: entity
   table: banner
   fields:

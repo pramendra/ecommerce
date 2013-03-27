@@ -1,10 +1,10 @@
 <?php
 
-namespace Ecommerce\BiologischekaasBundle\Controller;
+namespace Ecommerce\EcommerceBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use BiologischekaasBundle\Entity\Product;
-use Ecommerce\BiologischekaasBundle\Paginator\Paginator;
+use EcommerceBundle\Entity\Product;
+use Ecommerce\EcommerceBundle\Paginator\Paginator;
 
 class SectionController extends Controller {
 
@@ -13,14 +13,14 @@ class SectionController extends Controller {
         
         $permalink = $section;
         
-        $sections_repository = $this->getDoctrine()->getRepository('BiologischekaasBundle:Section');
-        $categories_repository = $this->getDoctrine()->getRepository('BiologischekaasBundle:Category');
+        $sections_repository = $this->getDoctrine()->getRepository('EcommerceBundle:Section');
+        $categories_repository = $this->getDoctrine()->getRepository('EcommerceBundle:Category');
         $section = $sections_repository->findOneByPermalink($section);
         
         $sections = $sections_repository->findAll();
 
         if($section === null) { 
-            return $this->forward('BiologischekaasBundle:Seo:view', array('permalink' => $permalink));
+            return $this->forward('EcommerceBundle:Seo:view', array('permalink' => $permalink));
         }
         
          /* Installing product filter */
@@ -44,29 +44,29 @@ class SectionController extends Controller {
             $firstResult = ($current_page * $productFilter->getMaxResults()) + 1;
         }
 
-        $products = $this->getDoctrine()->getRepository('BiologischekaasBundle:Product')->findByOffsetAndFilter($firstResult, $productFilter);
+        $products = $this->getDoctrine()->getRepository('EcommerceBundle:Product')->findByOffsetAndFilter($firstResult, $productFilter);
         
-        $attribute_repository = $this->getDoctrine()->getRepository('BiologischekaasBundle:Attribute');
+        $attribute_repository = $this->getDoctrine()->getRepository('EcommerceBundle:Attribute');
         $attributes = $attribute_repository->findBy(array('isFilterable' => true));
         
         if($productFilter->getAttributes() !== null) { 
             $attribute_values = $categories_repository->getDistinctProductAttributes($products);
             $totalProducts = count($products);
         } else { 
-            $active_products = $this->getDoctrine()->getRepository('BiologischekaasBundle:Product')->findLatestProductsBySection($section);
+            $active_products = $this->getDoctrine()->getRepository('EcommerceBundle:Product')->findLatestProductsBySection($section);
             $attribute_values = $categories_repository->getDistinctProductAttributes($active_products);
             $totalProducts = count($active_products);
         }
 
-        //$products = $this->getDoctrine()->getRepository('BiologischekaasBundle:Product')->findLatestProductsBySection($section);
+        //$products = $this->getDoctrine()->getRepository('EcommerceBundle:Product')->findLatestProductsBySection($section);
         
         $baseUrl = $this->generateUrl('_section', array('section' => $section->getPermalink()));
         
         $paginator = new Paginator($totalProducts, $current_page, $productFilter->getMaxResults(), $baseUrl);
         
-        $page = $this->getDoctrine()->getRepository('BiologischekaasBundle:Page')->findOneBy(array('permalink' => $section->getPermalink()));
+        $page = $this->getDoctrine()->getRepository('EcommerceBundle:Page')->findOneBy(array('permalink' => $section->getPermalink()));
         
-        return $this->render('BiologischekaasBundle:Section:index.html.twig', array('section' => $section, 
+        return $this->render('EcommerceBundle:Section:index.html.twig', array('section' => $section, 
             'sections' => $sections, 'products' => $products, 
             'attributes' => $attributes,
             'attribute_values' => $attribute_values,
@@ -80,10 +80,10 @@ class SectionController extends Controller {
     public function menuAction() {
 
         /* Fetch categories */
-        $section_repository = $this->getDoctrine()->getRepository('BiologischekaasBundle:Section');
+        $section_repository = $this->getDoctrine()->getRepository('EcommerceBundle:Section');
         $sections = $section_repository->findAll();
 
-        return $this->render('BiologischekaasBundle:Section:menu.html.twig', array('sections' => $sections));
+        return $this->render('EcommerceBundle:Section:menu.html.twig', array('sections' => $sections));
     }
 
 }

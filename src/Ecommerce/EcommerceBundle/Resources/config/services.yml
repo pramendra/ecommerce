@@ -1,33 +1,33 @@
 parameters:
-#    ecommerce.example.class: Ecommerce\BiologischekaasBundle\Example
+#    ecommerce.example.class: Ecommerce\EcommerceBundle\Example
 
 services:
     PageManager:
-        class:     Ecommerce\BiologischekaasBundle\PageManager\PageManager
+        class:     Ecommerce\EcommerceBundle\PageManager\PageManager
         calls:
             - [setContainer, ["@service_container"]]
     ShopManager:
-        class:     Ecommerce\BiologischekaasBundle\ShopManager\ShopManager
+        class:     Ecommerce\EcommerceBundle\ShopManager\ShopManager
         calls:
             - [setContainer, ["@service_container"]]
             - [initialize, []]
     ProductFilter:
-        class:     Ecommerce\BiologischekaasBundle\ProductFilter\ProductFilter
+        class:     Ecommerce\EcommerceBundle\ProductFilter\ProductFilter
         calls:
             - [setContainer, ["@service_container"]]
             - [initialize, []]
     adtv.twig.extension:
-        class: Ecommerce\BiologischekaasBundle\Twig\Extension\FirstImageTwigExtension
+        class: Ecommerce\EcommerceBundle\Twig\Extension\FirstImageTwigExtension
         tags:
             - { name: twig.extension }            
             
     adtv.twig.extension2:
-        class: Ecommerce\BiologischekaasBundle\Twig\Extension\PaginateTwigExtension
+        class: Ecommerce\EcommerceBundle\Twig\Extension\PaginateTwigExtension
         tags:
             - { name: twig.extension }            
             
     adtv.twig.extension3:
-        class: Ecommerce\BiologischekaasBundle\Twig\Extension\DayConvertTwigExtension
+        class: Ecommerce\EcommerceBundle\Twig\Extension\DayConvertTwigExtension
         tags:
             - { name: twig.extension }            
             

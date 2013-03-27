@@ -1,0 +1,52 @@
+{% extends 'SGBundle::layout.html.twig' %}
+
+{% block sidebar %}
+
+{% endblock%}
+
+{% block content %}
+
+<div class="checkout-well" style="width: 500px; margin: auto">
+
+    <form action="{{ path('login_check') }}" method="POST" class="form-horizontal">
+
+        <h3><i class="icon-key"></i> Inloggen</h3>
+        <p>Al vaker wat besteld? Log dan hier in op je account. Wachtwoord vergeten? Geen probleem, stuur een e-mail via het contactformulier.</p>
+
+        <hr />
+
+        {% if error %}
+	<div class="alert alert-error">{{ error.message }}</div>
+        {% endif %}
+
+        <fieldset>
+            <div class="control-group">
+                <label class="control-label" for="username">E-mailadres:</label>
+                <div class="controls">
+                    <input type="text" id="username" name="_username" />
+                </div>
+            </div>
+
+            <div class="control-group">    
+                <label class="control-label" for="password">Wachtwoord:</label>
+
+                <div class="controls">
+                    <input type="password" id="password" name="_password" />
+                </div>
+            </div>
+
+	    <div class="control-group">   
+		<label for="remember_me" class="control-label">
+		    <input type="checkbox" id="remember_me" name="_remember_me" checked />
+		    Onthoud mijn gegevens
+		</label>
+	    </div>
+
+        </fieldset>
+
+        <input type="submit" class="btn btn-block btn-large btn-primary" value="Inloggen" />
+
+    </form>
+</div>
+
+{% endblock%}

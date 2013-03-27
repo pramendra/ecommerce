@@ -1,11 +1,11 @@
 <?php
 
-namespace Ecommerce\BiologischekaasBundle\Entity;
+namespace Ecommerce\EcommerceBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Ecommerce\BiologischekaasBundle\Entity\Invoice
+ * Ecommerce\EcommerceBundle\Entity\Invoice
  */
 class Invoice
 {
@@ -35,12 +35,12 @@ class Invoice
     protected $payed;
 
     /**
-     * @var Ecommerce\BiologischekaasBundle\Entity\Client
+     * @var Ecommerce\EcommerceBundle\Entity\Client
      */
     protected $client;
 
     /**
-     * @var Ecommerce\BiologischekaasBundle\Entity\Orders
+     * @var Ecommerce\EcommerceBundle\Entity\Orders
      */
     protected $order;
 
@@ -138,9 +138,9 @@ class Invoice
     /**
      * Set client
      *
-     * @param Ecommerce\BiologischekaasBundle\Entity\Client $client
+     * @param Ecommerce\EcommerceBundle\Entity\Client $client
      */
-    public function setClient(\Ecommerce\BiologischekaasBundle\Entity\Client $client)
+    public function setClient(\Ecommerce\EcommerceBundle\Entity\Client $client)
     {
         $this->client = $client;
     }
@@ -148,7 +148,7 @@ class Invoice
     /**
      * Get client
      *
-     * @return Ecommerce\BiologischekaasBundle\Entity\Client 
+     * @return Ecommerce\EcommerceBundle\Entity\Client 
      */
     public function getClient()
     {
@@ -158,9 +158,9 @@ class Invoice
     /**
      * Set order
      *
-     * @param Ecommerce\BiologischekaasBundle\Entity\Orders $order
+     * @param Ecommerce\EcommerceBundle\Entity\Orders $order
      */
-    public function setOrder(\Ecommerce\BiologischekaasBundle\Entity\Orders $order)
+    public function setOrder(\Ecommerce\EcommerceBundle\Entity\Orders $order)
     {
         $this->order = $order;
     }
@@ -168,7 +168,7 @@ class Invoice
     /**
      * Get order
      *
-     * @return Ecommerce\BiologischekaasBundle\Entity\Orders 
+     * @return Ecommerce\EcommerceBundle\Entity\Orders 
      */
     public function getOrder()
     {

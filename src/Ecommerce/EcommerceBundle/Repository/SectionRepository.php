@@ -1,12 +1,12 @@
 <?php
 
-namespace Ecommerce\BiologischekaasBundle\Repository;
+namespace Ecommerce\EcommerceBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
 
 class SectionRepository extends EntityRepository {
     
-    public function getQueryBuilderCategorySections(\Ecommerce\BiologischekaasBundle\Entity\Category $category) {
+    public function getQueryBuilderCategorySections(\Ecommerce\EcommerceBundle\Entity\Category $category) {
 
         $qb = $this->createQueryBuilder('p');
         $qb->groupBy('p.id');

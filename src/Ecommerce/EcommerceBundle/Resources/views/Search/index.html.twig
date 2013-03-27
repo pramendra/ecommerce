@@ -1,4 +1,4 @@
-{% extends 'BiologischekaasBundle:Default:index.html.twig' %}
+{% extends 'EcommerceBundle:Default:index.html.twig' %}
 
 {% block content %}
 
@@ -10,7 +10,7 @@
         <ul class="category_product unstyled">
             {% for product in products %}
                 <li class="span3">
-                    {% include 'BiologischekaasBundle:Search:product.html.twig' with {'product': product} %}
+                    {% include 'EcommerceBundle:Search:product.html.twig' with {'product': product} %}
                 </li>
             {% endfor %}
         </ul>

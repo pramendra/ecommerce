@@ -1,11 +1,11 @@
 <?php
 
-namespace Ecommerce\BiologischekaasBundle\Entity;
+namespace Ecommerce\EcommerceBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Ecommerce\BiologischekaasBundle\Entity\Country
+ * Ecommerce\EcommerceBundle\Entity\Country
  */
 class Country
 {
@@ -45,7 +45,7 @@ class Country
     protected $lng;
 
     /**
-     * @var Ecommerce\BiologischekaasBundle\Entity\Source
+     * @var Ecommerce\EcommerceBundle\Entity\Source
      */
     protected $source;
 
@@ -183,9 +183,9 @@ class Country
     /**
      * Set source
      *
-     * @param Ecommerce\BiologischekaasBundle\Entity\Source $source
+     * @param Ecommerce\EcommerceBundle\Entity\Source $source
      */
-    public function setSource(\Ecommerce\BiologischekaasBundle\Entity\Source $source)
+    public function setSource(\Ecommerce\EcommerceBundle\Entity\Source $source)
     {
         $this->source = $source;
     }
@@ -193,7 +193,7 @@ class Country
     /**
      * Get source
      *
-     * @return Ecommerce\BiologischekaasBundle\Entity\Source 
+     * @return Ecommerce\EcommerceBundle\Entity\Source 
      */
     public function getSource()
     {

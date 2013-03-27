@@ -1,4 +1,4 @@
-Ecommerce\BiologischekaasBundle\Entity\Invoice:
+Ecommerce\EcommerceBundle\Entity\Invoice:
   type: entity
   table: invoice
   fields:

@@ -1,0 +1,64 @@
+Ecommerce\SGBundle\Entity\Category:
+  type: entity
+  table: category
+  repositoryClass: Ecommerce\SGBundle\Repository\CategoryRepository
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    name:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+    description:
+      type: text
+      nullable: false
+    keywords:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+    image:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+    permalink:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+    active:
+      type: integer
+      unsigned: false
+      nullable: false
+  manyToMany:
+    subcategories:
+      targetEntity: Subcategory
+      mappedBy: null
+      joinTable:
+        name: subcategory_category
+        joinColumns:
+          category_id:
+            referencedColumnName: id
+        inverseJoinColumns:
+          subcategory_id:
+            referencedColumnName: id
+    sections:
+      targetEntity: Section
+      mappedBy: null
+      joinTable:
+        name: section_category
+        joinColumns:
+          category_id:
+            referencedColumnName: id
+        inverseJoinColumns:
+          section_id:
+            referencedColumnName: id
+ 
+  lifecycleCallbacks: {  }

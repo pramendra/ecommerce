@@ -1,11 +1,11 @@
 <?php
 
-namespace Ecommerce\BiologischekaasBundle\Entity;
+namespace Ecommerce\EcommerceBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Ecommerce\BiologischekaasBundle\Entity\Cityname
+ * Ecommerce\EcommerceBundle\Entity\Cityname
  */
 class Cityname
 {
@@ -40,12 +40,12 @@ class Cityname
     protected $official;
 
     /**
-     * @var Ecommerce\BiologischekaasBundle\Entity\City
+     * @var Ecommerce\EcommerceBundle\Entity\City
      */
     protected $city;
 
     /**
-     * @var Ecommerce\BiologischekaasBundle\Entity\Source
+     * @var Ecommerce\EcommerceBundle\Entity\Source
      */
     protected $source;
 
@@ -163,9 +163,9 @@ class Cityname
     /**
      * Set city
      *
-     * @param Ecommerce\BiologischekaasBundle\Entity\City $city
+     * @param Ecommerce\EcommerceBundle\Entity\City $city
      */
-    public function setCity(\Ecommerce\BiologischekaasBundle\Entity\City $city)
+    public function setCity(\Ecommerce\EcommerceBundle\Entity\City $city)
     {
         $this->city = $city;
     }
@@ -173,7 +173,7 @@ class Cityname
     /**
      * Get city
      *
-     * @return Ecommerce\BiologischekaasBundle\Entity\City 
+     * @return Ecommerce\EcommerceBundle\Entity\City 
      */
     public function getCity()
     {
@@ -183,9 +183,9 @@ class Cityname
     /**
      * Set source
      *
-     * @param Ecommerce\BiologischekaasBundle\Entity\Source $source
+     * @param Ecommerce\EcommerceBundle\Entity\Source $source
      */
-    public function setSource(\Ecommerce\BiologischekaasBundle\Entity\Source $source)
+    public function setSource(\Ecommerce\EcommerceBundle\Entity\Source $source)
     {
         $this->source = $source;
     }
@@ -193,7 +193,7 @@ class Cityname
     /**
      * Get source
      *
-     * @return Ecommerce\BiologischekaasBundle\Entity\Source 
+     * @return Ecommerce\EcommerceBundle\Entity\Source 
      */
     public function getSource()
     {

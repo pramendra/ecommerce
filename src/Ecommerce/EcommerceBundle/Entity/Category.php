@@ -1,11 +1,11 @@
 <?php
 
-namespace Ecommerce\BiologischekaasBundle\Entity;
+namespace Ecommerce\EcommerceBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Ecommerce\BiologischekaasBundle\Entity\Category
+ * Ecommerce\EcommerceBundle\Entity\Category
  */
 class Category
 {
@@ -45,12 +45,12 @@ class Category
     protected $active;
     
     /*
-     * @var Ecommerce\BiologischekaasBundle\Entity\Subcategory $subcategories
+     * @var Ecommerce\EcommerceBundle\Entity\Subcategory $subcategories
      */
     protected $subcategories;
     
     /*
-     * @var Ecommerce\BiologischekaasBundle\Entity\Section $sections
+     * @var Ecommerce\EcommerceBundle\Entity\Section $sections
      */
     protected $sections;
     
@@ -215,7 +215,7 @@ class Category
     /**
      * add section
      *
-     * @param @var Ecommerce\BiologischekaasBundle\Entity\Section $section
+     * @param @var Ecommerce\EcommerceBundle\Entity\Section $section
      */
     public function addSections($section)
     {

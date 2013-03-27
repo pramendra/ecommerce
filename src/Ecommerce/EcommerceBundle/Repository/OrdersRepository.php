@@ -1,6 +1,6 @@
 <?php
 
-namespace Ecommerce\BiologischekaasBundle\Repository;
+namespace Ecommerce\EcommerceBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
 
@@ -37,7 +37,7 @@ class OrdersRepository extends EntityRepository {
         return $new_order_nr;
     }
 
-    public function getTotalOrdersPrice(\Ecommerce\BiologischekaasBundle\Entity\Client $client) {
+    public function getTotalOrdersPrice(\Ecommerce\EcommerceBundle\Entity\Client $client) {
 
         $orders = $this->createQueryBuilder('o')
                         ->where('o.client = :client')

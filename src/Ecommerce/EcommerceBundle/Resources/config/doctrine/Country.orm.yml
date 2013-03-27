@@ -1,4 +1,4 @@
-Ecommerce\BiologischekaasBundle\Entity\Country:
+Ecommerce\EcommerceBundle\Entity\Country:
   type: entity
   table: country
   fields:

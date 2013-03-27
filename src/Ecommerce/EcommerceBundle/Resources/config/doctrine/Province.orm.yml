@@ -1,4 +1,4 @@
-Ecommerce\BiologischekaasBundle\Entity\Province:
+Ecommerce\EcommerceBundle\Entity\Province:
   type: entity
   table: province
   fields:

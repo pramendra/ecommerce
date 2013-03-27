@@ -1,9 +1,9 @@
 <?php
 
-namespace Ecommerce\BiologischekaasBundle\Controller;
+namespace Ecommerce\EcommerceBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Ecommerce\BiologischekaasBundle\Entity\ProductAttributes;
+use Ecommerce\EcommerceBundle\Entity\ProductAttributes;
 
 class TestController extends Controller {
 
@@ -18,7 +18,7 @@ class TestController extends Controller {
         $val2 = 'geel';
 //        $val3 = 'groen';
         
-        $product_attributes = $this->getDoctrine()->getRepository('BiologischekaasBundle:ProductAttributes')->findbyAttributeLike($search);
+        $product_attributes = $this->getDoctrine()->getRepository('EcommerceBundle:ProductAttributes')->findbyAttributeLike($search);
         
         echo '<ul>';
         
@@ -27,8 +27,8 @@ class TestController extends Controller {
             
             echo '<li>' . $pa->getAttributeValue() . '</li>';
             
-            $attribute = $this->getDoctrine()->getRepository('BiologischekaasBundle:Attribute')->find($pa->getAttribute()->getId());
-            $product = $this->getDoctrine()->getRepository('BiologischekaasBundle:Product')->find($pa->getProduct()->getId());
+            $attribute = $this->getDoctrine()->getRepository('EcommerceBundle:Attribute')->find($pa->getAttribute()->getId());
+            $product = $this->getDoctrine()->getRepository('EcommerceBundle:Product')->find($pa->getProduct()->getId());
             
             $new_pa = new ProductAttributes();
             $new_pa->setAttribute($attribute);
@@ -61,9 +61,9 @@ class TestController extends Controller {
     
     public function emailAction() { 
         
-        $order = $this->getDoctrine()->getRepository('BiologischekaasBundle:Orders')->find(22);
+        $order = $this->getDoctrine()->getRepository('EcommerceBundle:Orders')->find(22);
         
-        return $this->render('BiologischekaasBundle:Email:order.html.twig', array('order' => $order));
+        return $this->render('EcommerceBundle:Email:order.html.twig', array('order' => $order));
         
         
     }

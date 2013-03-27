@@ -1,6 +1,6 @@
 <?php
 
-namespace Ecommerce\BiologischekaasBundle\Paginator;
+namespace Ecommerce\EcommerceBundle\Paginator;
 
 use Doctrine\ORM\EntityRepository;
 

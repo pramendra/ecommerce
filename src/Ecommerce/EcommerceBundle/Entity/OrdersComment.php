@@ -1,11 +1,11 @@
 <?php
 
-namespace Ecommerce\BiologischekaasBundle\Entity;
+namespace Ecommerce\EcommerceBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Ecommerce\BiologischekaasBundle\Entity\OrdersComment
+ * Ecommerce\EcommerceBundle\Entity\OrdersComment
  */
 class OrdersComment
 {
@@ -25,7 +25,7 @@ class OrdersComment
     protected $content;
 
     /**
-     * @var Ecommerce\BiologischekaasBundle\Entity\Orders
+     * @var Ecommerce\EcommerceBundle\Entity\Orders
      */
     protected $order;
 
@@ -83,9 +83,9 @@ class OrdersComment
     /**
      * Set order
      *
-     * @param Ecommerce\BiologischekaasBundle\Entity\Orders $order
+     * @param Ecommerce\EcommerceBundle\Entity\Orders $order
      */
-    public function setOrder(\Ecommerce\BiologischekaasBundle\Entity\Orders $order)
+    public function setOrder(\Ecommerce\EcommerceBundle\Entity\Orders $order)
     {
         $this->order = $order;
     }
@@ -93,7 +93,7 @@ class OrdersComment
     /**
      * Get order
      *
-     * @return Ecommerce\BiologischekaasBundle\Entity\Orders 
+     * @return Ecommerce\EcommerceBundle\Entity\Orders 
      */
     public function getOrder()
     {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Ecommerce\BiologischekaasBundle\ShopManager;
+namespace Ecommerce\EcommerceBundle\ShopManager;
 
 use Symfony\Component\DependencyInjection\ContainerAware;
 use Symfony\Component\HttpFoundation\Request;
@@ -8,16 +8,16 @@ use Symfony\Component\HttpFoundation\Session;
 use Symfony\Component\HttpFoundation\Cookie;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
-use Ecommerce\BiologischekaasBundle\Entity\Cart;
-use Ecommerce\BiologischekaasBundle\Entity\CartProducts;
-use Ecommerce\BiologischekaasBundle\Entity\Client;
-use Ecommerce\BiologischekaasBundle\Entity\Product;
-use Ecommerce\BiologischekaasBundle\Entity\Shipping;
-use Ecommerce\BiologischekaasBundle\Entity\ShippingTypes;
-use Ecommerce\BiologischekaasBundle\Entity\Orders;
-use Ecommerce\BiologischekaasBundle\Entity\OrdersProduct;
-use Ecommerce\BiologischekaasBundle\Entity\Coupon;
-use Ecommerce\BiologischekaasBundle\Entity\Paymethod;
+use Ecommerce\EcommerceBundle\Entity\Cart;
+use Ecommerce\EcommerceBundle\Entity\CartProducts;
+use Ecommerce\EcommerceBundle\Entity\Client;
+use Ecommerce\EcommerceBundle\Entity\Product;
+use Ecommerce\EcommerceBundle\Entity\Shipping;
+use Ecommerce\EcommerceBundle\Entity\ShippingTypes;
+use Ecommerce\EcommerceBundle\Entity\Orders;
+use Ecommerce\EcommerceBundle\Entity\OrdersProduct;
+use Ecommerce\EcommerceBundle\Entity\Coupon;
+use Ecommerce\EcommerceBundle\Entity\Paymethod;
 
 class ShopManager extends ContainerAware {
 
@@ -77,7 +77,7 @@ class ShopManager extends ContainerAware {
             $cart = $this->session->get('cart');
             
             if($cart->getId() !== null) {
-                $this->cart = $this->getDoctrine()->getRepository('BiologischekaasBundle:Cart')->find($cart->getId());
+                $this->cart = $this->getDoctrine()->getRepository('EcommerceBundle:Cart')->find($cart->getId());
             } else { 
                 $this->cart = new Cart();
                 $this->session->set('cart', $this->cart);
@@ -90,7 +90,7 @@ class ShopManager extends ContainerAware {
 
         if ($this->session->get('order') !== null) {
             $order = $this->session->get('order');
-            $this->order = $this->getDoctrine()->getRepository('BiologischekaasBundle:Orders')->find($order->getId());
+            $this->order = $this->getDoctrine()->getRepository('EcommerceBundle:Orders')->find($order->getId());
         } else {
             $this->order = null;
             $this->session->set('order', $this->order);
@@ -99,7 +99,7 @@ class ShopManager extends ContainerAware {
         if ($this->session->get('shipping') !== null) {
             $this->shipping = $this->session->get('shipping');
         } else {
-            $this->shipping = $this->getDoctrine()->getRepository('BiologischekaasBundle:Shipping')->find(1);
+            $this->shipping = $this->getDoctrine()->getRepository('EcommerceBundle:Shipping')->find(1);
             $this->session->set('shipping', $this->shipping);
         }
 
@@ -124,7 +124,7 @@ class ShopManager extends ContainerAware {
 
     public function setShipping($shipping) {
         
-        $this->shipping = $this->getDoctrine()->getRepository('BiologischekaasBundle:Shipping')->find($shipping);
+        $this->shipping = $this->getDoctrine()->getRepository('EcommerceBundle:Shipping')->find($shipping);
         $this->session->set('shipping', $this->shipping);        
         
         $this->cart->setShipping($this->shipping);
@@ -146,7 +146,7 @@ class ShopManager extends ContainerAware {
 
             if (!empty($item)) {
 
-                $product = $this->getDoctrine()->getRepository('BiologischekaasBundle:Product')->find($item);
+                $product = $this->getDoctrine()->getRepository('EcommerceBundle:Product')->find($item);
                 $products[] = $product->__toJson();
             }
         }
@@ -200,7 +200,7 @@ class ShopManager extends ContainerAware {
     public function getCoupon() {
 
         if ($this->coupon->getId() !== null) {
-            return $this->getDoctrine()->getRepository('BiologischekaasBundle:Coupon')->find($this->coupon->getId());
+            return $this->getDoctrine()->getRepository('EcommerceBundle:Coupon')->find($this->coupon->getId());
         } else { 
             return null;
         }
@@ -231,7 +231,7 @@ class ShopManager extends ContainerAware {
 
         if ($this->session->get('order') !== null) {
             $order = $this->session->get('order');
-            $this->order = $this->getDoctrine()->getRepository('BiologischekaasBundle:Orders')->find($order->getId());
+            $this->order = $this->getDoctrine()->getRepository('EcommerceBundle:Orders')->find($order->getId());
         } else {
             $this->order = null;
         }
@@ -246,7 +246,7 @@ class ShopManager extends ContainerAware {
         $this->logger[] = 'Searching for shopping cart...';
 
         $this->cart = $this->getDoctrine()
-                ->getRepository('BiologischekaasBundle:Cart')
+                ->getRepository('EcommerceBundle:Cart')
                 ->findOneBy(array('id' => $this->cart->getId()));
 
         $this->logger[] = 'Found existing shopping cart: ' . $this->cart->getId();
@@ -254,7 +254,7 @@ class ShopManager extends ContainerAware {
         $this->products[] = $product;
 
         $cartProduct = $this->getDoctrine()
-                ->getRepository('BiologischekaasBundle:CartProducts')
+                ->getRepository('EcommerceBundle:CartProducts')
                 ->findOneBy(array('product' => $product->getId(), 'cart' => $this->cart->getId()));
 
         $em->remove($cartProduct);
@@ -284,12 +284,12 @@ class ShopManager extends ContainerAware {
         if ($containsPackage) {
             /* Fetch active shipping methods */
             $shipping = $this->getDoctrine()
-                            ->getRepository('BiologischekaasBundle:Shipping')->findOneBy(array('shippingType' => 1, 'active' => 1));
+                            ->getRepository('EcommerceBundle:Shipping')->findOneBy(array('shippingType' => 1, 'active' => 1));
             
         } else {
             /* Fetch active shipping methods */
             $shipping = $this->getDoctrine()
-                            ->getRepository('BiologischekaasBundle:Shipping')->findOneBy(array('shippingType' => 2, 'active' => 1));
+                            ->getRepository('EcommerceBundle:Shipping')->findOneBy(array('shippingType' => 2, 'active' => 1));
         }
 
         $this->cart->setShipping($shipping);
@@ -319,7 +319,7 @@ class ShopManager extends ContainerAware {
         } else {
             
             $this->cart = $this->getDoctrine()
-                    ->getRepository('BiologischekaasBundle:Cart')
+                    ->getRepository('EcommerceBundle:Cart')
                     ->findOneBy(array('id' => $this->cart->getId()));
 
             $this->logger[] = 'Found existing shopping cart: ' . $this->cart->getId();
@@ -328,7 +328,7 @@ class ShopManager extends ContainerAware {
         $this->products[] = $product;
 
         $cartProducts = $this->getDoctrine()
-                ->getRepository('BiologischekaasBundle:CartProducts')
+                ->getRepository('EcommerceBundle:CartProducts')
                 ->findOneBy(array('product' => $product->getId(), 'cart' => $this->cart->getId()));
 
         if (count($cartProducts) == 0) {
@@ -385,12 +385,12 @@ class ShopManager extends ContainerAware {
         if ($containsPackage) {
             /* Fetch active shipping methods */
             $shipping = $this->getDoctrine()
-                            ->getRepository('BiologischekaasBundle:Shipping')->findOneBy(array('shippingType' => 1, 'active' => 1));
+                            ->getRepository('EcommerceBundle:Shipping')->findOneBy(array('shippingType' => 1, 'active' => 1));
             
         } else {
             /* Fetch active shipping methods */
             $shipping = $this->getDoctrine()
-                            ->getRepository('BiologischekaasBundle:Shipping')->findOneBy(array('shippingType' => 2, 'active' => 1));
+                            ->getRepository('EcommerceBundle:Shipping')->findOneBy(array('shippingType' => 2, 'active' => 1));
         }
 
         $this->cart->setShipping($shipping);
@@ -405,7 +405,7 @@ class ShopManager extends ContainerAware {
 
     public function addCouponCode($code) {
 
-        $this->coupon = $this->getDoctrine()->getRepository('BiologischekaasBundle:Coupon')->findOneBy(array('code' => $code));
+        $this->coupon = $this->getDoctrine()->getRepository('EcommerceBundle:Coupon')->findOneBy(array('code' => $code));
 
 
         if ($this->coupon !== null) {
@@ -438,7 +438,7 @@ class ShopManager extends ContainerAware {
         
         $payment = $request->get('payment');
         
-        $paymethod = $this->getDoctrine()->getRepository('BiologischekaasBundle:Paymethod')->findOneBy(array('code' => $payment[0]));
+        $paymethod = $this->getDoctrine()->getRepository('EcommerceBundle:Paymethod')->findOneBy(array('code' => $payment[0]));
         
         $this->paymethod = $paymethod;
         
@@ -454,12 +454,12 @@ class ShopManager extends ContainerAware {
 
         // get entity manager
         $em = $this->getDoctrine()->getEntityManager();
-        $this->client = $this->getDoctrine()->getRepository('BiologischekaasBundle:Client')->find($this->client->getId());
-        $this->shipping = $this->getDoctrine()->getRepository('BiologischekaasBundle:Shipping')->find($this->shipping->getId());
-        $this->paymethod = $this->getDoctrine()->getRepository('BiologischekaasBundle:Paymethod')->find($this->paymethod->getId());
+        $this->client = $this->getDoctrine()->getRepository('EcommerceBundle:Client')->find($this->client->getId());
+        $this->shipping = $this->getDoctrine()->getRepository('EcommerceBundle:Shipping')->find($this->shipping->getId());
+        $this->paymethod = $this->getDoctrine()->getRepository('EcommerceBundle:Paymethod')->find($this->paymethod->getId());
 
         if ($this->shipping == null) {
-            $this->shipping = $this->getDoctrine()->getRepository('BiologischekaasBundle:Shipping')->find(1);
+            $this->shipping = $this->getDoctrine()->getRepository('EcommerceBundle:Shipping')->find(1);
         }
 
         if ($this->order == null) {
@@ -479,7 +479,7 @@ class ShopManager extends ContainerAware {
             
             if($this->coupon->getId() != null) { 
                 
-                $coupon = $this->getDoctrine()->getRepository('BiologischekaasBundle:Coupon')->find($this->coupon->getId());
+                $coupon = $this->getDoctrine()->getRepository('EcommerceBundle:Coupon')->find($this->coupon->getId());
                 
                 $this->order->setCoupon($coupon);
             }
@@ -489,7 +489,7 @@ class ShopManager extends ContainerAware {
             $this->order->setTotal(number_format($totalPrice, 2, '.', '.'));
 
             // Fetch new orderNr
-            $orderNr = $this->getDoctrine()->getRepository('BiologischekaasBundle:Orders')->getNewOrderNr();
+            $orderNr = $this->getDoctrine()->getRepository('EcommerceBundle:Orders')->getNewOrderNr();
 
             $this->order->setOrderNr($orderNr);
 
@@ -615,7 +615,7 @@ class ShopManager extends ContainerAware {
 
         $this->session->set('client', $this->client);
         
-        $this->client = $this->getDoctrine()->getRepository('BiologischekaasBundle:Client')->find($this->client->getId());
+        $this->client = $this->getDoctrine()->getRepository('EcommerceBundle:Client')->find($this->client->getId());
         
         return $this->client;
     }
@@ -627,7 +627,7 @@ class ShopManager extends ContainerAware {
         $this->cart = new Cart();
 
         $this->shipping = $this->getDoctrine()
-                ->getRepository('BiologischekaasBundle:Shipping')
+                ->getRepository('EcommerceBundle:Shipping')
                 ->findOneBy(array('id' => '1')); // Standaard PostNL
 
         $this->cart->setTotalPriceInc(0);
@@ -649,7 +649,7 @@ class ShopManager extends ContainerAware {
 
         $em = $this->getDoctrine()->getEntityManager();
 
-        $cart = $this->getDoctrine()->getRepository('BiologischekaasBundle:Cart')->findOneBy(array('id' => $this->cart->getId()));
+        $cart = $this->getDoctrine()->getRepository('EcommerceBundle:Cart')->findOneBy(array('id' => $this->cart->getId()));
         
         if(count($cart->getProducts()) == 0) { 
             

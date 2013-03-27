@@ -1,4 +1,4 @@
-Ecommerce\BiologischekaasBundle\Entity\Cityname:
+Ecommerce\EcommerceBundle\Entity\Cityname:
   type: entity
   table: cityname
   fields:

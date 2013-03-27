@@ -1,4 +1,4 @@
-Ecommerce\BiologischekaasBundle\Entity\Attribute:
+Ecommerce\EcommerceBundle\Entity\Attribute:
   type: entity
   table: attribute
   fields:

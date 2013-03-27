@@ -1,7 +1,11 @@
 imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
-    - { resource: "@BiologischekaasBundle/Resources/config/services.yml" }
+    - { resource: "@BKBundle/Resources/config/services.yml" }
+    - { resource: "@SGBundle/Resources/config/services.yml" }
+    - { resource: "@AVBundle/Resources/config/services.yml" }
+    - { resource: "@AdminBundle/Resources/config/services.yml" }
+    - { resource: "@EcommerceBundle/Resources/config/services.yml" }
     
 framework:
     #esi:             ~

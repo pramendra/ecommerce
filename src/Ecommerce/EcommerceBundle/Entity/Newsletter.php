@@ -1,11 +1,11 @@
 <?php
 
-namespace Ecommerce\BiologischekaasBundle\Entity;
+namespace Ecommerce\EcommerceBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Ecommerce\BiologischekaasBundle\Entity\Newsletter
+ * Ecommerce\EcommerceBundle\Entity\Newsletter
  */
 class Newsletter
 {
@@ -45,7 +45,7 @@ class Newsletter
     protected $content;
 
     /**
-     * @var Ecommerce\BiologischekaasBundle\Entity\Client
+     * @var Ecommerce\EcommerceBundle\Entity\Client
      */
     protected $clients;
     

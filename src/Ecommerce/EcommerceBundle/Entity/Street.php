@@ -1,11 +1,11 @@
 <?php
 
-namespace Ecommerce\BiologischekaasBundle\Entity;
+namespace Ecommerce\EcommerceBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Ecommerce\BiologischekaasBundle\Entity\Street
+ * Ecommerce\EcommerceBundle\Entity\Street
  */
 class Street
 {
@@ -90,12 +90,12 @@ class Street
     protected $subtitle;
 
     /**
-     * @var Ecommerce\BiologischekaasBundle\Entity\Postcode
+     * @var Ecommerce\EcommerceBundle\Entity\Postcode
      */
     protected $postcode;
 
     /**
-     * @var Ecommerce\BiologischekaasBundle\Entity\Source
+     * @var Ecommerce\EcommerceBundle\Entity\Source
      */
     protected $source;
 
@@ -413,9 +413,9 @@ class Street
     /**
      * Set postcode
      *
-     * @param Ecommerce\BiologischekaasBundle\Entity\Postcode $postcode
+     * @param Ecommerce\EcommerceBundle\Entity\Postcode $postcode
      */
-    public function setPostcode(\Ecommerce\BiologischekaasBundle\Entity\Postcode $postcode)
+    public function setPostcode(\Ecommerce\EcommerceBundle\Entity\Postcode $postcode)
     {
         $this->postcode = $postcode;
     }
@@ -423,7 +423,7 @@ class Street
     /**
      * Get postcode
      *
-     * @return Ecommerce\BiologischekaasBundle\Entity\Postcode 
+     * @return Ecommerce\EcommerceBundle\Entity\Postcode 
      */
     public function getPostcode()
     {
@@ -433,9 +433,9 @@ class Street
     /**
      * Set source
      *
-     * @param Ecommerce\BiologischekaasBundle\Entity\Source $source
+     * @param Ecommerce\EcommerceBundle\Entity\Source $source
      */
-    public function setSource(\Ecommerce\BiologischekaasBundle\Entity\Source $source)
+    public function setSource(\Ecommerce\EcommerceBundle\Entity\Source $source)
     {
         $this->source = $source;
     }
@@ -443,7 +443,7 @@ class Street
     /**
      * Get source
      *
-     * @return Ecommerce\BiologischekaasBundle\Entity\Source 
+     * @return Ecommerce\EcommerceBundle\Entity\Source 
      */
     public function getSource()
     {

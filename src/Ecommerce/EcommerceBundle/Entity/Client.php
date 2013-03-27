@@ -1,12 +1,12 @@
 <?php
 
-namespace Ecommerce\BiologischekaasBundle\Entity;
+namespace Ecommerce\EcommerceBundle\Entity;
 
 use Symfony\Component\Security\Core\User\UserInterface;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Ecommerce\BiologischekaasBundle\Entity\Client
+ * Ecommerce\EcommerceBundle\Entity\Client
  */
 class Client implements UserInterface {
 
@@ -125,7 +125,7 @@ class Client implements UserInterface {
     protected $deletedAt;
 
     /**
-     * @var Ecommerce\BiologischekaasBundle\Entity\Orders
+     * @var Ecommerce\EcommerceBundle\Entity\Orders
      */
     protected $orders;
 
@@ -537,9 +537,9 @@ class Client implements UserInterface {
     /**
      * Add orders
      *
-     * @param Ecommerce\BiologischekaasBundle\Entity\Orders $order
+     * @param Ecommerce\EcommerceBundle\Entity\Orders $order
      */
-    public function addOrders(\Ecommerce\BiologischekaasBundle\Entity\Orders $order) {
+    public function addOrders(\Ecommerce\EcommerceBundle\Entity\Orders $order) {
         $this->orders[] = $order;
     }
 

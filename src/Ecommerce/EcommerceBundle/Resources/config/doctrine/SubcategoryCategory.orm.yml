@@ -1,4 +1,4 @@
-Ecommerce\BiologischekaasBundle\Entity\SubcategoryCategory:
+Ecommerce\EcommerceBundle\Entity\SubcategoryCategory:
   type: entity
   table: subcategory_category
   fields:

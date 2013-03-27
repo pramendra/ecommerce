@@ -1,8 +1,8 @@
 <?php
 
-namespace Ecommerce\BiologischekaasBundle\Twig\Extension;
+namespace Ecommerce\EcommerceBundle\Twig\Extension;
 
-use Ecommerce\BiologischekaasBundle\Paginator\Paginator;
+use Ecommerce\EcommerceBundle\Paginator\Paginator;
 
 class PaginateTwigExtension extends \Twig_Extension {
 

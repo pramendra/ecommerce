@@ -1,7 +1,7 @@
-Ecommerce\BiologischekaasBundle\Entity\Postcode:
+Ecommerce\EcommerceBundle\Entity\Postcode:
   type: entity
   table: postcode
-  repositoryClass: Ecommerce\BiologischekaasBundle\Repository\PostcodeRepository
+  repositoryClass: Ecommerce\EcommerceBundle\Repository\PostcodeRepository
   fields:
     id:
       id: true

@@ -1,11 +1,11 @@
 <?php
 
-namespace Ecommerce\BiologischekaasBundle\Controller;
+namespace Ecommerce\EcommerceBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use BiologischekaasBundle\Entity\Product;
-use BiologischekaasBundle\Entity\Cart;
+use EcommerceBundle\Entity\Product;
+use EcommerceBundle\Entity\Cart;
 
 class SearchController extends Controller {
 
@@ -19,7 +19,7 @@ class SearchController extends Controller {
             
             if($q !== null) { 
             
-                $products_repository = $this->getDoctrine()->getRepository('BiologischekaasBundle:Product');
+                $products_repository = $this->getDoctrine()->getRepository('EcommerceBundle:Product');
                 $products = $products_repository->searchProductsByKeyword($q);
             }
         }
@@ -28,7 +28,7 @@ class SearchController extends Controller {
             return $this->redirect($this->generateUrl('_product_shortcut', array('product' => $products[0]->getPermalink())));
         }
         
-        return $this->render('BiologischekaasBundle:Search:index.html.twig', array('products' => $products));
+        return $this->render('EcommerceBundle:Search:index.html.twig', array('products' => $products));
     }
 
     public function jsonAction() {
@@ -41,7 +41,7 @@ class SearchController extends Controller {
             
             if($q !== null) { 
             
-                $products_repository = $this->getDoctrine()->getRepository('BiologischekaasBundle:Product');
+                $products_repository = $this->getDoctrine()->getRepository('EcommerceBundle:Product');
                 
                 $products = $products_repository->searchProductsByKeyword($q);
                 

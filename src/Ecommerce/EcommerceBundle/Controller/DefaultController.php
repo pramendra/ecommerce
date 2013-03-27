@@ -1,6 +1,6 @@
 <?php
 
-namespace Ecommerce\BiologischekaasBundle\Controller;
+namespace Ecommerce\EcommerceBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -9,7 +9,7 @@ class DefaultController extends Controller
     
     public function indexAction()
     {
-        $latest_products = $this->getDoctrine()->getRepository('BiologischekaasBundle:Product')->findLatestProducts(12);
+        $latest_products = $this->getDoctrine()->getRepository('EcommerceBundle:Product')->findLatestProducts(12);
         
         /* 
         * PageManager aanroepen
@@ -19,6 +19,6 @@ class DefaultController extends Controller
         //$page = $pm->setPermalink('{homepage}');
         $page = null;
 
-    	return $this->render('BiologischekaasBundle:Default:index.html.twig', array('latest_products' => $latest_products, 'page' => $page));
+    	return $this->render('EcommerceBundle:Default:index.html.twig', array('latest_products' => $latest_products, 'page' => $page));
     }
 }

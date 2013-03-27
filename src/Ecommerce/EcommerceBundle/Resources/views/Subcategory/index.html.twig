@@ -1,11 +1,11 @@
-{% extends 'BiologischekaasBundle::layout.html.twig' %}
+{% extends 'EcommerceBundle::layout.html.twig' %}
 
 {% block sidebar %}
-    {% include 'BiologischekaasBundle:Sidebar:index.html.twig' %}
+    {% include 'EcommerceBundle:Sidebar:index.html.twig' %}
 {% endblock %}
 
 {% block banner %}
-    {% include 'BiologischekaasBundle:Banner:index.html.twig' %}
+    {% include 'EcommerceBundle:Banner:index.html.twig' %}
 {% endblock %}
 
 {% block canonical %}
@@ -89,7 +89,7 @@
                 {% for product in products %}
                 
                     <li class="span4">
-                        {% include 'BiologischekaasBundle:Category:product.html.twig' with {'product': product} %}
+                        {% include 'EcommerceBundle:Category:product.html.twig' with {'product': product} %}
                     </li>
                     
                     {% if x == 3 %} 

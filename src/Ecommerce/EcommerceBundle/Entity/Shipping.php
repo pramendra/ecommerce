@@ -1,11 +1,11 @@
 <?php
 
-namespace Ecommerce\BiologischekaasBundle\Entity;
+namespace Ecommerce\EcommerceBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Ecommerce\BiologischekaasBundle\Entity\Shipping
+ * Ecommerce\EcommerceBundle\Entity\Shipping
  */
 class Shipping {
 
@@ -30,7 +30,7 @@ class Shipping {
     protected $description;
 
     /**
-     * @var Ecommerce\BiologischekaasBundle\Entity\ShippingTypes $shippingType
+     * @var Ecommerce\EcommerceBundle\Entity\ShippingTypes $shippingType
      * 
      */
     protected $shippingType;
@@ -116,7 +116,7 @@ class Shipping {
     /**
      * Set shippingType
      *
-     * @param Ecommerce\BiologischekaasBundle\Entity\ShippingTypes $shippingType
+     * @param Ecommerce\EcommerceBundle\Entity\ShippingTypes $shippingType
      */
     public function setShippingType(ShippingTypes $shippingType) {
         $this->shippingType = $shippingType;
@@ -125,7 +125,7 @@ class Shipping {
     /**
      * Get shippingType
      *
-     * @return Ecommerce\BiologischekaasBundle\Entity\ShippingTypes
+     * @return Ecommerce\EcommerceBundle\Entity\ShippingTypes
      */
     public function getShippingType() {
         return $this->shippingType;

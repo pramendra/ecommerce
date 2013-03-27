@@ -1,4 +1,4 @@
-Ecommerce\BiologischekaasBundle\Entity\Email:
+Ecommerce\EcommerceBundle\Entity\Email:
   type: entity
   table: email
   fields:

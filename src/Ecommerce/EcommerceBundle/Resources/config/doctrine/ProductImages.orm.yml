@@ -1,4 +1,4 @@
-Ecommerce\BiologischekaasBundle\Entity\ProductImages:
+Ecommerce\EcommerceBundle\Entity\ProductImages:
   type: entity
   table: product_images
   fields:

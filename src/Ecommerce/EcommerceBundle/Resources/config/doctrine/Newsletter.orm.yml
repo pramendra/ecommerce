@@ -1,4 +1,4 @@
-Ecommerce\BiologischekaasBundle\Entity\Newsletter:
+Ecommerce\EcommerceBundle\Entity\Newsletter:
   type: entity
   table: newsletter
   fields:

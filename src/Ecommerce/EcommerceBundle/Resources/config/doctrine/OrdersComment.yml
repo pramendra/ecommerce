@@ -1,4 +1,4 @@
-Ecommerce\BiologischekaasBundle\Entity\OrdersComment:
+Ecommerce\EcommerceBundle\Entity\OrdersComment:
   type: entity
   table: orders_comment
   fields:

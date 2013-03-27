@@ -1,4 +1,4 @@
-{% extends 'BiologischekaasBundle::layout.html.twig' %}
+{% extends 'EcommerceBundle::layout.html.twig' %}
 
 {% block sidebar %}
 {{ parent() }}
@@ -35,7 +35,7 @@
                 {% for product in products %}
                 
                     <li class="span4">
-                        {% include 'BiologischekaasBundle:Search:product.html.twig' with {'product': product} %}
+                        {% include 'EcommerceBundle:Search:product.html.twig' with {'product': product} %}
                     </li>
                     
                     {% if x == 3 %} 

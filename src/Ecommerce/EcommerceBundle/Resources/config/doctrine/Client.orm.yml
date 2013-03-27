@@ -1,4 +1,4 @@
-Ecommerce\BiologischekaasBundle\Entity\Client:
+Ecommerce\EcommerceBundle\Entity\Client:
   type: entity
   table: client
   fields:

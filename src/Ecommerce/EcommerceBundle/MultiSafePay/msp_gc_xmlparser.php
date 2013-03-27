@@ -1,6 +1,6 @@
 <?php
 
-namespace Ecommerce\BiologischekaasBundle\MultiSafePay;
+namespace Ecommerce\EcommerceBundle\MultiSafePay;
 
 /**
  * Classes used to parse xml data

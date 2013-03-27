@@ -1,0 +1,170 @@
+_root:
+    pattern:  /
+    defaults: { _controller: BKBundle:Default:index }
+
+_ajax:
+    pattern: /ajax
+    defaults: { _controller: BKBundle:Ajax:index }
+    
+_cart:
+    pattern:  /winkelmandje
+    defaults: { _controller: BKBundle:Cart:index }
+
+_sale:
+    pattern:  /sale
+    defaults: { _controller: BKBundle:Sale:index }
+    
+_account:
+    pattern:  /mijn-account
+    defaults: { _controller: BKBundle:Client:index }
+    
+_checkout:
+    pattern:  /afrekenen
+    defaults: { _controller: BKBundle:Cart:checkout }    
+    
+_cart_shipping:
+    pattern:  /afrekenen/bezorgwijze
+    defaults: { _controller: BKBundle:Cart:shipping }
+    
+_cart_paymethod:
+    pattern:  /afrekenen/betaalmethode
+    defaults: { _controller: BKBundle:Cart:payment }
+    
+_cart_overview:
+    pattern:  /afrekenen/overzicht
+    defaults: { _controller: BKBundle:Cart:overview }
+    
+_checkout_complete:
+    pattern:  /bestelling-geplaatst
+    defaults: { _controller: BKBundle:Cart:checkoutComplete }    
+    
+_checkout_cancel:
+    pattern:  /bestelling-geannuleerd
+    defaults: { _controller: BKBundle:Cart:checkoutCancel }    
+    
+_search:
+    pattern:  /zoeken
+    defaults: { _controller: BKBundle:Search:index }
+    
+_address:
+    pattern:  /client-address-lookup
+    defaults: { _controller: BKBundle:Client:addressLookup }
+    
+_set_product_filter:
+    pattern:  /set-product-filter
+    defaults: { _controller: BKBundle:Ajax:index }
+
+_twitter_oauth:
+    pattern:  /authorize-twitter
+    defaults: { _controller: BKBundle:Client:twitterOauth }  
+    
+_json_search:
+    pattern:  /json-search
+    defaults: { _controller: BKBundle:Search:json }
+    
+_notify:
+    pattern:  /notify
+    defaults: { _controller: BKBundle:Cart:notify }
+    
+_sitemap:
+    pattern:  /sitemap
+    defaults: { _controller: BKBundle:Page:sitemap }
+    
+_contact:
+    pattern:  /contact
+    defaults: { _controller: BKBundle:Page:contact }
+
+_betaalpagina_msp:
+    pattern:  /betaal-template-msp
+    defaults: { _controller: BKBundle:Cart:MSPPaymentPage }
+
+login:
+    pattern:   /login
+    defaults:  { _controller: BKBundle:Client:login }
+    
+login_check:
+    pattern:   /login_check
+    
+logout:
+    pattern:   /logout
+    
+_test:
+    pattern:  /test/email
+    defaults: { _controller: BKBundle:Test:email }    
+    
+_testmail:
+    pattern:  /test
+    defaults: { _controller: BKBundle:Test:index }    
+
+_oldcrap: 
+    pattern:  /index.php/catalogsearch/result/index/
+    defaults:
+        _controller: FrameworkBundle:Redirect:redirect
+        route: _root
+        permanent: true    
+
+_oldcrap2: 
+    pattern:  /index.php/catalogsearch/result/
+    defaults:
+        _controller: FrameworkBundle:Redirect:redirect
+        route: _root
+        permanent: true    
+
+_oldcrap3: 
+    pattern:  /index.php/{old}/{crap}/
+    defaults:
+        _controller: FrameworkBundle:Redirect:redirect
+        route: _root
+        permanent: true    
+
+_section:
+    pattern:  /{section}
+    defaults: { _controller: BKBundle:Section:index }
+
+_section_ws:
+    pattern:  /{section}/
+    defaults:
+        _controller: FrameworkBundle:Redirect:redirect
+        route: _section
+        permanent: true    
+
+_category:
+    pattern:  /{section}/{category}
+    defaults: { _controller: BKBundle:Category:index }
+
+_category_ws:
+    pattern:  /{section}/{category}/
+    defaults:
+        _controller: FrameworkBundle:Redirect:redirect
+        route: _category
+        permanent: true    
+
+_subcategory:
+    pattern:  /{section}/{category}/{subcategory}
+    defaults: { _controller: BKBundle:Category:Subcategory }  
+    
+_subcategory_ws:
+    pattern:  /{section}/{category}/{subcategory}
+    defaults:
+        _controller: FrameworkBundle:Redirect:redirect
+        route: _subcategory
+        permanent: true  
+    
+_product:
+    pattern:  /{section}/{category}/{subcategory}/{product}
+    defaults: { _controller: BKBundle:Product:view }    
+    
+
+_seo_page:
+    pattern:  /{permalink}
+    defaults: { _controller: BKBundle:Seo:view }    
+
+
+_page:
+    pattern:  /{permalink}
+    defaults: { _controller: BKBundle:Page:view }    
+
+_product_shortcut:
+    pattern:  /{product}
+    defaults: { _controller: BKBundle:Product:shortcut }   
+ 

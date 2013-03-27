@@ -1,4 +1,4 @@
-{% extends 'BiologischekaasBundle::layout.html.twig' %}
+{% extends 'EcommerceBundle::layout.html.twig' %}
 
 {% block sidebar %}
 
@@ -227,7 +227,7 @@
 
                 {% for related_product in related_products %}
                     <li class="span3">
-                        {% include 'BiologischekaasBundle:Category:product.html.twig' with {'product': related_product, 'subcategory': subcategory,'category': category} %}
+                        {% include 'EcommerceBundle:Category:product.html.twig' with {'product': related_product, 'subcategory': subcategory,'category': category} %}
                     </li>
                 {% endfor %}
             </ul>

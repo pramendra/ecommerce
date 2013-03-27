@@ -1,7 +1,7 @@
-Ecommerce\BiologischekaasBundle\Entity\ShippingTypes:
+Ecommerce\EcommerceBundle\Entity\ShippingTypes:
   type: entity
   table: shipping_types
-  repositoryClass: Ecommerce\BiologischekaasBundle\Repository\ShippingTypesRepository
+  repositoryClass: Ecommerce\EcommerceBundle\Repository\ShippingTypesRepository
   fields:
     id:
       id: true

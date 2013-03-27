@@ -7,8 +7,8 @@ AdminBundle:
     resource: "@AdminBundle/Resources/config/routing.yml"
     prefix:   /
 
-BiologischekaasBundle:
-    resource: "@BiologischekaasBundle/Resources/config/routing.yml"
+BKBundle:
+    resource: "@BKBundle/Resources/config/routing.yml"
     prefix:   /
     
 #EcommerceBundle:

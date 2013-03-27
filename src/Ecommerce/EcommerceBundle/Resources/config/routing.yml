@@ -1,86 +1,86 @@
 _root:
     pattern:  /
-    defaults: { _controller: BiologischekaasBundle:Default:index }
+    defaults: { _controller: EcommerceBundle:Default:index }
 
 _ajax:
     pattern: /ajax
-    defaults: { _controller: BiologischekaasBundle:Ajax:index }
+    defaults: { _controller: EcommerceBundle:Ajax:index }
     
 _cart:
     pattern:  /winkelmandje
-    defaults: { _controller: BiologischekaasBundle:Cart:index }
+    defaults: { _controller: EcommerceBundle:Cart:index }
 
 _sale:
     pattern:  /sale
-    defaults: { _controller: BiologischekaasBundle:Sale:index }
+    defaults: { _controller: EcommerceBundle:Sale:index }
     
 _account:
     pattern:  /mijn-account
-    defaults: { _controller: BiologischekaasBundle:Client:index }
+    defaults: { _controller: EcommerceBundle:Client:index }
     
 _checkout:
     pattern:  /afrekenen
-    defaults: { _controller: BiologischekaasBundle:Cart:checkout }    
+    defaults: { _controller: EcommerceBundle:Cart:checkout }    
     
 _cart_shipping:
     pattern:  /afrekenen/bezorgwijze
-    defaults: { _controller: BiologischekaasBundle:Cart:shipping }
+    defaults: { _controller: EcommerceBundle:Cart:shipping }
     
 _cart_paymethod:
     pattern:  /afrekenen/betaalmethode
-    defaults: { _controller: BiologischekaasBundle:Cart:payment }
+    defaults: { _controller: EcommerceBundle:Cart:payment }
     
 _cart_overview:
     pattern:  /afrekenen/overzicht
-    defaults: { _controller: BiologischekaasBundle:Cart:overview }
+    defaults: { _controller: EcommerceBundle:Cart:overview }
     
 _checkout_complete:
     pattern:  /bestelling-geplaatst
-    defaults: { _controller: BiologischekaasBundle:Cart:checkoutComplete }    
+    defaults: { _controller: EcommerceBundle:Cart:checkoutComplete }    
     
 _checkout_cancel:
     pattern:  /bestelling-geannuleerd
-    defaults: { _controller: BiologischekaasBundle:Cart:checkoutCancel }    
+    defaults: { _controller: EcommerceBundle:Cart:checkoutCancel }    
     
 _search:
     pattern:  /zoeken
-    defaults: { _controller: BiologischekaasBundle:Search:index }
+    defaults: { _controller: EcommerceBundle:Search:index }
     
 _address:
     pattern:  /client-address-lookup
-    defaults: { _controller: BiologischekaasBundle:Client:addressLookup }
+    defaults: { _controller: EcommerceBundle:Client:addressLookup }
     
 _set_product_filter:
     pattern:  /set-product-filter
-    defaults: { _controller: BiologischekaasBundle:Ajax:index }
+    defaults: { _controller: EcommerceBundle:Ajax:index }
 
 _twitter_oauth:
     pattern:  /authorize-twitter
-    defaults: { _controller: BiologischekaasBundle:Client:twitterOauth }  
+    defaults: { _controller: EcommerceBundle:Client:twitterOauth }  
     
 _json_search:
     pattern:  /json-search
-    defaults: { _controller: BiologischekaasBundle:Search:json }
+    defaults: { _controller: EcommerceBundle:Search:json }
     
 _notify:
     pattern:  /notify
-    defaults: { _controller: BiologischekaasBundle:Cart:notify }
+    defaults: { _controller: EcommerceBundle:Cart:notify }
     
 _sitemap:
     pattern:  /sitemap
-    defaults: { _controller: BiologischekaasBundle:Page:sitemap }
+    defaults: { _controller: EcommerceBundle:Page:sitemap }
     
 _contact:
     pattern:  /contact
-    defaults: { _controller: BiologischekaasBundle:Page:contact }
+    defaults: { _controller: EcommerceBundle:Page:contact }
 
 _betaalpagina_msp:
     pattern:  /betaal-template-msp
-    defaults: { _controller: BiologischekaasBundle:Cart:MSPPaymentPage }
+    defaults: { _controller: EcommerceBundle:Cart:MSPPaymentPage }
 
 login:
     pattern:   /login
-    defaults:  { _controller: BiologischekaasBundle:Client:login }
+    defaults:  { _controller: EcommerceBundle:Client:login }
     
 login_check:
     pattern:   /login_check
@@ -90,11 +90,11 @@ logout:
     
 _test:
     pattern:  /test/email
-    defaults: { _controller: BiologischekaasBundle:Test:email }    
+    defaults: { _controller: EcommerceBundle:Test:email }    
     
 _testmail:
     pattern:  /test
-    defaults: { _controller: BiologischekaasBundle:Test:index }    
+    defaults: { _controller: EcommerceBundle:Test:index }    
 
 _oldcrap: 
     pattern:  /index.php/catalogsearch/result/index/
@@ -119,7 +119,7 @@ _oldcrap3:
 
 _section:
     pattern:  /{section}
-    defaults: { _controller: BiologischekaasBundle:Section:index }
+    defaults: { _controller: EcommerceBundle:Section:index }
 
 _section_ws:
     pattern:  /{section}/
@@ -130,7 +130,7 @@ _section_ws:
 
 _category:
     pattern:  /{section}/{category}
-    defaults: { _controller: BiologischekaasBundle:Category:index }
+    defaults: { _controller: EcommerceBundle:Category:index }
 
 _category_ws:
     pattern:  /{section}/{category}/
@@ -141,7 +141,7 @@ _category_ws:
 
 _subcategory:
     pattern:  /{section}/{category}/{subcategory}
-    defaults: { _controller: BiologischekaasBundle:Category:Subcategory }  
+    defaults: { _controller: EcommerceBundle:Category:Subcategory }  
     
 _subcategory_ws:
     pattern:  /{section}/{category}/{subcategory}
@@ -152,19 +152,19 @@ _subcategory_ws:
     
 _product:
     pattern:  /{section}/{category}/{subcategory}/{product}
-    defaults: { _controller: BiologischekaasBundle:Product:view }    
+    defaults: { _controller: EcommerceBundle:Product:view }    
     
 
 _seo_page:
     pattern:  /{permalink}
-    defaults: { _controller: BiologischekaasBundle:Seo:view }    
+    defaults: { _controller: EcommerceBundle:Seo:view }    
 
 
 _page:
     pattern:  /{permalink}
-    defaults: { _controller: BiologischekaasBundle:Page:view }    
+    defaults: { _controller: EcommerceBundle:Page:view }    
 
 _product_shortcut:
     pattern:  /{product}
-    defaults: { _controller: BiologischekaasBundle:Product:shortcut }   
+    defaults: { _controller: EcommerceBundle:Product:shortcut }   
  

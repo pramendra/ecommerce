@@ -1,11 +1,11 @@
 <?php
 
-namespace Ecommerce\BiologischekaasBundle\Entity;
+namespace Ecommerce\EcommerceBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Ecommerce\BiologischekaasBundle\Entity\Product
+ * Ecommerce\EcommerceBundle\Entity\Product
  */
 class Product {
 
@@ -105,22 +105,22 @@ class Product {
     protected $firstImage;
 
     /*
-     * @var Ecommerce\BiologischekaasBundle\Entity\ShippingTypes $shippingType
+     * @var Ecommerce\EcommerceBundle\Entity\ShippingTypes $shippingType
      */
     protected $shippingType;
 
     /*
-     * @var Ecommerce\BiologischekaasBundle\Entity\ProductImages $images
+     * @var Ecommerce\EcommerceBundle\Entity\ProductImages $images
      */
     protected $images;
 
     /**
-     * @var Ecommerce\BiologischekaasBundle\Entity\ProductAttributes
+     * @var Ecommerce\EcommerceBundle\Entity\ProductAttributes
      */
     protected $attributes;
 
     /**
-     * @var Ecommerce\BiologischekaasBundle\Entity\Subcategories
+     * @var Ecommerce\EcommerceBundle\Entity\Subcategories
      */
     protected $subcategories;
 
@@ -449,9 +449,9 @@ class Product {
     /**
      * Add images
      *
-     * @param Ecommerce\BiologischekaasBundle\Entity\ProductImages $images
+     * @param Ecommerce\EcommerceBundle\Entity\ProductImages $images
      */
-    public function addImages(\Ecommerce\BiologischekaasBundle\Entity\ProductImages $images) {
+    public function addImages(\Ecommerce\EcommerceBundle\Entity\ProductImages $images) {
 
         $this->images = $images;
     }
@@ -502,16 +502,16 @@ class Product {
     /**
      * Set shippingType
      *
-     * @param Ecommerce\BiologischekaasBundle\Entity\ShippingTypes $shipping
+     * @param Ecommerce\EcommerceBundle\Entity\ShippingTypes $shipping
      */
-    public function setShippingType(\Ecommerce\BiologischekaasBundle\Entity\ShippingTypes $shipping_type) {
+    public function setShippingType(\Ecommerce\EcommerceBundle\Entity\ShippingTypes $shipping_type) {
         $this->shippingType = $shipping_type;
     }
 
     /**
      * Get shippingType
      *
-     * @return @param Ecommerce\BiologischekaasBundle\Entity\ShippingTypes
+     * @return @param Ecommerce\EcommerceBundle\Entity\ShippingTypes
      */
     public function getShippingType() {
         return $this->shippingType;
@@ -520,9 +520,9 @@ class Product {
     /**
      * Add attributes
      *
-     * @param Ecommerce\BiologischekaasBundle\Entity\ProductAttributes $attributes
+     * @param Ecommerce\EcommerceBundle\Entity\ProductAttributes $attributes
      */
-    public function addAttributes(\Ecommerce\BiologischekaasBundle\Entity\ProductAttributes $attributes) {
+    public function addAttributes(\Ecommerce\EcommerceBundle\Entity\ProductAttributes $attributes) {
 
         $this->attributes[] = $attributes;
     }
@@ -548,9 +548,9 @@ class Product {
     /**
      * Add subcategories
      *
-     * @param Ecommerce\BiologischekaasBundle\Entity\Subcategory $subcategories
+     * @param Ecommerce\EcommerceBundle\Entity\Subcategory $subcategories
      */
-    public function addSubcategories(\Ecommerce\BiologischekaasBundle\Entity\Subcategory $subcategories) {
+    public function addSubcategories(\Ecommerce\EcommerceBundle\Entity\Subcategory $subcategories) {
         $this->subcategories[] = $subcategories;
     }
 

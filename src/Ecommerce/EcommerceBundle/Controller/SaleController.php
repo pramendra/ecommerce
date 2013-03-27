@@ -1,16 +1,16 @@
 <?php
 
-namespace Ecommerce\BiologischekaasBundle\Controller;
+namespace Ecommerce\EcommerceBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use BiologischekaasBundle\Entity\Product;
-use Ecommerce\BiologischekaasBundle\Paginator\Paginator;
+use EcommerceBundle\Entity\Product;
+use Ecommerce\EcommerceBundle\Paginator\Paginator;
 
 class SaleController extends Controller {
 
     public function indexAction() {
         
-        $sections_repository = $this->getDoctrine()->getRepository('BiologischekaasBundle:Section');
+        $sections_repository = $this->getDoctrine()->getRepository('EcommerceBundle:Section');
 
         /* Fetch section by permalink */
         $sections = $sections_repository->findAll();
@@ -33,7 +33,7 @@ class SaleController extends Controller {
             $firstResult = ($page * $productFilter->getMaxResults()) + 1;
         }
 
-        $products = $this->getDoctrine()->getRepository('BiologischekaasBundle:Product')->findByOffsetAndFilter($firstResult, $productFilter);
+        $products = $this->getDoctrine()->getRepository('EcommerceBundle:Product')->findByOffsetAndFilter($firstResult, $productFilter);
 
         $totalProducts = count($products);
         
@@ -42,9 +42,9 @@ class SaleController extends Controller {
         
         $sale_discount = $this->container->getParameter('sale_discount');
         
-        $page = $this->getDoctrine()->getRepository('BiologischekaasBundle:Page')->findOneBy(array('permalink' => 'sale'));
+        $page = $this->getDoctrine()->getRepository('EcommerceBundle:Page')->findOneBy(array('permalink' => 'sale'));
         
-        return $this->render('BiologischekaasBundle:Sale:index.html.twig', array(
+        return $this->render('EcommerceBundle:Sale:index.html.twig', array(
                     'products' => $products,
                     'page' => $page,
                     'sale_discount' => $sale_discount,

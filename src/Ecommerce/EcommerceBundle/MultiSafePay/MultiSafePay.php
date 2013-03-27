@@ -1,8 +1,8 @@
 <?php
 
-namespace Ecommerce\BiologischekaasBundle\MultiSafePay;
+namespace Ecommerce\EcommerceBundle\MultiSafePay;
 
-use Ecommerce\BiologischekaasBundle\MultiSafePay\msp_gc_xmlparser;
+use Ecommerce\EcommerceBundle\MultiSafePay\msp_gc_xmlparser;
 
 define('MSP_TEST_API', true); // seperate testaccount needed
 define('MSP_ACCOUNT_ID', '10099492');

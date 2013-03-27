@@ -1,7 +1,7 @@
-Ecommerce\BiologischekaasBundle\Entity\ProductAttributes:
+Ecommerce\EcommerceBundle\Entity\ProductAttributes:
   type: entity
   table: product_attributes
-  repositoryClass: Ecommerce\BiologischekaasBundle\Repository\ProductAttributesRepository
+  repositoryClass: Ecommerce\EcommerceBundle\Repository\ProductAttributesRepository
   fields:
     id:
       id: true

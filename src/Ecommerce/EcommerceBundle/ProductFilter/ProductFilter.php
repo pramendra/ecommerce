@@ -1,6 +1,6 @@
 <?php
 
-namespace Ecommerce\BiologischekaasBundle\ProductFilter;
+namespace Ecommerce\EcommerceBundle\ProductFilter;
 
 use Symfony\Component\DependencyInjection\ContainerAware;
 use Symfony\Component\HttpFoundation\Request;
@@ -9,10 +9,10 @@ use Symfony\Component\HttpFoundation\Cookie;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 
-use Ecommerce\BiologischekaasBundle\Entity\Attribute;
-use Ecommerce\BiologischekaasBundle\Entity\Subcategory;
-use Ecommerce\BiologischekaasBundle\Entity\Category;
-use Ecommerce\BiologischekaasBundle\Entity\Section;
+use Ecommerce\EcommerceBundle\Entity\Attribute;
+use Ecommerce\EcommerceBundle\Entity\Subcategory;
+use Ecommerce\EcommerceBundle\Entity\Category;
+use Ecommerce\EcommerceBundle\Entity\Section;
 
 class ProductFilter extends ContainerAware {
 

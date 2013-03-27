@@ -1,9 +1,9 @@
 <?php
 
-namespace Ecommerce\BiologischekaasBundle\PageManager;
+namespace Ecommerce\EcommerceBundle\PageManager;
 
 use Symfony\Component\DependencyInjection\ContainerAware;
-use Ecommerce\BiologischekaasBundle\Entity\Page;
+use Ecommerce\EcommerceBundle\Entity\Page;
 
 class PageManager extends ContainerAware {
 
@@ -11,7 +11,7 @@ class PageManager extends ContainerAware {
 
     public function setPermalink($permalink) {
         
-        $page = $this->getDoctrine()->getRepository('BiologischekaasBundle:Page')->findOneByPermalink($permalink);
+        $page = $this->getDoctrine()->getRepository('EcommerceBundle:Page')->findOneByPermalink($permalink);
         
         if($page !== null) { 
             $this->page = $page;

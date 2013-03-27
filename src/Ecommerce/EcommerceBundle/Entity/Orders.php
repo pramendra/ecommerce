@@ -1,11 +1,11 @@
 <?php
 
-namespace Ecommerce\BiologischekaasBundle\Entity;
+namespace Ecommerce\EcommerceBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Ecommerce\BiologischekaasBundle\Entity\Orders
+ * Ecommerce\EcommerceBundle\Entity\Orders
  */
 class Orders
 {
@@ -50,27 +50,27 @@ class Orders
     protected $shippingDate;
     
     /**
-     * @var Ecommerce\BiologischekaasBundle\Entity\Paymethod
+     * @var Ecommerce\EcommerceBundle\Entity\Paymethod
      */
     protected $paymethod;
 
     /**
-     * @var Ecommerce\BiologischekaasBundle\Entity\Coupon
+     * @var Ecommerce\EcommerceBundle\Entity\Coupon
      */
     protected $coupon;
 
     /**
-     * @var Ecommerce\BiologischekaasBundle\Entity\Client
+     * @var Ecommerce\EcommerceBundle\Entity\Client
      */
     protected $client;
 
     /**
-     * @var Ecommerce\BiologischekaasBundle\Entity\Shipping
+     * @var Ecommerce\EcommerceBundle\Entity\Shipping
      */
     protected $shipping;
     
     /**
-     * @var Ecommerce\BiologischekaasBundle\Entity\OrdersProducts
+     * @var Ecommerce\EcommerceBundle\Entity\OrdersProducts
      */
     protected $products;
 
@@ -234,9 +234,9 @@ class Orders
     /**
      * Set paymethod
      *
-     * @param Ecommerce\BiologischekaasBundle\Entity\Paymethod $paymethod
+     * @param Ecommerce\EcommerceBundle\Entity\Paymethod $paymethod
      */
-    public function setPaymethod(\Ecommerce\BiologischekaasBundle\Entity\Paymethod $paymethod)
+    public function setPaymethod(\Ecommerce\EcommerceBundle\Entity\Paymethod $paymethod)
     {
         $this->paymethod = $paymethod;
     }
@@ -244,7 +244,7 @@ class Orders
     /**
      * Get paymethod
      *
-     * @return Ecommerce\BiologischekaasBundle\Entity\Paymethod 
+     * @return Ecommerce\EcommerceBundle\Entity\Paymethod 
      */
     public function getPaymethod()
     {
@@ -254,9 +254,9 @@ class Orders
     /**
      * Set coupon
      *
-     * @param Ecommerce\BiologischekaasBundle\Entity\Coupon $coupon
+     * @param Ecommerce\EcommerceBundle\Entity\Coupon $coupon
      */
-    public function setCoupon(\Ecommerce\BiologischekaasBundle\Entity\Coupon $coupon)
+    public function setCoupon(\Ecommerce\EcommerceBundle\Entity\Coupon $coupon)
     {
         $this->coupon = $coupon;
     }
@@ -264,7 +264,7 @@ class Orders
     /**
      * Get coupon
      *
-     * @return Ecommerce\BiologischekaasBundle\Entity\Coupon 
+     * @return Ecommerce\EcommerceBundle\Entity\Coupon 
      */
     public function getCoupon()
     {
@@ -274,9 +274,9 @@ class Orders
     /**
      * Set client
      *
-     * @param Ecommerce\BiologischekaasBundle\Entity\Client $client
+     * @param Ecommerce\EcommerceBundle\Entity\Client $client
      */
-    public function setClient(\Ecommerce\BiologischekaasBundle\Entity\Client $client)
+    public function setClient(\Ecommerce\EcommerceBundle\Entity\Client $client)
     {
         $this->client = $client;
     }
@@ -284,7 +284,7 @@ class Orders
     /**
      * Get client
      *
-     * @return Ecommerce\BiologischekaasBundle\Entity\Client 
+     * @return Ecommerce\EcommerceBundle\Entity\Client 
      */
     public function getClient()
     {
@@ -294,9 +294,9 @@ class Orders
     /**
      * Set shipping
      *
-     * @param Ecommerce\BiologischekaasBundle\Entity\Shipping $shipping
+     * @param Ecommerce\EcommerceBundle\Entity\Shipping $shipping
      */
-    public function setShipping(\Ecommerce\BiologischekaasBundle\Entity\Shipping $shipping)
+    public function setShipping(\Ecommerce\EcommerceBundle\Entity\Shipping $shipping)
     {
         $this->shipping = $shipping;
     }
@@ -304,7 +304,7 @@ class Orders
     /**
      * Get shipping
      *
-     * @return Ecommerce\BiologischekaasBundle\Entity\Shipping 
+     * @return Ecommerce\EcommerceBundle\Entity\Shipping 
      */
     public function getShipping()
     {
@@ -315,9 +315,9 @@ class Orders
     /**
      * Add product
      *
-     * @param Ecommerce\BiologischekaasBundle\Entity\OrdersProduct $product
+     * @param Ecommerce\EcommerceBundle\Entity\OrdersProduct $product
      */
-    public function addProduct(\Ecommerce\BiologischekaasBundle\Entity\OrdersProduct $product) {
+    public function addProduct(\Ecommerce\EcommerceBundle\Entity\OrdersProduct $product) {
         $product->setOrder($this);
         $this->products[] = $product;
     }

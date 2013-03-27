@@ -1,11 +1,11 @@
 <?php
 
-namespace Ecommerce\BiologischekaasBundle\Entity;
+namespace Ecommerce\EcommerceBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Ecommerce\BiologischekaasBundle\Entity\ProductImages
+ * Ecommerce\EcommerceBundle\Entity\ProductImages
  */
 class ProductImages {
 
@@ -40,7 +40,7 @@ class ProductImages {
     protected $createdAt;
 
     /**
-     * @var Ecommerce\BiologischekaasBundle\Entity\Product
+     * @var Ecommerce\EcommerceBundle\Entity\Product
      */
     protected $product;
 
@@ -146,16 +146,16 @@ class ProductImages {
     /**
      * Set product
      *
-     * @param Ecommerce\BiologischekaasBundle\Entity\Product $product
+     * @param Ecommerce\EcommerceBundle\Entity\Product $product
      */
-    public function setProduct(\Ecommerce\BiologischekaasBundle\Entity\Product $product) {
+    public function setProduct(\Ecommerce\EcommerceBundle\Entity\Product $product) {
         $this->product = $product;
     }
 
     /**
      * Get product
      *
-     * @return Ecommerce\BiologischekaasBundle\Entity\Product 
+     * @return Ecommerce\EcommerceBundle\Entity\Product 
      */
     public function getProduct() {
         return $this->product;

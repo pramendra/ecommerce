@@ -1,11 +1,11 @@
 <?php
 
-namespace Ecommerce\BiologischekaasBundle\Entity;
+namespace Ecommerce\EcommerceBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Ecommerce\BiologischekaasBundle\Entity\Email
+ * Ecommerce\EcommerceBundle\Entity\Email
  */
 class Email
 {
@@ -30,7 +30,7 @@ class Email
     protected $subject;
 
     /**
-     * @var Ecommerce\BiologischekaasBundle\Entity\Client
+     * @var Ecommerce\EcommerceBundle\Entity\Client
      */
     protected $client;
 
@@ -108,9 +108,9 @@ class Email
     /**
      * Set client
      *
-     * @param Ecommerce\BiologischekaasBundle\Entity\Client $client
+     * @param Ecommerce\EcommerceBundle\Entity\Client $client
      */
-    public function setClient(\Ecommerce\BiologischekaasBundle\Entity\Client $client)
+    public function setClient(\Ecommerce\EcommerceBundle\Entity\Client $client)
     {
         $this->client = $client;
     }
@@ -118,7 +118,7 @@ class Email
     /**
      * Get client
      *
-     * @return Ecommerce\BiologischekaasBundle\Entity\Client 
+     * @return Ecommerce\EcommerceBundle\Entity\Client 
      */
     public function getClient()
     {
