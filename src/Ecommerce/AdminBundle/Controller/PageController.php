@@ -1,6 +1,6 @@
 <?php
 
-namespace Ecommerce\AdminBundle00\Controller;
+namespace Ecommerce\AdminBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,7 +15,7 @@ class PageController extends Controller
 
         $pages = $this->getDoctrine()->getRepository('EcommerceBundle:Page')->findAll();
         
-        return $this->render('AdminBundle00:Page:index.html.twig', array('pages' => $pages));
+        return $this->render('AdminBundle:Page:index.html.twig', array('pages' => $pages));
     }
 
     public function editAction($id) {
@@ -26,7 +26,7 @@ class PageController extends Controller
             $page = $this->getDoctrine()->getRepository('EcommerceBundle:Page')->find($id);
         }
 
-        $page_form = $this->createForm(new \Ecommerce\AdminBundle00\Form\PageType($page), $page);
+        $page_form = $this->createForm(new \Ecommerce\AdminBundle\Form\PageType($page), $page);
 
         $page_form->setData($page);
 
@@ -54,7 +54,7 @@ class PageController extends Controller
             }
         }
 
-        return $this->render('AdminBundle00:Page:edit.html.twig', array('page' => $page,  'pages_form' => $page_form->createView()));
+        return $this->render('AdminBundle:Page:edit.html.twig', array('page' => $page,  'pages_form' => $page_form->createView()));
     }
 
 }

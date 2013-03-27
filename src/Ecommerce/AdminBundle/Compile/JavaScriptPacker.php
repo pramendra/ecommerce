@@ -1,6 +1,6 @@
 <?php
 
-namespace Ecommerce\AdminBundle00\Compile;
+namespace Ecommerce\AdminBundle\Compile;
 
 /* 9 April 2008. version 1.1
  * 

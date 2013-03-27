@@ -1,6 +1,6 @@
 <?php
 
-namespace Ecommerce\AdminBundle00\Compile;
+namespace Ecommerce\AdminBundle\Compile;
 
 /*
   :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::

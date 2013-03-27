@@ -1,6 +1,6 @@
 <?php
 
-namespace Ecommerce\AdminBundle00\Command;
+namespace Ecommerce\AdminBundle\Command;
 
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputArgument;

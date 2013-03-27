@@ -1,6 +1,6 @@
 <?php
 
-namespace Ecommerce\AdminBundle00\Tests\Controller;
+namespace Ecommerce\AdminBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 

@@ -1,4 +1,4 @@
-{% extends 'AdminBundle00::layout.html.twig' %}
+{% extends 'AdminBundle::layout.html.twig' %}
 
 {% block content %}
 <div class="row-fluid">
@@ -31,10 +31,10 @@
     <div class="span12">
         <div class="tab-content">
             <div id="lA" class="tab-pane active">
-                {% include 'AdminBundle00:Clients:general.html.twig' %}
+                {% include 'AdminBundle:Clients:general.html.twig' %}
             </div>
             <div id="lB" class="tab-pane">
-                {% include 'AdminBundle00:Clients:orders.html.twig' %}
+                {% include 'AdminBundle:Clients:orders.html.twig' %}
             </div>
         </div>
     </div>

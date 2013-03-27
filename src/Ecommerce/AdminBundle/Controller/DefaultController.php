@@ -1,10 +1,10 @@
 <?php
 
-namespace Ecommerce\AdminBundle00\Controller;
+namespace Ecommerce\AdminBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
-use Ecommerce\AdminBundle00\Compile\GIFEncoder;
+use Ecommerce\AdminBundle\Compile\GIFEncoder;
 
 
 class DefaultController extends Controller
@@ -32,7 +32,7 @@ class DefaultController extends Controller
         $mostViewedProducts = $this->getDoctrine()->getRepository('EcommerceBundle:Product')->findMostViewedProducts(5);
         
         
-        return $this->render('AdminBundle00:Default:index.html.twig', 
+        return $this->render('AdminBundle:Default:index.html.twig', 
                 array('weekOrders' => $weekOrders, 'lastFiveOrders' => $lastFiveOrders, 'waitingForShipping' => $waitingForShipping,
                     'profit_this_month' => $profit_this_month, 'profit_prev_month' => $profit_prev_month,
                     'newestProducts' => $newestProducts, 'mostViewedProducts' => $mostViewedProducts));

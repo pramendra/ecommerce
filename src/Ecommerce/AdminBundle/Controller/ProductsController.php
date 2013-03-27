@@ -1,10 +1,10 @@
 <?php
 
-namespace Ecommerce\AdminBundle00\Controller;
+namespace Ecommerce\AdminBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
-use Ecommerce\AdminBundle00\UploadHandler\UploadHandler;
+use Ecommerce\AdminBundle\UploadHandler\UploadHandler;
 use Ecommerce\EcommerceBundle\Entity\ProductImages;
 use Ecommerce\EcommerceBundle\Entity\Product;
 use Symfony\Component\HttpFoundation\Request;
@@ -21,7 +21,7 @@ class ProductsController extends Controller {
         
         $categories = $this->getDoctrine()->getRepository('EcommerceBundle:Category')->findAll();
         
-        return $this->render('AdminBundle00:Products:index.html.twig', 
+        return $this->render('AdminBundle:Products:index.html.twig', 
                 array('query_string' => $query_string,
                     'categories' => $categories,
                     'selected_subcategory' => $selected_subcategory,
@@ -170,7 +170,7 @@ class ProductsController extends Controller {
             $product = $this->getDoctrine()->getRepository('EcommerceBundle:Product')->find($id);
         }
 
-        $product_form = $this->createForm(new \Ecommerce\AdminBundle00\Form\ProductType($product), $product);
+        $product_form = $this->createForm(new \Ecommerce\AdminBundle\Form\ProductType($product), $product);
 
         $product_form->setData($product);
 
@@ -214,7 +214,7 @@ class ProductsController extends Controller {
             }
         }
 
-        return $this->render('AdminBundle00:Products:edit.html.twig', array('product' => $product, 'sections' => $sections,  'attributes' => $attributes, 'products_form' => $product_form->createView()));
+        return $this->render('AdminBundle:Products:edit.html.twig', array('product' => $product, 'sections' => $sections,  'attributes' => $attributes, 'products_form' => $product_form->createView()));
     }
     
     public function deleteAction($id) { 

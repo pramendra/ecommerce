@@ -1,10 +1,10 @@
 <?php
 
-namespace Ecommerce\AdminBundle00;
+namespace Ecommerce\AdminBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class AdminBundle00 extends Bundle
+class AdminBundle extends Bundle
 {
     
 }

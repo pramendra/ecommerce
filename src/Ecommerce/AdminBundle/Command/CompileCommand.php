@@ -1,14 +1,14 @@
 <?php
 
-namespace Ecommerce\AdminBundle00\Command;
+namespace Ecommerce\AdminBundle\Command;
 
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
-use Ecommerce\AdminBundle00\Compile\lessc;
-use Ecommerce\AdminBundle00\Compile\JavaScriptPacker;
+use Ecommerce\AdminBundle\Compile\lessc;
+use Ecommerce\AdminBundle\Compile\JavaScriptPacker;
 
 class CompileCommand extends ContainerAwareCommand {
 

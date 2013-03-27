@@ -1,6 +1,6 @@
 <?php
 
-namespace Ecommerce\AdminBundle00\Controller;
+namespace Ecommerce\AdminBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
@@ -19,7 +19,7 @@ class OrdersController extends Controller {
 	$selected_status = $this->getRequest()->get('status');
 	$selected_shipping = $this->getRequest()->get('shipping');
 
-	return $this->render('AdminBundle00:Orders:index.html.twig', array('query_string' => $query_string, 'paymethods' => $paymethods, 'shippings' => $shippings,
+	return $this->render('AdminBundle:Orders:index.html.twig', array('query_string' => $query_string, 'paymethods' => $paymethods, 'shippings' => $shippings,
 		    'selected_paymethod' => $selected_paymethod,
 		    'selected_status' => $selected_status,
 		    'selected_shipping' => $selected_shipping,
@@ -30,7 +30,7 @@ class OrdersController extends Controller {
 
 	$order = $this->getDoctrine()->getRepository('EcommerceBundle:Orders')->find($id);
 
-	return $this->render('AdminBundle00:Orders:view.html.twig', array('order' => $order));
+	return $this->render('AdminBundle:Orders:view.html.twig', array('order' => $order));
     }
 
     public function sendOrderMailAction($id) {

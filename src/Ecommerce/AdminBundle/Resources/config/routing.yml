@@ -1,123 +1,123 @@
 admin_homepage:
     pattern:  /admin
-    defaults: { _controller: AdminBundle00:Default:index }
+    defaults: { _controller: AdminBundle:Default:index }
     
 admin_products:
     pattern:  /admin/products
-    defaults: { _controller: AdminBundle00:Products:index }
+    defaults: { _controller: AdminBundle:Products:index }
     
 admin_products_edit:
     pattern:  /admin/products/{id}
-    defaults: { _controller: AdminBundle00:Products:edit }
+    defaults: { _controller: AdminBundle:Products:edit }
     
 admin_products_attributes:
     pattern:  /admin/products/{id}/{product_attribute_id}
-    defaults: { _controller: AdminBundle00:Products:attributes }
+    defaults: { _controller: AdminBundle:Products:attributes }
     
 admin_products_delete:
     pattern:  /admin/delete_product/{id}
-    defaults: { _controller: AdminBundle00:Products:delete }
+    defaults: { _controller: AdminBundle:Products:delete }
     
 admin_products_upload:
     pattern:  /admin/upload
-    defaults: { _controller: AdminBundle00:Products:upload }
+    defaults: { _controller: AdminBundle:Products:upload }
     
 admin_orders:
     pattern:  /admin/bestellingen
-    defaults: { _controller: AdminBundle00:Orders:index }
+    defaults: { _controller: AdminBundle:Orders:index }
     
 admin_category:
     pattern:  /admin/category
-    defaults: { _controller: AdminBundle00:Category:index }
+    defaults: { _controller: AdminBundle:Category:index }
     
 admin_category_edit:
     pattern:  /admin/category/{id}
-    defaults: { _controller: AdminBundle00:Category:edit }
+    defaults: { _controller: AdminBundle:Category:edit }
     
 admin_category_delete:
     pattern:  /admin/delete_category/{id}
-    defaults: { _controller: AdminBundle00:Category:edit }
+    defaults: { _controller: AdminBundle:Category:edit }
     
 admin_subcategory_edit:
     pattern:  /admin/subcategory/{id}
-    defaults: { _controller: AdminBundle00:Category:editSubcategory }
+    defaults: { _controller: AdminBundle:Category:editSubcategory }
     
 admin_subcategory_delete:
     pattern:  /admin/delete_subcategory/{id}
-    defaults: { _controller: AdminBundle00:Category:editSubcategory }
+    defaults: { _controller: AdminBundle:Category:editSubcategory }
     
 admin_order:
     pattern:  /admin/bestellingen/{id}
-    defaults: { _controller: AdminBundle00:Orders:view }
+    defaults: { _controller: AdminBundle:Orders:view }
     
 admin_order_payed:    
     pattern:  /admin/json-order-status/{id}
-    defaults: { _controller: AdminBundle00:Orders:jsonSetOrderPayed }
+    defaults: { _controller: AdminBundle:Orders:jsonSetOrderPayed }
     
 admin_send_order:
     pattern:  /admin/verstuur-bestelling/{id}
-    defaults: { _controller: AdminBundle00:Orders:send }
+    defaults: { _controller: AdminBundle:Orders:send }
     
 admin_clients:
     pattern:  /admin/klanten
-    defaults: { _controller: AdminBundle00:Clients:index }
+    defaults: { _controller: AdminBundle:Clients:index }
     
 admin_client:
     pattern:  /admin/klanten/{id}
-    defaults: { _controller: AdminBundle00:Clients:view }
+    defaults: { _controller: AdminBundle:Clients:view }
     
 admin_contact_client:
     pattern:  /admin/klanten-contact/{id}
-    defaults: { _controller: AdminBundle00:Clients:contact }
+    defaults: { _controller: AdminBundle:Clients:contact }
     
 admin_pages:
     pattern:  /admin/paginas
-    defaults: { _controller: AdminBundle00:Page:index }
+    defaults: { _controller: AdminBundle:Page:index }
     
 admin_page:
     pattern:  /admin/paginas/{id}
-    defaults: { _controller: AdminBundle00:Page:edit }
+    defaults: { _controller: AdminBundle:Page:edit }
     
 admin_coupons:
     pattern:  /admin/marketing/kortingcodes
-    defaults: { _controller: AdminBundle00:Settings:coupons }
+    defaults: { _controller: AdminBundle:Settings:coupons }
     
 admin_coupon:
     pattern:  /admin/marketing/kortingcodes/{id}
-    defaults: { _controller: AdminBundle00:Settings:viewCoupon }
+    defaults: { _controller: AdminBundle:Settings:viewCoupon }
     
 admin_newsletters:
     pattern:  /admin/marketing/nieuwsbrief
-    defaults: { _controller: AdminBundle00:Newsletter:index }
+    defaults: { _controller: AdminBundle:Newsletter:index }
     
 admin_newsletter:
     pattern:  /admin/marketing/nieuwsbrief/{id}
-    defaults: { _controller: AdminBundle00:Newsletter:edit }
+    defaults: { _controller: AdminBundle:Newsletter:edit }
     
 admin_email:
     pattern:  /admin/instellingen/email
-    defaults: { _controller: AdminBundle00:Settings:email }
+    defaults: { _controller: AdminBundle:Settings:email }
     
 admin_email_view:
     pattern:  /admin/instellingen/email/{id}
-    defaults: { _controller: AdminBundle00:Settings:viewEmail }
+    defaults: { _controller: AdminBundle:Settings:viewEmail }
     
 admin_json_orders:
     pattern:  /admin/json-orders
-    defaults: { _controller: AdminBundle00:Orders:jsonOrders }
+    defaults: { _controller: AdminBundle:Orders:jsonOrders }
     
 admin_json_clients:
     pattern:  /admin/json-clients
-    defaults: { _controller: AdminBundle00:Clients:jsonClients }
+    defaults: { _controller: AdminBundle:Clients:jsonClients }
     
 admin_json_products:
     pattern:  /admin/json-products
-    defaults: { _controller: AdminBundle00:Products:jsonProducts }
+    defaults: { _controller: AdminBundle:Products:jsonProducts }
     
 admin_json_remove_attr:
     pattern:  /admin/remove-attribute
-    defaults: { _controller: AdminBundle00:Products:removeattribute }
+    defaults: { _controller: AdminBundle:Products:removeattribute }
     
 admin_json_send_order_mail:
     pattern:  /admin/send-order-mail/{id}
-    defaults: { _controller: AdminBundle00:Orders:sendOrderMail }
+    defaults: { _controller: AdminBundle:Orders:sendOrderMail }
