@@ -1,6 +1,6 @@
 <?php
 
-namespace Ecommerce\AdminBundle\UploadHandler;
+namespace Ecommerce\AdminBundle00\UploadHandler;
 
 /*
  * jQuery File Upload Plugin PHP Class 5.11.1

@@ -1,6 +1,6 @@
 <?php
 
-namespace Ecommerce\AdminBundle\DependencyInjection;
+namespace Ecommerce\AdminBundle00\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;

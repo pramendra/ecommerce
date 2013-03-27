@@ -1,6 +1,6 @@
 <?php
 
-namespace Ecommerce\AdminBundle\Controller;
+namespace Ecommerce\AdminBundle00\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Ecommerce\EcommerceBundle\Entity\Page;
@@ -14,7 +14,7 @@ class NewsletterController extends Controller
 
         $newsletters = $this->getDoctrine()->getRepository('EcommerceBundle:Newsletter')->findAll();
         
-        return $this->render('AdminBundle:Newsletter:index.html.twig', array('newsletters' => $newsletters));
+        return $this->render('AdminBundle00:Newsletter:index.html.twig', array('newsletters' => $newsletters));
     }
 
     public function editAction($id) {
@@ -25,7 +25,7 @@ class NewsletterController extends Controller
             $newsletter = $this->getDoctrine()->getRepository('EcommerceBundle:Newsletter')->find($id);
         }
 
-        $newsletter_form = $this->createForm(new \Ecommerce\AdminBundle\Form\NewsletterType($newsletter), $newsletter);
+        $newsletter_form = $this->createForm(new \Ecommerce\AdminBundle00\Form\NewsletterType($newsletter), $newsletter);
 
         $newsletter_form->setData($newsletter);
 
@@ -51,7 +51,7 @@ class NewsletterController extends Controller
             }
         }
 
-        return $this->render('AdminBundle:Newsletter:edit.html.twig', array('newsletter' => $newsletter, 'newsletter_form' => $newsletter_form->createView()));
+        return $this->render('AdminBundle00:Newsletter:edit.html.twig', array('newsletter' => $newsletter, 'newsletter_form' => $newsletter_form->createView()));
     }
 
 }

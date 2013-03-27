@@ -1,6 +1,6 @@
 <?php
 
-namespace Ecommerce\AdminBundle\Command;
+namespace Ecommerce\AdminBundle00\Command;
 
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputArgument;
@@ -9,7 +9,7 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Ecommerce\EcommerceBundle\Entity\Product;
 use Ecommerce\EcommerceBundle\Entity\ProductImages;
-use Ecommerce\AdminBundle\UploadHandler\UploadHandler;
+use Ecommerce\AdminBundle00\UploadHandler\UploadHandler;
 use Ecommerce\EcommerceBundle\Entity\ProductCategory;
 use Ecommerce\EcommerceBundle\Entity\ProductAttributes;
 

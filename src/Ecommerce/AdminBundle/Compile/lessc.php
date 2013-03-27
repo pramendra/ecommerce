@@ -1,6 +1,6 @@
 <?php
 
-namespace Ecommerce\AdminBundle\Compile;
+namespace Ecommerce\AdminBundle00\Compile;
 
 /**
  * lessphp v0.3.4-2

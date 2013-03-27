@@ -1,6 +1,6 @@
 <?php
 
-namespace Ecommerce\AdminBundle\Controller;
+namespace Ecommerce\AdminBundle00\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
@@ -12,7 +12,7 @@ class CategoryController extends Controller {
 
         $sections = $this->getDoctrine()->getRepository('EcommerceBundle:Section')->findAll();
         
-        return $this->render('AdminBundle:Category:index.html.twig', array('sections' => $sections));
+        return $this->render('AdminBundle00:Category:index.html.twig', array('sections' => $sections));
     }
 
     public function editAction($id) { 
@@ -23,7 +23,7 @@ class CategoryController extends Controller {
             $category = $this->getDoctrine()->getRepository('EcommerceBundle:Category')->find($id);
         }
 
-        $category_form = $this->createForm(new \Ecommerce\AdminBundle\Form\CategoryType($category), $category);
+        $category_form = $this->createForm(new \Ecommerce\AdminBundle00\Form\CategoryType($category), $category);
 
         $category_form->setData($category);
 
@@ -48,7 +48,7 @@ class CategoryController extends Controller {
             }
         }
 
-        return $this->render('AdminBundle:Category:edit.html.twig', array('category' => $category, 'category_form' => $category_form->createView()));
+        return $this->render('AdminBundle00:Category:edit.html.twig', array('category' => $category, 'category_form' => $category_form->createView()));
     }
 
     public function editSubcategoryAction($id) { 
@@ -59,7 +59,7 @@ class CategoryController extends Controller {
             $subcategory = $this->getDoctrine()->getRepository('EcommerceBundle:Subcategory')->find($id);
         }
 
-        $subcategory_form = $this->createForm(new \Ecommerce\AdminBundle\Form\SubcategoryType($subcategory), $subcategory);
+        $subcategory_form = $this->createForm(new \Ecommerce\AdminBundle00\Form\SubcategoryType($subcategory), $subcategory);
 
         $subcategory_form->setData($subcategory);
 
@@ -84,6 +84,6 @@ class CategoryController extends Controller {
             }
         }
 
-        return $this->render('AdminBundle:Subcategory:edit.html.twig', array('subcategory' => $subcategory, 'subcategory_form' => $subcategory_form->createView()));
+        return $this->render('AdminBundle00:Subcategory:edit.html.twig', array('subcategory' => $subcategory, 'subcategory_form' => $subcategory_form->createView()));
     }
 }

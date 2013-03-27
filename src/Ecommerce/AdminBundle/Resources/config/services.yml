@@ -1,5 +1,5 @@
 parameters:
-#    admin.example.class: Ecommerce\AdminBundle\Example
+#    admin.example.class: Ecommerce\AdminBundle00\Example
 
 services:
 #    admin.example:

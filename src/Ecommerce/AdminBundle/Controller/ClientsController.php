@@ -1,6 +1,6 @@
 <?php
 
-namespace Ecommerce\AdminBundle\Controller;
+namespace Ecommerce\AdminBundle00\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
@@ -10,7 +10,7 @@ class ClientsController extends Controller {
 
     public function indexAction() {
 
-	return $this->render('AdminBundle:Clients:index.html.twig');
+	return $this->render('AdminBundle00:Clients:index.html.twig');
     }
 
     public function contactAction($id) {
@@ -23,7 +23,7 @@ class ClientsController extends Controller {
 
 	$email->setClient($client);
 
-	$email_form = $this->createForm(new \Ecommerce\AdminBundle\Form\EmailType($email), $email);
+	$email_form = $this->createForm(new \Ecommerce\AdminBundle00\Form\EmailType($email), $email);
 
 	$email_form->setData($email);
 
@@ -59,13 +59,13 @@ class ClientsController extends Controller {
 	    }
 	}
 
-	return $this->render('AdminBundle:Clients:contact.html.twig', array('client' => $client, 'email_form' => $email_form->createView(), 'emaillog' => $emaillog));
+	return $this->render('AdminBundle00:Clients:contact.html.twig', array('client' => $client, 'email_form' => $email_form->createView(), 'emaillog' => $emaillog));
     }
 
     public function viewAction($id) {
 	$client = $this->getDoctrine()->getRepository('EcommerceBundle:Client')->find($id);
 
-	$client_form = $this->createForm(new \Ecommerce\AdminBundle\Form\ClientType($client), $client);
+	$client_form = $this->createForm(new \Ecommerce\AdminBundle00\Form\ClientType($client), $client);
 
 	$client_form->setData($client);
 
@@ -96,7 +96,7 @@ class ClientsController extends Controller {
 	    }
 	}
 
-	return $this->render('AdminBundle:Clients:edit.html.twig', array('client' => $client, 'clients_form' => $client_form->createView()));
+	return $this->render('AdminBundle00:Clients:edit.html.twig', array('client' => $client, 'clients_form' => $client_form->createView()));
     }
 
     public function jsonClientsAction() {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Ecommerce\AdminBundle\Form;
+namespace Ecommerce\AdminBundle00\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface; 

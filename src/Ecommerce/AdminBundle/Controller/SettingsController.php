@@ -1,6 +1,6 @@
 <?php
 
-namespace Ecommerce\AdminBundle\Controller;
+namespace Ecommerce\AdminBundle00\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
@@ -13,21 +13,21 @@ class SettingsController extends Controller {
 
         $email = $this->getDoctrine()->getRepository('EcommerceBundle:Email')->findAll();
         
-        return $this->render('AdminBundle:Email:index.html.twig', array('emails' => $email));
+        return $this->render('AdminBundle00:Email:index.html.twig', array('emails' => $email));
     }
 
     public function viewEmailAction($id) {
 
         $email = $this->getDoctrine()->getRepository('EcommerceBundle:Email')->find($id);
         
-        return $this->render('AdminBundle:Email:view.html.twig', array('email' => $email));
+        return $this->render('AdminBundle00:Email:view.html.twig', array('email' => $email));
     }
 
     public function couponsAction() {
 
         $coupons = $this->getDoctrine()->getRepository('EcommerceBundle:Coupon')->findAll();
         
-        return $this->render('AdminBundle:Coupons:index.html.twig', array('coupons' => $coupons));
+        return $this->render('AdminBundle00:Coupons:index.html.twig', array('coupons' => $coupons));
     }
 
     public function viewCouponAction($id) {
@@ -38,7 +38,7 @@ class SettingsController extends Controller {
             $coupon = $this->getDoctrine()->getRepository('EcommerceBundle:Coupon')->find($id);
         }
 
-        $coupon_form = $this->createForm(new \Ecommerce\AdminBundle\Form\CouponType($coupon), $coupon);
+        $coupon_form = $this->createForm(new \Ecommerce\AdminBundle00\Form\CouponType($coupon), $coupon);
 
         $coupon_form->setData($coupon);
 
@@ -66,6 +66,6 @@ class SettingsController extends Controller {
         
         $orders = $this->getDoctrine()->getRepository('EcommerceBundle:Orders')->findBy(array('coupon' => $coupon->getId()));
 
-        return $this->render('AdminBundle:Coupons:edit.html.twig', array('coupon' => $coupon, 'orders' => $orders, 'coupons_form' => $coupon_form->createView()));
+        return $this->render('AdminBundle00:Coupons:edit.html.twig', array('coupon' => $coupon, 'orders' => $orders, 'coupons_form' => $coupon_form->createView()));
     }
 }
