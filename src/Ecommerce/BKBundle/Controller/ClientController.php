@@ -43,7 +43,7 @@ class ClientController extends Controller {
             }
         }
 
-        $TotalOrdersPrice = $this->getDoctrine()->getRepository('BKBundle:Orders')->getTotalOrdersPrice($client);
+        $TotalOrdersPrice = $this->getDoctrine()->getRepository('EcommerceBundle:Orders')->getTotalOrdersPrice($client);
         
         return $this->render('BKBundle:Client:index.html.twig', array(
             'TotalOrdersPrice' => $TotalOrdersPrice, 'stamp_amount' => 10, 'clients_form' => $client_form->createView()));
@@ -77,7 +77,7 @@ class ClientController extends Controller {
             $zipcode = $request->get('zipcode');
 
 
-            $postcode_repository = $this->getDoctrine()->getRepository('BKBundle:Postcode');
+            $postcode_repository = $this->getDoctrine()->getRepository('EcommerceBundle:Postcode');
             $result = $postcode_repository->getAdrressByPostcode($zipcode);
 
             $response = new Response(json_encode(array('result' => $result)));

@@ -18,11 +18,11 @@ class ProductController extends Controller {
             $show_canonical = false;
         }
 
-        $sections = $this->getDoctrine()->getRepository('BKBundle:Section')->findAll();
+        $sections = $this->getDoctrine()->getRepository('EcommerceBundle:Section')->findAll();
         
         $product_permalink = str_replace('.html', '', $product);
 
-        $product_repository = $this->getDoctrine()->getRepository('BKBundle:Product');
+        $product_repository = $this->getDoctrine()->getRepository('EcommerceBundle:Product');
         $product = $product_repository->findActiveProductByPermalink($product_permalink);
           
         if(!empty($product[0])) { 
@@ -44,13 +44,13 @@ class ProductController extends Controller {
             //throw $this->createNotFoundException();
         }
         
-        $categories_repository = $this->getDoctrine()->getRepository('BKBundle:Category');
+        $categories_repository = $this->getDoctrine()->getRepository('EcommerceBundle:Category');
         $category = $categories_repository->findOneByPermalink($category);
         
-        $subcategories_repository = $this->getDoctrine()->getRepository('BKBundle:Subcategory');
+        $subcategories_repository = $this->getDoctrine()->getRepository('EcommerceBundle:Subcategory');
         $subcategory = $subcategories_repository->findOneByPermalink($subcategory);
         
-        $sections_repository = $this->getDoctrine()->getRepository('BKBundle:Section');
+        $sections_repository = $this->getDoctrine()->getRepository('EcommerceBundle:Section');
         $section = $sections_repository->findOneByPermalink($section);
      
         $attribute = null;
@@ -64,11 +64,11 @@ class ProductController extends Controller {
 //        }
 //        
 //        if($attribute != null) { 
-//            $related_products = $this->getDoctrine()->getRepository('BKBundle:Product')->findRelatedProductsByAttribute($subcategory, $attribute, 4, $product);
+//            $related_products = $this->getDoctrine()->getRepository('EcommerceBundle:Product')->findRelatedProductsByAttribute($subcategory, $attribute, 4, $product);
 //        }
 //        
         if($related_products == null) { 
-            $related_products = $this->getDoctrine()->getRepository('BKBundle:Product')->getActiveProductsBySubcategory($subcategory, 4);
+            $related_products = $this->getDoctrine()->getRepository('EcommerceBundle:Product')->getActiveProductsBySubcategory($subcategory, 4);
         }
         
         $sale_discount = $this->container->getParameter('sale_discount');
@@ -89,12 +89,12 @@ class ProductController extends Controller {
         
         $product_permalink = str_replace('.html', '', $product);
 
-        $product_repository = $this->getDoctrine()->getRepository('BKBundle:Product');
+        $product_repository = $this->getDoctrine()->getRepository('EcommerceBundle:Product');
         $product = $product_repository->findOneByPermalink($product_permalink);
         
         if (!$product) {
             
-            $categories_repository = $this->getDoctrine()->getRepository('BKBundle:Category');
+            $categories_repository = $this->getDoctrine()->getRepository('EcommerceBundle:Category');
             $category = $categories_repository->findOneByPermalink($product_permalink);
             
             if($category != null) { 
@@ -114,7 +114,7 @@ class ProductController extends Controller {
 		}
             }
             
-            $subcategorie_repository = $this->getDoctrine()->getRepository('BKBundle:Subcategory');
+            $subcategorie_repository = $this->getDoctrine()->getRepository('EcommerceBundle:Subcategory');
             $subcategory = $subcategorie_repository->findOneByPermalink($product_permalink);
             
             if($subcategory != null) { 

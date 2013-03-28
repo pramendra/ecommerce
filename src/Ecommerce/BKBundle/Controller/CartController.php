@@ -5,8 +5,8 @@ namespace Ecommerce\BKBundle\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use BKBundle\Entity\Product;
-use Ecommerce\BKBundle\MultiSafePay\MultiSafePay;
+use Ecommerce\EcommerceBundle\Entity\Product;
+use Ecommerce\EcommerceBundle\MultiSafePay\MultiSafePay;
 use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
 
 define('BASE_URL_BK', 'http://www.addictedtovintage.nl');
@@ -57,7 +57,7 @@ class CartController extends Controller {
         }
         
         /* Fetch active shipping methods */
-        $shippings = $this->getDoctrine()->getRepository('BKBundle:Shipping')->findBy(array('shippingType' => $shippingType, 'active' => 1));
+        $shippings = $this->getDoctrine()->getRepository('EcommerceBundle:Shipping')->findBy(array('shippingType' => $shippingType, 'active' => 1));
         
         return $this->render('BKBundle:Cart:index.html.twig', array('cart' => $cart, 'discount' => $discount, 'shippings' => $shippings, 'coupon' => $coupon));
     }
@@ -82,7 +82,7 @@ class CartController extends Controller {
         }
         
         /* Fetch active shipping methods */
-        $shippings = $this->getDoctrine()->getRepository('BKBundle:Shipping')->findBy(array('shippingType' => $cart->getShipping()->getShippingType(), 'active' => 1));
+        $shippings = $this->getDoctrine()->getRepository('EcommerceBundle:Shipping')->findBy(array('shippingType' => $cart->getShipping()->getShippingType(), 'active' => 1));
 
         $next_delivery_date = $this->getNextDeliveryDate();
         
@@ -111,7 +111,7 @@ class CartController extends Controller {
             $shopManager->setClientShipping($this->getRequest());
         }
         
-        $paymethods = $this->getDoctrine()->getRepository('BKBundle:Paymethod')->findBy(array('isActive' => 1));
+        $paymethods = $this->getDoctrine()->getRepository('EcommerceBundle:Paymethod')->findBy(array('isActive' => 1));
         
         /* Fetch discount */
         $discount = $shopManager->getDiscount();
@@ -316,7 +316,7 @@ class CartController extends Controller {
 
     public function checkoutCompleteAction() {
 
-        $order = $this->getDoctrine()->getRepository('BKBundle:Orders')->findOneBy(array('ordernr' => $this->getRequest()->get('transactionid')));
+        $order = $this->getDoctrine()->getRepository('EcommerceBundle:Orders')->findOneBy(array('ordernr' => $this->getRequest()->get('transactionid')));
 
         $shopManager = $this->get('ShopManager');
         

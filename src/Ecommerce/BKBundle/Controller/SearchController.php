@@ -19,7 +19,7 @@ class SearchController extends Controller {
             
             if($q !== null) { 
             
-                $products_repository = $this->getDoctrine()->getRepository('BKBundle:Product');
+                $products_repository = $this->getDoctrine()->getRepository('EcommerceBundle:Product');
                 $products = $products_repository->searchProductsByKeyword($q);
             }
         }
@@ -41,7 +41,7 @@ class SearchController extends Controller {
             
             if($q !== null) { 
             
-                $products_repository = $this->getDoctrine()->getRepository('BKBundle:Product');
+                $products_repository = $this->getDoctrine()->getRepository('EcommerceBundle:Product');
                 
                 $products = $products_repository->searchProductsByKeyword($q);
                 

@@ -8,7 +8,7 @@ class PageController extends Controller {
 
     public function viewAction($permalink) {
         
-        $page = $this->getDoctrine()->getRepository('BKBundle:Page')->findOneBy(array('permalink' => $permalink));
+        $page = $this->getDoctrine()->getRepository('EcommerceBundle:Page')->findOneBy(array('permalink' => $permalink));
         
         if($page == null) { 
             return $this->forward('BKBundle:Product:shortcut', array('product' => $permalink));

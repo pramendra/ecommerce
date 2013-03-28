@@ -13,14 +13,14 @@ class CategoryController extends Controller {
         $category_permalink = $category;
         $section_permalink = $section;
 
-        $categories_repository = $this->getDoctrine()->getRepository('BKBundle:Category');
+        $categories_repository = $this->getDoctrine()->getRepository('EcommerceBundle:Category');
         $category = $categories_repository->findOneByPermalink($category_permalink);
         
         if($category == null) { 
             return $this->forward('BKBundle:Product:shortcut', array('product' => $category_permalink));
         }
 
-        $sections_repository = $this->getDoctrine()->getRepository('BKBundle:Section');
+        $sections_repository = $this->getDoctrine()->getRepository('EcommerceBundle:Section');
         $section = $sections_repository->findOneByPermalink($section_permalink);
         
         if($section == null) { 
@@ -35,10 +35,10 @@ class CategoryController extends Controller {
         $sections = $sections_repository->findAll();
         
         /* Fetch subcategory */
-        $subcategorie_repository = $this->getDoctrine()->getRepository('BKBundle:Subcategory');
+        $subcategorie_repository = $this->getDoctrine()->getRepository('EcommerceBundle:Subcategory');
         $subcategories = $subcategorie_repository->getActiveSubcategoriesByCategory($category);
         
-        $page = $this->getDoctrine()->getRepository('BKBundle:Page')->findOneBy(array('permalink' => $section_permalink .'/'.$category_permalink));
+        $page = $this->getDoctrine()->getRepository('EcommerceBundle:Page')->findOneBy(array('permalink' => $section_permalink .'/'.$category_permalink));
         
         /* Installing product filter */
         $productFilter = $this->get('ProductFilter');
@@ -67,16 +67,16 @@ class CategoryController extends Controller {
             $firstResult = ($current_page * $productFilter->getMaxResults()) + 1;
         }
 
-        $products = $this->getDoctrine()->getRepository('BKBundle:Product')->findByOffsetAndFilter($firstResult, $productFilter);
+        $products = $this->getDoctrine()->getRepository('EcommerceBundle:Product')->findByOffsetAndFilter($firstResult, $productFilter);
         
-        $attribute_repository = $this->getDoctrine()->getRepository('BKBundle:Attribute');
+        $attribute_repository = $this->getDoctrine()->getRepository('EcommerceBundle:Attribute');
         $attributes = $attribute_repository->findBy(array('isFilterable' => true));
         
         if($productFilter->getAttributes() !== null) { 
             $attribute_values = $categories_repository->getDistinctProductAttributes($products);
             $totalProducts = count($products);
         } else { 
-            $active_products = $this->getDoctrine()->getRepository('BKBundle:Product')->findAllProductsByCategory($category);
+            $active_products = $this->getDoctrine()->getRepository('EcommerceBundle:Product')->findAllProductsByCategory($category);
             $attribute_values = $categories_repository->getDistinctProductAttributes($active_products);
             $totalProducts = count($active_products);
         }
@@ -113,7 +113,7 @@ class CategoryController extends Controller {
     
     public function subcategoryAction($section, $category, $subcategory) {
 
-        $sections_repository = $this->getDoctrine()->getRepository('BKBundle:Section');
+        $sections_repository = $this->getDoctrine()->getRepository('EcommerceBundle:Section');
 
         /* Fetch section by permalink */
         $section = $sections_repository->findOneByPermalink($section);
@@ -123,13 +123,13 @@ class CategoryController extends Controller {
             throw $this->createNotFoundException();
         }
         
-        $categories_repository = $this->getDoctrine()->getRepository('BKBundle:Category');
+        $categories_repository = $this->getDoctrine()->getRepository('EcommerceBundle:Category');
 
         /* Fetch category by permalink */
         $category = $categories_repository->findOneByPermalink($category);
 
         /* Fetch subcategory */
-        $subcategorie_repository = $this->getDoctrine()->getRepository('BKBundle:Subcategory');
+        $subcategorie_repository = $this->getDoctrine()->getRepository('EcommerceBundle:Subcategory');
         $subcategory = $subcategorie_repository->findOneByPermalink($subcategory);
         
         if($subcategory == null) { 
@@ -169,9 +169,9 @@ class CategoryController extends Controller {
             $firstResult = ($current_page * $productFilter->getMaxResults()) + 1;
         }
 
-        $products = $this->getDoctrine()->getRepository('BKBundle:Product')->findByOffsetAndFilter($firstResult, $productFilter);
+        $products = $this->getDoctrine()->getRepository('EcommerceBundle:Product')->findByOffsetAndFilter($firstResult, $productFilter);
         
-        $attribute_repository = $this->getDoctrine()->getRepository('BKBundle:Attribute');
+        $attribute_repository = $this->getDoctrine()->getRepository('EcommerceBundle:Attribute');
         $attributes = $attribute_repository->findBy(array('isFilterable' => true));
 
         if($productFilter->getAttributes() !== null) { 
@@ -179,7 +179,7 @@ class CategoryController extends Controller {
             $totalProducts = count($products);
         } else { 
             
-            $active_products = $this->getDoctrine()->getRepository('BKBundle:Product')->getActiveProductsBySubcategory($subcategory);
+            $active_products = $this->getDoctrine()->getRepository('EcommerceBundle:Product')->getActiveProductsBySubcategory($subcategory);
             
             $attribute_values = $categories_repository->getDistinctProductAttributes($active_products);
             $totalProducts = count($active_products);

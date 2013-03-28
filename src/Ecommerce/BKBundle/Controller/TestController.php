@@ -18,7 +18,7 @@ class TestController extends Controller {
         $val2 = 'geel';
 //        $val3 = 'groen';
         
-        $product_attributes = $this->getDoctrine()->getRepository('BKBundle:ProductAttributes')->findbyAttributeLike($search);
+        $product_attributes = $this->getDoctrine()->getRepository('EcommerceBundle:ProductAttributes')->findbyAttributeLike($search);
         
         echo '<ul>';
         
@@ -27,8 +27,8 @@ class TestController extends Controller {
             
             echo '<li>' . $pa->getAttributeValue() . '</li>';
             
-            $attribute = $this->getDoctrine()->getRepository('BKBundle:Attribute')->find($pa->getAttribute()->getId());
-            $product = $this->getDoctrine()->getRepository('BKBundle:Product')->find($pa->getProduct()->getId());
+            $attribute = $this->getDoctrine()->getRepository('EcommerceBundle:Attribute')->find($pa->getAttribute()->getId());
+            $product = $this->getDoctrine()->getRepository('EcommerceBundle:Product')->find($pa->getProduct()->getId());
             
             $new_pa = new ProductAttributes();
             $new_pa->setAttribute($attribute);
@@ -61,7 +61,7 @@ class TestController extends Controller {
     
     public function emailAction() { 
         
-        $order = $this->getDoctrine()->getRepository('BKBundle:Orders')->find(22);
+        $order = $this->getDoctrine()->getRepository('EcommerceBundle:Orders')->find(22);
         
         return $this->render('BKBundle:Email:order.html.twig', array('order' => $order));
         

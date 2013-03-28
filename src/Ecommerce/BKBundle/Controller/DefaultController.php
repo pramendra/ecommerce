@@ -9,7 +9,7 @@ class DefaultController extends Controller
     
     public function indexAction()
     {
-        $latest_products = $this->getDoctrine()->getRepository('BKBundle:Product')->findLatestProducts(12);
+        $latest_products = $this->getDoctrine()->getRepository('EcommerceBundle:Product')->findLatestProducts(12);
         
         /* 
         * PageManager aanroepen
