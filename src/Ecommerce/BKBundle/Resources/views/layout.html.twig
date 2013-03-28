@@ -64,16 +64,150 @@
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
     </head>
 
-    <body>
-        <div id="fb-root"></div>
+<body>
+    <div id="fb-root"></div>
+    <header>
+        <div class="container">
+            <div class="row-fluid">
+		<div class="span5">
+		    <a href="{{ path('_root') }}">
+			<h1 class="site-brand">Biologische-kaas.nl</h1>
+			<p class="site-slogan hide">De lekkerste biologische kaas online!</p>
+		    </a>
+		</div>
+		<div class="span7">
+		    <ul class="nav top-nav">
+			{% if is_granted('ROLE_CLIENT') %}
+			    <li><a rel="nofollow" href="{{ path('_account') }}"><i class="icon-user"></i> Account</a></li>
+			{% else %}
+			    <li><a rel="nofollow" href="{{ path('login') }}"><i class="icon-user"></i> Inloggen</a></li>
+			{% endif %}
+			<li><a rel="nofollow" href="{{ path('_root') }}contact"><i class="icon-envelope"></i> Contact</a></li>
+			<li><a rel="nofollow" href="{{ path('_root') }}klantenservice"><i class="icon-question-sign"></i> Klantenservice</a></li>
+		    </ul>
+		</div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
         <div class="container">
             <div class="row-fluid">
                 <div class="span12">
-                    <img src="{{ asset('bundles/bk/img/cover.jpg') }}" />
+                     {% render controller('BKBundle:Section:menu') %}
                 </div>
-            </div>    
+            </div>
+        </div>
+    </nav>
+    <div class="search">
+
+        <div class="container">
+
+            <div class="row-fluid">
+                <div class="span4">
+                    <form method="POST" action="{{ path('_search') }}">
+                        <div class="input-append">
+                            <input type="search"  data-provide="typeahead" autocomplete="off" class="typeahead span10" placeholder="Zoek een product... " value="" name="q">
+                            <button type="submit" class="btn button-search"><i class="icon-search"></i></button>
+                        </div>
+                    </form>
+                </div>
+                <div class="span6">
+                    <p>
+                        <span class="wonen"></span> 
+                        <strong>Nieuw: Vintage Woonaccessoires!</strong> <br />
+                        Met o.a.: <a href="{{ path('_subcategory', { 'section' : 'woonaccessoires', 'category': 'servies', 'subcategory' : 'vazen' }) }}">vazen</a>, <a href="{{ path('_subcategory', { 'section' : 'woonaccessoires', 'category': 'servies', 'subcategory' : 'borden' }) }}">borden</a>, <a href="{{ path('_subcategory', { 'section' : 'woonaccessoires', 'category': 'servies', 'subcategory' : 'schalen' }) }}">schalen</a> en nog veel meer!
+                    </p>
+                </div>    
+                <div class="span2">
+                    <div class="fb-like pull-right" data-href="https://www.facebook.com/Addictedtovintage.nl" data-layout="button_count" data-send="false" data-width="150" data-show-faces="false"></div>
+                </div>
+            </div>
         </div>
 
+    </div>
+
+    <div class="container">
+        <div class="row-fluid">
+            <div class="span12" id="content-container">
+
+                <div class="row-fluid">
+
+                {% block sidebar %}
+                    {% include 'BKBundle:Sidebar:index.html.twig' %}
+                {% endblock %}
+
+                {% block content %}
+                {% endblock %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+        
+
+    <div class="footer">
+        <div class="container">
+            <div class="row-fluid">
+                <div class="span12">
+                    <div class="row-fluid">
+                        <div class="span4">
+
+                            <div class="question-box">
+
+                                <h4>Hulp nodig bij je bestelling?</h4>
+
+                                <p>Stuur ons nu een email via het contactformulier, en we helpen je met het plaatsen van je bestelling.</p>
+                                <p>Of lees de meest gestelde vragen in onze online klantenservice.</p>
+                            </div>
+
+                            <hr />
+                            <p><b>Populaire zoektermen: <a href="{{ path('_page', { 'permalink' : 'vintage-leren-tassen' } ) }}" title="Vintage leren tassen">Vintage leren tassen</a></b></p>
+                            {#
+			    <hr />
+			    
+			    <small>
+				<strong>Addictedtovintage</strong> <br />
+				Verstolkstraat 28, 8933DZ Leeuwarden <br /> KVK: 50787098
+			    </small>
+			    #}
+                        </div>
+
+                        <div class="span4">
+                            <h5>Klantenservice</h5>
+                            <ul class="unstyled questions">
+                                <li><i class="icon-question-sign"></i> <a rel="nofollow" href="{{ path('_page', { 'permalink' : 'kwaliteit' } ) }}">Wat is de kwaliteit van de producten?</a></li>
+                                <li><i class="icon-question-sign"></i> <a rel="nofollow" href="{{ path('_page', { 'permalink' : 'betaalwijzen' } ) }}">Waarmee kan ik online betalen?</a></li>
+                                <li><i class="icon-question-sign"></i> <a rel="nofollow" href="{{ path('_page', { 'permalink' : 'verzending-en-bezorging' } ) }}">Welke verzendmethodes kan ik kiezen?</a></li>
+                                <li><i class="icon-question-sign"></i> <a rel="nofollow" href="{{ path('_page', { 'permalink' : 'retouren-en-service' } ) }}">Hoe kan ik mijn bestelling retourneren</a></li>
+                                <li><i class="icon-question-sign"></i> <a rel="nofollow" href="{{ path('_page', { 'permalink' : 'veiligheid-en-privacy' } ) }}">Wat doen jullie aan veiligheid en privacy?</a></li>
+                            </ul>
+                        </div>
+                        <div class="span4">
+                            <div class="fb-like-box" data-href="http://www.facebook.com/addictedtovintagenl" data-width="292" data-show-faces="true" data-stream="false" data-header="false"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr />
+
+            <div class="row-fluid">
+                <div class="span6">
+                    <ul class="unstyled">
+                        <li class="inline"><a rel="nofollow" href="{{ path('_sitemap') }}"><i class="icon-sitemap"></i> SiteMap</a></li>
+                        <li class="inline"><a rel="nofollow" href="{{ path('_page', { 'permalink' : 'voorwaarden' } ) }}"><i class="icon-legal"></i> Voorwaarden</a></li>
+                        <li class="inline"><a rel="nofollow" href="{{ path('_page', { 'permalink' : 'contact' } ) }}"><i class="icon-envelope"></i> Contact</a></li>
+                        <li class="inline"><a href="https://plus.google.com/111274401763774016435" rel="publisher">Google+</a></li>
+                        <li class="inline"><a href="https://twitter.com/VintageAddictNL">Twitter</a></li>
+                    </ul>
+                </div>
+                <div class="span6">
+                    <img class="pull-right" src="{{ asset('/bundles/ecommerce/img/multisafepay-footer.jpg') }}" alt="Betaalwijzen" />
+                </div>    
+            </div>
+        </div>
+    </div>
     {% block javascripts %}
 
         <script type="text/javascript"> less = {env: 'development'};</script>
