@@ -4,8 +4,8 @@ namespace Ecommerce\BKBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use BKBundle\Entity\Product;
-use BKBundle\Entity\Cart;
+use Ecommerce\EcommerceBundle\Entity\Product;
+use Ecommerce\EcommerceBundle\Entity\Cart;
 
 class SearchController extends Controller {
 

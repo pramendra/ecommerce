@@ -3,8 +3,8 @@
 namespace Ecommerce\BKBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use BKBundle\Entity\Product;
-use Ecommerce\BKBundle\Paginator\Paginator;
+use Ecommerce\EcommerceBundle\Entity\Product;
+use Ecommerce\EcommerceBundle\Paginator\Paginator;
 
 class SaleController extends Controller {
 

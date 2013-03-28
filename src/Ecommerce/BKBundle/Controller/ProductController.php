@@ -3,7 +3,7 @@
 namespace Ecommerce\BKBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use BKBundle\Entity\Product;
+use Ecommerce\EcommerceBundle\Entity\Product;
 
 class ProductController extends Controller {
 
