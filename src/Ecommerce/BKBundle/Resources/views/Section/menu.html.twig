@@ -4,6 +4,8 @@
 <ul class="unstyled main-menu">
 
    <li><a href="{{ path('_root') }}"><i class="icon-home"></i></a></li> 
+   
+   <li class="divider-vertical">&nbsp;</li>
 
     {% for section in sections %}
 
@@ -44,30 +46,7 @@
                 </div>
             </div>
         </li>
-
-    {% endfor %}
-        
-    <li class="menu-cart pull-right">
-        {% include 'BKBundle:Cart:small-cart.html.twig' %}
-    </li>    
-    
-    
-        
-</ul>
-    
-
-
-{#
-<ul class="unstyled main-menu">
-
-    <li><a href="{{ path('_root') }}"><i class="icon-home"></i></a></li> 
-    <li class="divider-vertical">&nbsp;</li>
-
-    {% for section in sections %}
-        <li><a href="{{ path('_section', { 'section': section.permalink }) }}">{{ section.name }}</a></li>
         <li class="divider-vertical">&nbsp;</li>
-    {% endfor %}
 
-    <li class="sale"><a href="{{ path('_sale') }}">Sale!</a></li>    
+    {% endfor %}
 </ul>
-#}

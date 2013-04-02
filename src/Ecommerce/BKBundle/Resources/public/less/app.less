@@ -3,7 +3,8 @@
 
 body { 
     min-height: 100%;
-    padding-top: 80px;
+    padding-top: 20px;
+    background: url('../img/bg.jpg');
 }
 
 html { height: 100%; }
@@ -57,21 +58,11 @@ input.typeahead {
 }
 
 header { 
-    position: absolute;
-    background: #FFF;
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-    width: 100%;
-    z-index: 900;
-    top: -1px;
-    .box-shadow(0px 0px 10px 0 rgba(0, 0, 0, 0.15));
 
-    .container { 
-        position: relative;
-    }
+    position: relative;
 
     .nav {
-
+        
         margin-top: 30px;
 
         li { 
@@ -99,22 +90,25 @@ header {
 .site-brand { 
     background: url("../img/logo.png") no-repeat scroll 0 0 transparent;
     display: block;
-    height: 60px;
+    height: 120px;
     text-indent: -9999em;
-    width: 350px;
+    width: 395px;
 }
 
 .site-slogan { 
     color: #FFF;
 }
-
-#content-container { 
-    //background: #FFF;
+.container { 
+    background: #FFF;
     padding: 10px;
     //border: 1px solid #ddd;
 
     //.border-radius(@baseBorderRadius);
-    //.box-shadow(0px 0px 4px rgba(0,0,0,.15));
+    .box-shadow(0px 0px 14px rgba(0, 0, 0, 0.95));
+
+}
+
+#content-container { 
     margin-bottom: 30px;
     margin-top: 10px;
 }
@@ -122,10 +116,10 @@ header {
     
 // nav 
 nav { 
-    background: #FFF;
-    border-bottom: 1px solid #ddd;
+    #gradient > .vertical(#fed138, #fabf25);
     position: relative;
     z-index: 2;
+    border: 2px solid #ffe386;
 }
 // search
 .search { 
@@ -160,54 +154,41 @@ nav {
 
 }
 
-// .cart 
 
-li.menu-cart { 
 
-    padding: 5px 0px 0px 0px !important;
-    width: 250px;
-    border-bottom: 1px solid transparent !important;
+header .cart { 
 
-    .cart { 
+    display: block;
+    margin-top: 20px;
+    
+    width: 80%;
+    .pull-right();
 
-        display: block;
-        border: 0px;
-        padding: 0px;
-        z-index: 1000;
+    i { 
+        font-size: 42px;
+        color: #ddd;
         position: relative;
-
-        i { 
-            font-size: 30px;
-            color: #ddd;
-            margin-top: 10px;
-            margin-left: 10px;
-        }
-
-        h4 { 
-            margin: 5px 0px 0px 0px;
-        }
-
-        .total_price { 
-            font-size: 14px;
-            color: #999;
-            .pull-right();
-            margin-top: 5px;
-        }
-
-        .product_count { 
-            font-size: 11px;
-            color: #666;
-            display: block;
-            font-weight: normal;
-            line-height: 13px;
-        }
-
+        top: 9px;
+        margin-left: 10px;
     }
 
-    &:hover  {
-        background: transparent;
-        .box-shadow(0px 0px 0px rgba(255,255,255,.0));
-        border-bottom: 1px solid transparent;
+    h4 { 
+        margin: 5px 0px 0px 0px;
+    }
+
+    .total_price { 
+        font-size: 14px;
+        color: #999;
+        .pull-right();
+        margin-top: 5px;
+    }
+
+    .product_count { 
+        font-size: 11px;
+        color: #666;
+        display: block;
+        font-weight: normal;
+        line-height: 13px;
     }
 
 }
@@ -274,12 +255,12 @@ li.menu-cart {
         padding: 13px;
         display: inline-block;
         position: relative;
-        border-bottom: 4px solid transparent;
 
         a { 
-            color: #000000;
+            color: #fff;
             font-size: 14px;
             font-weight: bold;
+            text-shadow: 1px 0px 0px #e0af26;
         }
 
         .sub-menu { 
@@ -287,7 +268,7 @@ li.menu-cart {
             position: absolute;
             background: #FFF;
             z-index: 1;
-            top: 50px;
+            top: 40px;
 
             padding: 10px;
             width: 250px;
@@ -317,7 +298,9 @@ li.menu-cart {
                                     font-size: 12px;
                                     font-weight: normal;
                                     color: #333;
+                                    text-shadow: none;
                                 }
+
                                 a:hover { 
                                     color: @linkColor;
                                 }
@@ -360,26 +343,26 @@ li.menu-cart {
     }
 
     li:hover { 
-        border-bottom: 4px solid @linkColor;
 
         a { 
-            color: #249191;
+            color: #fff;
             font-weight: bold;
         }
     }
 
     li.divider-vertical { 
-        border-right: 1px solid #ddd;
-        line-height: 50px;
-        padding: 0;
+        border-left: 1px solid #FFED5A;
+        border-right: 1px solid #FCAD14;
+        font-size: 1px;
+        height: 48px;
+        margin: 0px;
+        padding: 0px;
+        position: absolute;
     }
 }
 
  // .footer 
 .footer { 
-
-    background: #FFF;
-    border-top: 2px solid #DDD;
 
     h5 { 
         color: #333;
@@ -458,19 +441,24 @@ li.menu-cart {
 // .homepage
 
 #homepage-banner { 
-    background: url('../img/banner-wonen-large.jpg') no-repeat right bottom;  
+    background: url('../img/banner.jpg') no-repeat left bottom;  
     position: relative;
+    height: 450px;
 
     h1 { 
         font-size: 48px;
-        padding-top: 50px;
-        margin-bottom: 30px;
+        padding-top: 20px;
+        margin-bottom: 20px;
+        color: #22274f;
+        margin-left: 20px;
     }
 
     p { 
         font-size: 16px;
         line-height: 30px;
         width: 80%;
+        color: #1a31dc;
+        margin-left: 20px;
     }
 
     .btn { 
@@ -478,6 +466,37 @@ li.menu-cart {
         margin-bottom: 40px;
     }
 
+    .price-box { 
+
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+
+        background: #2f237b;
+        padding: 20px;
+        font-size: 18px;
+        color: #c8c8c8;
+
+        width: 250px;
+
+        strong { 
+            color: #FFF;
+            font-size: 36px;
+            display: block;
+            text-transform: uppercase;
+            margin-top: 10px;
+        }
+    }
+
+}
+
+.populair-links { 
+    li { 
+        margin: 3px 0px;
+        padding: 4px 6px;
+        border-bottom: 1px solid #ddd;
+        color: #22274f;
+    }
 }
 
 .homepage { 
