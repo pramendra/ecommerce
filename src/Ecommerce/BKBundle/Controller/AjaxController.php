@@ -13,6 +13,7 @@ use Ecommerce\EcommerceBundle\ProductFilter\ProductFilter;
 class AjaxController extends Controller {
 
     public function indexAction() {
+        
         $result = '';
 
         if ($this->getRequest()->getMethod() === 'POST') {
@@ -85,7 +86,7 @@ class AjaxController extends Controller {
         
         $shopManager->removeProductFromCart($product);
         
-        $shopManager->setDebugMode(true);
+        $shopManager->setDebugMode(false);
         
         $cart = $shopManager->getCart();
         
@@ -103,7 +104,7 @@ class AjaxController extends Controller {
 
         $shopManager = $this->get('ShopManager');
 
-        $shopManager->setDebugMode(true);
+        $shopManager->setDebugMode(false);
 
         $shopManager->addProductToCart($product, $amount);
 
@@ -122,7 +123,7 @@ class AjaxController extends Controller {
 
         $shopManager = $this->get('ShopManager');
 
-        $shopManager->setDebugMode(true);
+        $shopManager->setDebugMode(false);
 
         $shopManager->addToShoppingList($product);
 
@@ -143,7 +144,7 @@ class AjaxController extends Controller {
             $discount = number_format($shopManager->getDiscount(), 2, ',', '.');
         }
 
-        $shopManager->setDebugMode(true);
+        $shopManager->setDebugMode(false);
 
         $cart = $shopManager->getCart();
 
@@ -157,7 +158,7 @@ class AjaxController extends Controller {
         $shopManager = $this->get('ShopManager');
 
         $shopManager->clearCouponCode();
-        $shopManager->setDebugMode(true);
+        $shopManager->setDebugMode(false);
 
         $cart = $shopManager->getCart();
 
@@ -172,7 +173,7 @@ class AjaxController extends Controller {
 
         $shopManager->setShipping($shipping);
         
-        $shopManager->setDebugMode(true);
+        $shopManager->setDebugMode(false);
         
         $cart = $shopManager->getCart();
         
