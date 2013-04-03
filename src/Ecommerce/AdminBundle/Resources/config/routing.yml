@@ -36,7 +36,7 @@ admin_category_edit:
     
 admin_category_delete:
     pattern:  /admin/delete_category/{id}
-    defaults: { _controller: AdminBundle:Category:edit }
+    defaults: { _controller: AdminBundle:Category:delete }
     
 admin_subcategory_edit:
     pattern:  /admin/subcategory/{id}
@@ -44,7 +44,7 @@ admin_subcategory_edit:
     
 admin_subcategory_delete:
     pattern:  /admin/delete_subcategory/{id}
-    defaults: { _controller: AdminBundle:Category:editSubcategory }
+    defaults: { _controller: AdminBundle:Category:deleteSubcategory }
     
 admin_order:
     pattern:  /admin/bestellingen/{id}

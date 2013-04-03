@@ -11,12 +11,36 @@ class CategoryController extends Controller {
     public function indexAction() {
 
         $sections = $this->getDoctrine()->getRepository('EcommerceBundle:Section')->findAll();
-        
+
         return $this->render('AdminBundle:Category:index.html.twig', array('sections' => $sections));
     }
 
-    public function editAction($id) { 
+    public function deleteSubcategoryAction($id) {
         
+        $subcategory = $this->getDoctrine()->getRepository('EcommerceBundle:Subcategory')->find($id);
+        
+        $em = $this->getDoctrine()->getEntityManager();
+        $em->remove($subcategory);
+        
+        $em->flush();
+        
+        return $this->redirect($this->generateUrl('admin_category'));
+    }
+
+    public function deleteAction($id) {
+        
+        $category = $this->getDoctrine()->getRepository('EcommerceBundle:Category')->find($id);
+        
+        $em = $this->getDoctrine()->getEntityManager();
+        $em->remove($category);
+        
+        $em->flush();
+        
+        return $this->redirect($this->generateUrl('admin_category'));
+    }
+
+    public function editAction($id) {
+
         if ($id == 0) {
             $category = new \Ecommerce\EcommerceBundle\Entity\Category();
         } else {
@@ -34,7 +58,7 @@ class CategoryController extends Controller {
             if ($category_form->isValid()) {
 
                 $em = $this->getDoctrine()->getEntityManager();
-                
+
                 $request = Request::createFromGlobals();
                 $postData = $request->request->get('category');
 
@@ -51,8 +75,8 @@ class CategoryController extends Controller {
         return $this->render('AdminBundle:Category:edit.html.twig', array('category' => $category, 'category_form' => $category_form->createView()));
     }
 
-    public function editSubcategoryAction($id) { 
-        
+    public function editSubcategoryAction($id) {
+
         if ($id == 0) {
             $subcategory = new \Ecommerce\EcommerceBundle\Entity\Subcategory();
         } else {
@@ -70,7 +94,7 @@ class CategoryController extends Controller {
             if ($subcategory_form->isValid()) {
 
                 $em = $this->getDoctrine()->getEntityManager();
-                
+
                 $request = Request::createFromGlobals();
                 $postData = $request->request->get('category');
 
@@ -86,4 +110,5 @@ class CategoryController extends Controller {
 
         return $this->render('AdminBundle:Subcategory:edit.html.twig', array('subcategory' => $subcategory, 'subcategory_form' => $subcategory_form->createView()));
     }
+
 }

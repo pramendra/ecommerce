@@ -27,7 +27,7 @@ class CategoryType extends AbstractType {
                 );
         
         //Brand settings
-        $builder->add('sections', 'entity', array('class' => 'AddictedToVintage\\EcommerceBundle\Entity\\Section', 'multiple' => true, 'expanded' => true,
+        $builder->add('sections', 'entity', array('class' => 'Ecommerce\\EcommerceBundle\Entity\\Section', 'multiple' => true, 'expanded' => true,
             'query_builder' => function (\Ecommerce\EcommerceBundle\Repository\SectionRepository $repository) use ($category) {
                 return $repository->getQueryBuilderCategorySections($category);
          }));

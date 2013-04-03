@@ -27,7 +27,7 @@ class SubcategoryType extends AbstractType {
                 );
         
          //Brand settings
-        $builder->add('categories', 'entity', array('class' => 'AddictedToVintage\\EcommerceBundle\Entity\\Category', 'multiple' => true, 'expanded' => false,
+        $builder->add('categories', 'entity', array('class' => 'Ecommerce\\EcommerceBundle\Entity\\Category', 'multiple' => true, 'expanded' => false,
             'query_builder' => function (\Ecommerce\EcommerceBundle\Repository\CategoryRepository $repository) use ($subcategory) {
                 return $repository->getQueryBuilderSubcategoryCategory($subcategory);
          }));
